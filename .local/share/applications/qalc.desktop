@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+NoDisplay=true
+Exec=kitty --class qalc qalc
+Name=kitty-qalc
+StartupWMClass=qalc

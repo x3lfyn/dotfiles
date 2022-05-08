@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+NoDisplay=true
+Exec=kitty --class kitty-floating
+Name=kitty-floating
+StartupWMClass=kitty-floating

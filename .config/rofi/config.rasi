@@ -1,0 +1,4 @@
+configuration {
+	font: "JetBrainsMono 10";
+}
+@theme "gruvbox"
