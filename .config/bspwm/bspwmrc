@@ -9,7 +9,7 @@ sxhkd &
 
 # bar
 killall polybar
-polybar example &
+polybar top &
 
 # compositor
 picom &
