@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+NoDisplay=true
+Exec=kitty --class updates-splash /home/kadyklesha/.scripts/updates/action.sh
+Name=updates-splash
+StartupWMClass=updates-splash
