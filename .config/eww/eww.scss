@@ -1,0 +1,26 @@
+* {
+    font-family: "JetBrains Mono", "Font Awesome 6 Free Regular", "Font Awesome 6 Brands Regular", "Font Awesome 6 Free Solid";
+    transition: 200ms ease-out;
+}
+
+.time {
+    font-size: 64;
+    font-weight: bold;
+}
+
+.date {
+    font-size: 36;
+}
+
+.date_name {
+    font-style: italic;
+    font-size: 32;
+}
+
+.uptime, .updates {
+    font-size: 26;
+}
+
+.uptime-updates-pad {
+    padding-left: 18px;
+}

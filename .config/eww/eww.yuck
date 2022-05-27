@@ -1,0 +1,81 @@
+;; vars
+(defpoll TIME :interval "1m" `scripts/time.sh`)
+(defpoll DATE :interval "1m" `scripts/date.sh`)
+(defpoll DATE_NAME :interval "1m" `scripts/date-name.sh`)
+(defpoll UPTIME :interval "1s" `scripts/uptime.sh`)
+(defpoll UPDATES :interval "5m" `scripts/updates.sh`)
+(defpoll CPU_LOAD :interval "3s" `scripts/cpu.sh --load`)
+(defpoll CPU_TEMP :interval "2s" `scripts/cpu.sh --temp`)
+(defpoll MEMORY_PERCENT :interval "2s" `scripts/memory.sh --percents`)
+(defpoll MEMORY_NUMBERS :interval "2s" `scripts/memory.sh --numbers`)
+(defpoll VOLUME_ICON :interval "1s" `scripts/volume.sh --icon`)
+(defpoll VOLUME_VALUE :interval "1s" `scripts/volume.sh --value`)
+
+(defpoll CALENDAR_DAY :interval "20h" "date '+%d'")
+(defpoll CALENDAR_YEAR :interval "20h" "date '+%Y'")
+
+;; widgets
+(defwidget clock []
+    (box :class "pad" :orientation "v" :space-evenly "false" :vexpand "false" :hexpand "false" :valign "center" :spacing 8
+        (label :class "time" :valign "center" :wrap "true" :text "${TIME}")
+        (label :class "date" :valign "center" :wrap "true" :text "${DATE}")))
+
+(defwidget date_name []
+    (box :class "pad" :orientation "v" :space-evenly "false" :vexpand "false" :hexpand "false" :valign "center" :spacing 8
+        (label :class "date_name" :valign "center" :wrap "true" :text "${DATE_NAME}")))
+
+(defwidget uptime-updates []
+    (box :class "pad uptime-updates-pad" :orientation "v" :space-evenly "false" :vexpand "false" :hexpand "false" :valign "center" :spacing 8
+        (label :class "uptime" :halign "start" :valign "center" :wrap "true" :text "uptime: ${UPTIME}")
+        (label :class "updates" :halign "start" :valign "center" :wrap "true" :text "updates: ${UPDATES}")))
+
+(defwidget cpu []
+    (box :class "pad uptime-updates-pad" :orientation "v" :space-evenly "false" :vexpand "false" :hexpand "false" :valign "center" :spacing 8
+        (circular-progress :class "cpu_prog" :thickness 50 :start-at 75 :value "${CPU_LOAD}" :clockwise false)
+        (label :class "cpu_text" :valign "center" :wrap "true" :text "")))
+
+
+;; windows
+(defwindow clock
+    :monitor 0
+    :geometry (geometry 
+        :x "-300px"
+        :y "100px"
+        :width "275px"
+        :height "175px"
+        :anchor "top center")
+    :stacking "fg"
+(clock))
+
+(defwindow date_name
+    :monitor 0
+    :geometry (geometry
+        :x "-300px"
+        :y "300px"
+        :height "75px"
+        :width "275px"
+        :anchor "top center")
+    :stacking "fg"
+(date_name))
+
+(defwindow uptime-updates
+    :monitor 0
+    :geometry (geometry
+        :x "-300px"
+        :y "400px"
+        :height "125px"
+        :width "275px"
+        :anchor "top center")
+    :stacking "fg"
+(uptime-updates))
+
+(defwindow cpu
+    :monitor 0
+    :geometry (geometry
+        :x "-300px"
+        :y "550px"
+        :height "125px"
+        :width "275px"
+        :anchor "top center")
+    :stacking "fg"
+(cpu))
