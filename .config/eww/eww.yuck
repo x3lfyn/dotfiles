@@ -15,6 +15,9 @@
 (defpoll CALENDAR_YEAR :interval "20h" "date '+%Y'")
 
 ;; widgets
+(defwidget bg []
+    (box :class "bg"))
+
 (defwidget clock []
     (box :class "pad" :orientation "v" :space-evenly "false" :vexpand "false" :hexpand "false" :valign "center" :spacing 8
         (label :class "time" :valign "center" :wrap "true" :text "${TIME}")
@@ -28,54 +31,7 @@
     (box :class "pad uptime-updates-pad" :orientation "v" :space-evenly "false" :vexpand "false" :hexpand "false" :valign "center" :spacing 8
         (label :class "uptime" :halign "start" :valign "center" :wrap "true" :text "uptime: ${UPTIME}")
         (label :class "updates" :halign "start" :valign "center" :wrap "true" :text "updates: ${UPDATES}")))
+        
 
-(defwidget cpu []
-    (box :class "pad uptime-updates-pad" :orientation "v" :space-evenly "false" :vexpand "false" :hexpand "false" :valign "center" :spacing 8
-        (circular-progress :class "cpu_prog" :thickness 50 :start-at 75 :value "${CPU_LOAD}" :clockwise false)
-        (label :class "cpu_text" :valign "center" :wrap "true" :text "")))
-
-
-;; windows
-(defwindow clock
-    :monitor 0
-    :geometry (geometry 
-        :x "-300px"
-        :y "100px"
-        :width "275px"
-        :height "175px"
-        :anchor "top center")
-    :stacking "fg"
-(clock))
-
-(defwindow date_name
-    :monitor 0
-    :geometry (geometry
-        :x "-300px"
-        :y "300px"
-        :height "75px"
-        :width "275px"
-        :anchor "top center")
-    :stacking "fg"
-(date_name))
-
-(defwindow uptime-updates
-    :monitor 0
-    :geometry (geometry
-        :x "-300px"
-        :y "400px"
-        :height "125px"
-        :width "275px"
-        :anchor "top center")
-    :stacking "fg"
-(uptime-updates))
-
-(defwindow cpu
-    :monitor 0
-    :geometry (geometry
-        :x "-300px"
-        :y "550px"
-        :height "125px"
-        :width "275px"
-        :anchor "top center")
-    :stacking "fg"
-(cpu))
+(defwindow system :stacking "fg" :focusable "false" :screen 0
+    :geometry (geometry :x)

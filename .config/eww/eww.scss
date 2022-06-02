@@ -1,26 +1,16 @@
+$bg: #282828;
+$red: #cc241d;
+$green: #98971a;
+$yellow: #d79921;
+$blue: #458588;
+$purple: #b16286;
+$aqua: #689d6a;
+$gray: #a89984;
+$fg: #ebdbb2;
+$orange: #d65d0e;
+
 * {
+    all: unset;
     font-family: "JetBrains Mono", "Font Awesome 6 Free Regular", "Font Awesome 6 Brands Regular", "Font Awesome 6 Free Solid";
     transition: 200ms ease-out;
-}
-
-.time {
-    font-size: 64;
-    font-weight: bold;
-}
-
-.date {
-    font-size: 36;
-}
-
-.date_name {
-    font-style: italic;
-    font-size: 32;
-}
-
-.uptime, .updates {
-    font-size: 26;
-}
-
-.uptime-updates-pad {
-    padding-left: 18px;
 }
