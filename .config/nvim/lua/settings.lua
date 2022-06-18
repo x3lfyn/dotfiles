@@ -38,3 +38,4 @@ o.softtabstop = 2
 o.termguicolors = true
 
 opt.lazyredraw = true
+

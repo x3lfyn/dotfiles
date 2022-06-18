@@ -14,6 +14,7 @@ return require('packer').startup(function(use)
   -- color scheme
   use {'morhetz/gruvbox', config = function()
       vim.cmd('colorscheme gruvbox')
+      vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
     end, }
 
   -- bottom info line
@@ -30,14 +31,14 @@ return require('packer').startup(function(use)
     end, }
 
   -- top buffer line
-  use { 'akinsho/bufferline.nvim', 
+  use { 'akinsho/bufferline.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = false },
     config = function()
       require('bufferline').setup()
     end, }
 
   -- files
-  use { 'kyazdani42/nvim-tree.lua', 
+  use { 'kyazdani42/nvim-tree.lua',
     requires = { 'kyazdani42/nvim-web-devicons', opt = false },
     config = function()
       require('nvim-tree').setup()
@@ -53,7 +54,7 @@ return require('packer').startup(function(use)
   use("google/vim-searchindex")
 
   -- indentlines
-  use { "lukas-reineke/indent-blankline.nvim", 
+  use { "lukas-reineke/indent-blankline.nvim",
     config = function()
       vim.cmd [[highlight IndentBlanklineIndent1 guifg=#E06C75 gui=nocombine]]
       vim.cmd [[highlight IndentBlanklineIndent2 guifg=#E5C07B gui=nocombine]]
@@ -104,28 +105,65 @@ return require('packer').startup(function(use)
 
   -- lsp
   -- lspconfig
-  use { 'neovim/nvim-lspconfig',
-    config = function()
-      require('which-key').register({
-        name = "Code",
-        g = {
-          name = "Diagnosis",
-          o = { vim.diagnostic.open_float, "Open float" },
-          q = { vim.diagnostic.setloclist, "setloclist" },
-          w = { vim.diagnostic.goto_prev, "Go to previous" },
-          e = { vim.diagnostic.goto_next, "Go to next" },    
-        },
-        D = { vim.lsp.buf.declarations, "Declarations" },
-        d = { vim.lsp.buf.definitions, "Definitions" },
-        K = { vim.lsp.buf.hover, "Hover" },
-        i = { vim.lsp.buf.implementations, "Implementations" },
-        t = { vim.lsp.buf.type_definitions, "Type definitions" },
-        R = { vim.lsp.buf.rename, "Rename" },
-        c = { vim.lsp.buf.code_action, "Code action" },
-        r = { vim.lsp.buf.references, "References" },
-        f = { vim.lsp.buf.format, "Format" },
-      }, { prefix = "<leader>c" })
-    end, }
+  -- use { 'neovim/nvim-lspconfig',
+    -- config = function()
+      -- require('which-key').register({
+        -- name = "Code",
+        -- g = {
+          -- name = "Diagnosis",
+          -- o = { vim.diagnostic.open_float, "Open float" },
+          -- q = { vim.diagnostic.setloclist, "setloclist" },
+          -- w = { vim.diagnostic.goto_prev, "Go to previous" },
+          -- e = { vim.diagnostic.goto_next, "Go to next" },
+        -- },
+        -- D = { vim.lsp.buf.declarations, "Declarations" },
+        -- d = { vim.lsp.buf.definitions, "Definitions" },
+        -- K = { vim.lsp.buf.hover, "Hover" },
+        -- i = { vim.lsp.buf.implementations, "Implementations" },
+        -- t = { vim.lsp.buf.type_definitions, "Type definitions" },
+        -- R = { vim.lsp.buf.rename, "Rename" },
+        -- c = { vim.lsp.buf.code_action, "Code action" },
+        -- r = { vim.lsp.buf.references, "References" },
+        -- f = { vim.lsp.buf.format, "Format" },
+      -- }, { prefix = "<leader>c" })
+      -- local li = require('nvim-lsp-installer')
+      -- li.setup()
+    -- end,
+    -- requires = {'williamboman/nvim-lsp-installer'}}
+
+
+  use {
+    "williamboman/nvim-lsp-installer",
+    {
+        "neovim/nvim-lspconfig",
+        config = function()
+          require("nvim-lsp-installer").setup {}
+          local lspconfig = require("lspconfig")
+          lspconfig.sumneko_lua.setup {}
+
+          require('which-key').register({
+            name = "Code",
+            g = {
+              name = "Diagnosis",
+              o = { vim.diagnostic.open_float, "Open float" },
+              q = { vim.diagnostic.setloclist, "setloclist" },
+              w = { vim.diagnostic.goto_prev, "Go to previous" },
+              e = { vim.diagnostic.goto_next, "Go to next" },
+            },
+            D = { vim.lsp.buf.declarations, "Declarations" },
+            d = { vim.lsp.buf.definitions, "Definitions" },
+            K = { vim.lsp.buf.hover, "Hover" },
+            i = { vim.lsp.buf.implementations, "Implementations" },
+            t = { vim.lsp.buf.type_definitions, "Type definitions" },
+            R = { vim.lsp.buf.rename, "Rename" },
+            c = { vim.lsp.buf.code_action, "Code action" },
+            r = { vim.lsp.buf.references, "References" },
+            f = { vim.lsp.buf.format, "Format" },
+          }, { prefix = "<leader>c" })
+        end
+    }
+  }
+
 
   if packer_bootstrap then
     require('packer').sync()

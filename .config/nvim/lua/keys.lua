@@ -24,7 +24,7 @@ map('n', '<C-l>', '<C-w>l', default_opts)
 
 
 -- exit from insert by jj
-map('i', 'jj', '<Esc>', { noremap = true })
+map('i', 'jk', '<Esc>', default_opts)
 
 -- navigating in insert mode
 map('i', '<C-h>', '<Left>', {})
