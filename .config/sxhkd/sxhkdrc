@@ -6,9 +6,17 @@ super + Return
 super + alt + Return
 	gtk-launch kitty-floating
 
+# kaomoji picker
+super + F1
+  ~/.scripts/kaomoji-rofi/kaomoji.sh
+
 # file manager
 super + r
-        gtk-launch ranger-kitty
+  gtk-launch ranger-kitty
+
+# thunar
+super + shift + r
+  gtk-launch thunar
 
 # program launcher
 control + space
