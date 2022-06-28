@@ -1,6 +1,7 @@
 // colors
 $bg: #282828;
 $bg2: #504945;
+$bg3: #665c54;
 $red: #cc241d;
 $green: #98971a;
 $yellow: #d79921;
@@ -14,8 +15,14 @@ $orange: #d65d0e;
 // common
 * {
     all: unset;
-    font-family: "Inter", "Font Awesome 6 Free Solid", "Font Awesome 6 Free Regular", "Font Awesome 6 Brands Regular";
+    font-family: "Inter", "Font Awesome v4 Compatibility Regular", "Font Awesome 6 Free Solid", "Font Awesome 6 Free Regular", "Font Awesome 6 Brands Regular";
     transition: 200ms ease-out;
+}
+
+.bg {
+    all: unset;
+    opacity: 0.3;
+    background-color: $bg3;
 }
 
 window {
@@ -67,7 +74,7 @@ window {
 }
 
 .cpu-icon {
-    font-size: 32px;
+    font-size: 30px;
     color: $blue;
 }
 
@@ -76,12 +83,12 @@ window {
 }
 
 .cpu-value {
-    font-size: 28px;
+    font-size: 26px;
     color: $blue;
 }
 
 .mem-icon {
-    font-size: 32px;
+    font-size: 30px;
     color: $aqua;
 }
 
@@ -90,7 +97,7 @@ window {
 }
 
 .mem-value {
-    font-size: 28px;
+    font-size: 26px;
     color: $aqua;
 }
 
@@ -123,4 +130,40 @@ window {
 .additional-track-info {
     background-color: $bg;
     opacity: 0.9;
+}
+
+.track-title {
+    margin-top: 7px;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.track-artist {
+    font-size: 28px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.track-btn {
+    font-size: 48px;
+}
+
+// volume
+scale trough {
+    all: unset;
+    background-color: $bg2;
+    min-width: 100px;
+    min-height: 240px;
+    border-radius: 25px;
+}
+
+scale trough highlight {
+    background-color: $orange;
+    border-radius: 25px;
+}
+
+.volume-icon {
+    font-size: 36px;
+    color: $orange;
+    margin-top: 5px;
 }

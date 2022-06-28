@@ -1,0 +1,32 @@
+(defpoll TIME :interval "1m" `scripts/time.sh`)
+(defpoll DATE :interval "1m" `scripts/date.sh`)
+(defpoll DATE_NAME :interval "1m" `scripts/date-name.sh`)
+
+(defpoll UPTIME :interval "1s" `scripts/uptime.sh`)
+(defpoll UPDATES :interval "5m" `scripts/updates.sh`)
+
+(defpoll CPU_LOAD :interval "3s" :initial "0" `scripts/cpu.sh --load`)
+(defpoll CPU_TEMP :interval "2s" `scripts/cpu.sh --temp`)
+
+(defpoll MEMORY_PERCENT :interval "2s" :initial "0" `scripts/memory.sh --percentage`)
+(defpoll MEMORY_NUMBERS :interval "2s" `scripts/memory.sh --numbers`)
+
+(defpoll DISK_USED :interval "1m" :initial "0" `scripts/disk.sh --used`)
+(defpoll DISK_TOTAL :interval "1m" :initial "0" `scripts/disk.sh --total`)
+(defpoll DISK_PERCENTAGE :interval "1m" :initial "0" `scripts/disk.sh --percentage`)
+(defpoll DISK_DOWNLOAD :interval "1m" :initial "0" `scripts/disk.sh --download`)
+(defpoll DISK_UPLOAD :interval "1m" :initial "0" `scripts/disk.sh --upload`)
+
+(defpoll ALBUM_ART :interval "3s" :initial "" `scripts/player.sh --album-art`)
+(defpoll TRACK_TITLE :interval "2s" :initial "No track" `scripts/player.sh --track-title`)
+(defpoll TRACK_ARTIST :interval "2s" :initial "No track" `scripts/player.sh --track-artist`)
+(defpoll PLAY_PAUSE_ICON :interval "1s" :initial "" `scripts/player.sh --play-pause-icon`)
+
+(defpoll VOLUME_ICON :interval "0.4s" `scripts/volume.sh --icon`)
+(defpoll VOLUME_VALUE :interval "0.4s" `scripts/volume.sh --volume`)
+
+(defpoll CALENDAR_DAY :interval "1h" `date '+%d'`)
+(defpoll CALENDAR_YEAR :interval "1h" `date '+%Y'`)
+(defpoll CALENDAR_MONTH :interval "1h" `date '+%m'`)
+
+(deflisten trackAdditionalInfoOpened :initial "false" `scripts/player.sh --subscribe`)

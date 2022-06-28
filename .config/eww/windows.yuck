@@ -1,0 +1,98 @@
+(defwindow bg :stacking "fg" :focusable "false" :screen 0 
+    :geometry (geometry
+        :x 0
+        :y 30
+        :width 2560
+        :height 1050
+        :anchor "top left")
+(bg))
+
+(defwindow time-date :stacking "fg" :focusable "false" :screen 0
+    :geometry (geometry 
+        :x 855
+        :y 200
+        :width 350
+        :height 175
+        :anchor "top left")
+(clock))
+
+(defwindow uptime-updates :stacking "fg" :focusable "false" :screen 0
+    :geometry (geometry 
+        :x 855
+        :y 400
+        :width 350
+        :height 110
+        :anchor "top left")
+(uptime-updates))
+
+(defwindow cpu-mem :stacking "fg" :focusable "false" :screen 0
+    :geometry (geometry 
+        :x 855
+        :y 535
+        :width 350
+        :height 115
+        :anchor "top left")
+(cpu-mem))
+
+(defwindow disk :stacking "fg" :focusable "false" :screen 0
+    :geometry (geometry 
+        :x 855
+        :y 675
+        :width 350
+        :height 110
+        :anchor "top left")
+(disk))
+
+(defwindow calendarw :stacking "fg" :focusable "false" :screen 0
+    :geometry (geometry 
+        :x 1230
+        :y 575
+        :width 350
+        :height 210
+        :anchor "top left")
+(calendarw))
+
+(defwindow trackInfo :stacking "fg" :focusable "false" :screen 0
+    :geometry (geometry 
+        :x 1230
+        :y 200
+        :width 350
+        :height 350
+        :anchor "top left")
+(trackInfo))
+
+(defwindow trackPrev :stacking "fg" :focusable "false" :screen 0
+    :geometry (geometry 
+        :x 1605
+        :y 200
+        :width 100
+        :height 100
+        :anchor "top left")
+(trackPrev))
+
+(defwindow trackPP :stacking "fg" :focusable "false" :screen 0
+    :geometry (geometry 
+        :x 1605
+        :y 325
+        :width 100
+        :height 100
+        :anchor "top left")
+(trackPP))
+
+(defwindow trackNext :stacking "fg" :focusable "false" :screen 0
+    :geometry (geometry 
+        :x 1605
+        :y 450
+        :width 100
+        :height 100
+        :anchor "top left")
+(trackNext))
+
+(defwindow volume :stacking "fg" :focusable "false" :screen 0
+    :geometry (geometry 
+        :x 1605
+        :y 575
+        :width 100
+        :height 305
+        :anchor "top left")
+(volume))
