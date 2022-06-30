@@ -26,6 +26,10 @@ super + shift + r
 control + space
 	rofi -show drun -modi drun
 
+# jgmenu
+super + button2
+  jgmenu_run
+
 # powermenu
 super + Escape
 	~/.config/rofi/applets/android/powermenu.sh
@@ -137,8 +141,8 @@ super + ctrl + shift + space
 #
 
 # expand a window by moving one of its side outward
-#super + alt + {h,j,k,l}
-#	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+super + alt + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # contract a window by moving one of its side inward
 super + alt + shift + {h,j,k,l}

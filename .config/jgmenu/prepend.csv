@@ -1,0 +1,18 @@
+@search,,42,15,250,20,2,left,top,#c0caf5,#7aa2f7,Search
+Terminal,kitty,kitty
+Browser,firefox,firefox
+Ranger,gtk-launch ranger-kitty,nautilus
+Thunar,gtk-launch thunar,Thunar
+Telegram,gtk-launch kotatogramdesktop,telegram
+Spotify,gtk-launch spotify,spotify
+
+^sep()
+Applications,^checkout(lx-apps),applications-all
+Bspwm,^checkout(bspwm),/home/kadyklesha/.config/jgmenu/icons/bspwm.png
+
+^tag(bspwm)
+Edit bspwmrc,kitty -e nvim ~/.config/bspwm/bspwmrc,gedit
+Edit sxhkdrc,kitty -e nvim ~/.config/sxhkd/sxhkdrc,key_bindings
+Reload,bspc wm -r,
+
+^tag(lx-apps)

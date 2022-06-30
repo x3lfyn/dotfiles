@@ -22,7 +22,7 @@ bspc monitor -d I II III IV V VI VII
 
 bspc config border_width         3
 bspc config window_gap          4
-bspc config border_radius 8
+bspc config border_radius 15
 
 bspc config split_ratio          0.5
 bspc config borderless_monocle   true
