@@ -1,5 +1,5 @@
 configuration {
-	font:				"CaskaydiaCove Nerd Font Mono 10,JetBrainsMono 10";
+	font: "Cascadia Code PL 12";
 	sidebar-mode: 			false;
 	show-icons:			false;
 }

@@ -46,9 +46,9 @@
             (overlay 
                 (image :path "${ALBUM_ART}" :image-width 350 :image-height 350 :class "album-art")
                 (revealer :transition "slideup" :reveal "${trackAdditionalInfoOpened}" :valign "end"
-                    (box :class "additional-track-info" :orientation "v" :space-evenly "false" :valign "center" :height 100 :width 350 :spacing 8
-                        (label :class "track-title" :text "${TRACK_TITLE}" :valign "center" :limit-width 19)
-                        (label :class "track-artist" :text "${TRACK_ARTIST}" :valign "center" :limit-width 18)))))))
+                    (box :class "additional-track-info" :orientation "v" :space-evenly "false" :valign "center" :height 90 :width 350 :spacing 8
+                        (label :class "track-title" :text "${TRACK_TITLE}" :valign "center" :limit-width 20)
+                        (label :class "track-artist" :text "${TRACK_ARTIST}" :valign "center" :limit-width 22)))))))
                 
 (defwidget trackPrev []
     (button :class "pad" :valign "center" :halign "center" :onclick "scripts/player.sh --previous"
@@ -67,3 +67,19 @@
         (scale :class "volume" :orientation "v" :flipped true :min 0 :max 100 :value "${VOLUME_VALUE}" :valign "center" :onchange "scripts/volume.sh --set-vol {}")
         (button :onclick "scripts/volume.sh --toggle-mute"
             (label :class "volume-icon" :valign "end" :text "${VOLUME_ICON}"))))
+
+(defwidget dnd-switch []
+   (button :class "pad" :valign "center" :halign "center" :onclick "scripts/dnd.sh --toggle"
+        (label :class "dnd-label act-btn" :valign "center" :halign "center" :text "${DND_SWITCH_ICON}")))
+
+(defwidget sleep []
+    (button :class "pad" :valign "center" :halign "center" :onclick "systemctl suspend"
+            (label :class "sleep-label act-btn" :valign "center" :halign "center" :text "")))
+
+(defwidget reboot []
+    (button :class "pad" :valign "center" :halign "center" :onclick "reboot"
+            (label :class "reboot-label act-btn" :valign "center" :halign "center" :text "")))
+    
+(defwidget shutdown []
+    (button :class "pad" :valign "center" :halign "center" :onclick "poweroff"
+            (label :class "shutdown-label act-btn" :valign "center" :halign "center" :text "")))

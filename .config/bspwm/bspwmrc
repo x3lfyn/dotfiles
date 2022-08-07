@@ -20,9 +20,9 @@ nitrogen --restore
 # bspwm configuration
 bspc monitor -d I II III IV V VI VII 
 
-bspc config border_width         3
+bspc config border_width         2
 bspc config window_gap          4
-bspc config border_radius 15
+bspc config border_radius 10
 
 bspc config split_ratio          0.5
 bspc config borderless_monocle   true
@@ -34,12 +34,17 @@ bspc rule -a qalc state=floating rectangle=300x500+1500+290
 bspc rule -a updates-splash state=floating rectangle=1100x700+730+190
 bspc rule -a ranger state=floating rectangle=1100x700+730+190
 bspc rule -a kotatogram-desktop desktop=^2
+bspc rule -a *:*:splash state=floating
 
 # cursor, keyboard layout, numlock
 xsetroot -cursor_name left_ptr &
 setxkbmap -model pc105 -layout us,ru -variant qwerty -option grp:win_space_toggle
 numlockx on
 bluetoothctl power on
+
+# crutch 
+wmname LG3D
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 # applications
 sleep 10
@@ -50,4 +55,6 @@ kdeconnect-indicator &
 element-desktop --hidden &
 
 kotatogram-desktop -startintray &
+
+/home/kadyklesha/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox --minimize &
 

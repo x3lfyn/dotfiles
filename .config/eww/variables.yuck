@@ -30,3 +30,5 @@
 (defpoll CALENDAR_MONTH :interval "1h" `date '+%m'`)
 
 (deflisten trackAdditionalInfoOpened :initial "false" `scripts/player.sh --subscribe`)
+
+(defpoll DND_SWITCH_ICON :interval "1s" `scripts/dnd.sh --icon`)

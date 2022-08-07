@@ -17,15 +17,15 @@ $window-border-radius: 16px;
 // common
 * {
     all: unset;
-    font-family: "Inter", "Font Awesome v4 Compatibility Regular", "Font Awesome 6 Free Solid", "Font Awesome 6 Free Regular", "Font Awesome 6 Brands Regular";
+    font-family: "Cascadia Code PL", "Font Awesome v4 Compatibility Regular", "Font Awesome 6 Free Solid", "Font Awesome 6 Free Regular", "Font Awesome 6 Brands Regular";
     transition: 200ms ease-out;
     box-shadow: none;
 }
 
 .bg {
     all: unset;
-    opacity: 0.3;
-    background-color: $bg3;
+    opacity: 0.4;
+    background-color: $bg2;
 }
 
 window {
@@ -40,11 +40,11 @@ window {
 // clock
 .time {
     font-weight: bold;
-    font-size: 48px;
+    font-size: 44px;
 }
 
 .date {
-    font-size: 40px;
+    font-size: 36px;
 }
 
 .weekday-month {
@@ -55,7 +55,7 @@ window {
 
 // uptime-updates
 .uptime, .updates {
-    font-size: 32px;
+    font-size: 30px;
     margin-left: 50px;
 }
 
@@ -72,8 +72,9 @@ window {
 }
 
 .hw-progress > trough > progress {
-    min-height: 16px;
-    border-radius: 8px;
+    margin-left: 2px;
+    min-height: 12px;
+    border-radius: 6px;
 }
 
 .cpu-icon {
@@ -137,12 +138,12 @@ window {
 
 .track-title {
     margin-top: 7px;
-    font-size: 30px;
+    font-size: 26px;
     font-weight: 500;
 }
 
 .track-artist {
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 400;
     font-style: italic;
 }
@@ -157,16 +158,37 @@ scale trough {
     background-color: $bg2;
     min-width: 100px;
     min-height: 240px;
-    border-radius: 25px;
+    border-radius: $window-border-radius;
 }
 
 scale trough highlight {
     background-color: $orange;
-    border-radius: 25px;
+    border-radius: $window-border-radius;
 }
 
 .volume-icon {
     font-size: 36px;
     color: $orange;
     margin-top: 5px;
+}
+
+// action buttons
+.act-btn {
+    font-size: 32px;
+}
+
+.dnd-label {
+    color: $yellow;
+}
+
+.sleep-label {
+    color: $blue;
+}
+
+.reboot-label {
+    color: $green;
+}
+
+.shutdown-label {
+    color: $red;
 }

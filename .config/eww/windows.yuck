@@ -96,3 +96,39 @@
         :height 305
         :anchor "top left")
 (volume))
+
+(defwindow dnd-switch :stacking "fg" :focusable "false" :screen 0
+    :geometry (geometry 
+        :x 1228
+        :y 810
+        :width 70
+        :height 70
+        :anchor "top left")
+(dnd-switch))
+
+(defwindow sleep :stacking "fg" :focusable "false" :screen 0
+    :geometry (geometry 
+        :x 1322
+        :y 810
+        :width 70
+        :height 70
+        :anchor "top left")
+(sleep))
+
+(defwindow reboot :stacking "fg" :focusable "false" :screen 0
+    :geometry (geometry 
+        :x 1416
+        :y 810
+        :width 70
+        :height 70
+        :anchor "top left")
+(reboot))
+
+(defwindow shutdown :stacking "fg" :focusable "false" :screen 0
+    :geometry (geometry 
+        :x 1510
+        :y 810
+        :width 70
+        :height 70
+        :anchor "top left")
+(shutdown))

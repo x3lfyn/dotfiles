@@ -14,7 +14,11 @@ if [ $OPENED_WINDOWS -eq 0 ]; then
         trackPrev\
         trackPP\
         trackNext\
-        volume
+        volume\
+        dnd-switch\
+        sleep\
+        reboot\
+        shutdown
 else
     eww close-all
 fi

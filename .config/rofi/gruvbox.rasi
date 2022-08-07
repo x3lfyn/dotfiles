@@ -1,13 +1,12 @@
 configuration {
 	modi:				"drun";
-	font:				"CaskaydiaCove Nerd Font Mono 10,JetBrainsMono 10";
 	display-drun: 			"";
 	sidebar-mode: 			false;
 	show-icons:			true;
-	icon-theme:			"Tela circle";
 }
 
 * {
+  transparent: #00000000;
 	bg:				#3c3836;
 	fg:				#d5c4a1;
 	button:				#665c54;
@@ -18,7 +17,7 @@ configuration {
 
 window {
 	transparency:                   "real";
-	border-radius:                  0px;
+	border-radius:                  10px;
 	width:			    	25%;
 	y-offset:                       10px;
 	padding: 			10px;
@@ -53,6 +52,7 @@ listview {
 }
 
 mainbox {
+  background-color:               @transparent;
 	children:                       [ inputbar, listview ];
 	spacing:                       	2%;
 	padding:                        2% 1% 2% 1%;
@@ -78,7 +78,7 @@ element selected {
 	border-radius:                  6px;
 }
 element-icon {
-	size:				1.25em;
+	size:				1.5em;
 	vertical-align:			0.5;
 	background-color:		transparent;
 
