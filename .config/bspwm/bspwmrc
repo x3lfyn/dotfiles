@@ -17,6 +17,10 @@ picom &
 # wallpapers
 nitrogen --restore
 
+# automount flash drives & nm-applet
+udiskie -ant &
+nm-applet &
+
 # bspwm configuration
 bspc monitor -d I II III IV V VI VII 
 
@@ -45,6 +49,9 @@ bluetoothctl power on
 # crutch 
 wmname LG3D
 export _JAVA_AWT_WM_NONREPARENTING=1
+
+# audio visualizer
+~/.scripts/kitty-audiovisualizer.sh
 
 # applications
 sleep 10
