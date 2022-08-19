@@ -6,7 +6,7 @@ bspc rule -a $RULE
 
 kitty --class audiovisualizer --title audiovisualizer --config ~/.config/kitty/kitty-audiovisualizer.conf cava&
 KITTYPID=$!
-sleep 0.5
+sleep 1
 
 wmctrl -r audiovisualizer -b add,below,sticky
 wmctrl -r audiovisualizer -b add,skip_pager,skip_taskbar

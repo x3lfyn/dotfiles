@@ -18,7 +18,9 @@ picom &
 nitrogen --restore
 
 # automount flash drives & nm-applet
+killall udiskie
 udiskie -ant &
+killall nm-applet
 nm-applet &
 
 # bspwm configuration
@@ -51,7 +53,7 @@ wmname LG3D
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 # audio visualizer
-~/.scripts/kitty-audiovisualizer.sh
+~/.scripts/kitty-audiovisualizer.sh &
 
 # applications
 sleep 10
