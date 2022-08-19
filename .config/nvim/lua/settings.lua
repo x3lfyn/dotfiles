@@ -1,41 +1,55 @@
-local cmd = vim.cmd
-local exec = vim.api.nvim_exec
-local g = vim.g
 local opt = vim.opt
-local o = vim.o
+local g = vim.g
 
-o.timeoutlen = 0
-o.ttimeoutlen = 0
+--[[Numbers]]--
+	-- show line numbers
+	opt.number = true
 
-g.mapleader = " "
+	-- use relative numbers
+	opt.relativenumber = true
 
-o.relativenumber = true
-o.cursorline = true
-o.number = true
-o.numberwidth = 2
-o.ignorecase = true
-o.smartcase = true
-o.wrap = true
-o.mouse = "a"
-o.scrolloff = 5
-o.sidescrolloff = 8
-o.hidden = true
-o.writebackup = false
-o.undofile = true
-o.splitright = true
-o.splitbelow = true
+--[[Search]]--
+	-- when search "test", "Test" would be found
+	opt.ignorecase = true
 
-o.autoindent = true
-o.smartindent = true
+	-- when search "Test", only "Test" would be found
+	opt.smartcase = true
 
-o.updatetime = 100
-o.clipboard = "unnamedplus"
-o.tabstop = 2
-o.shiftwidth = 2
-o.expandtab = true
-o.softtabstop = 2
+	opt.showmatch = true
 
-o.termguicolors = true
 
-opt.lazyredraw = true
+--[[Panels]]--
+	-- verticals splits are on right side
+	opt.splitright = true
 
+	-- horizontal splits are below
+	opt.splitbelow = true
+
+--[[Tabs]]--
+	opt.expandtab = false
+
+	-- spaces on "<",">"
+	opt.shiftwidth = 4
+	opt.tabstop = 4
+
+	opt.smartindent = true
+
+--[[Misc]]--
+	-- system clipboard
+	opt.clipboard = 'unnamedplus'
+
+	opt.fixeol = false
+
+	-- native autocomplete
+	opt.completeopt = 'menu,noselect'
+
+	-- don't autocomment new line
+	vim.cmd [[autocmd BufEnter * set fo-=c fo-=r fo-=o]]
+
+	-- truecolor
+	opt.termguicolors = true
+
+	opt.lazyredraw = true
+
+	-- enable mouse
+	opt.mouse = "a"

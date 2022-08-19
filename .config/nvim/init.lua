@@ -1,4 +1,4 @@
-require('plugins')
-require('settings')
-require('keys')
-require('autocmd')
+require [[keys/main]]
+require [[keys/plugins]]
+require [[settings]]
+require [[plugins/plugins]]

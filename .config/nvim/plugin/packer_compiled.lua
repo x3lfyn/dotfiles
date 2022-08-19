@@ -69,60 +69,115 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  LuaSnip = {
+    loaded = true,
+    path = "/home/kadyklesha/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    url = "https://github.com/L3MON4D3/LuaSnip"
+  },
   ["bufferline.nvim"] = {
-    config = { "\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15bufferline\frequire\0" },
+    config = { "\27LJ\2\n:\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\31plugins/configs/bufferline\frequire\0" },
     loaded = true,
     path = "/home/kadyklesha/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
-  gruvbox = {
-    config = { "\27LJ\2\ni\0\0\3\0\4\0\t6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\0\0009\0\1\0'\2\3\0B\0\2\1K\0\1\0&hi Normal guibg=NONE ctermbg=NONE\24colorscheme gruvbox\bcmd\bvim\0" },
+  ["cmp-emoji"] = {
     loaded = true,
-    path = "/home/kadyklesha/.local/share/nvim/site/pack/packer/start/gruvbox",
-    url = "https://github.com/morhetz/gruvbox"
+    path = "/home/kadyklesha/.local/share/nvim/site/pack/packer/start/cmp-emoji",
+    url = "https://github.com/hrsh7th/cmp-emoji"
   },
-  ["indent-blankline.nvim"] = {
-    config = { "\27LJ\2\n¬\6\0\0\4\0\19\0,6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\0\0009\0\1\0'\2\3\0B\0\2\0016\0\0\0009\0\1\0'\2\4\0B\0\2\0016\0\0\0009\0\1\0'\2\5\0B\0\2\0016\0\0\0009\0\1\0'\2\6\0B\0\2\0016\0\0\0009\0\1\0'\2\a\0B\0\2\0016\0\0\0009\0\b\0+\1\2\0=\1\t\0006\0\0\0009\0\b\0009\0\n\0\18\2\0\0009\0\v\0'\3\f\0B\0\3\0016\0\r\0'\2\14\0B\0\2\0029\0\15\0005\2\16\0005\3\17\0=\3\18\2B\0\2\1K\0\1\0\24char_highlight_list\1\a\0\0\27IndentBlanklineIndent1\27IndentBlanklineIndent2\27IndentBlanklineIndent3\27IndentBlanklineIndent4\27IndentBlanklineIndent5\27IndentBlanklineIndent6\1\0\1\25space_char_blankline\6 \nsetup\21indent_blankline\frequire\14space:â‹…\vappend\14listchars\tlist\boptAhighlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombineAhighlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombineAhighlight IndentBlanklineIndent4 guifg=#56B6C2 gui=nocombineAhighlight IndentBlanklineIndent3 guifg=#98C379 gui=nocombineAhighlight IndentBlanklineIndent2 guifg=#E5C07B gui=nocombineAhighlight IndentBlanklineIndent1 guifg=#E06C75 gui=nocombine\bcmd\bvim\0" },
+  ["cmp-nvim-lsp"] = {
     loaded = true,
-    path = "/home/kadyklesha/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
-    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+    path = "/home/kadyklesha/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["cmp-nvim-lsp-signature-help"] = {
+    loaded = true,
+    path = "/home/kadyklesha/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp-signature-help",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp-signature-help"
+  },
+  ["cmp-nvim-lua"] = {
+    loaded = true,
+    path = "/home/kadyklesha/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua",
+    url = "https://github.com/hrsh7th/cmp-nvim-lua"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "/home/kadyklesha/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
+  },
+  cmp_luasnip = {
+    loaded = true,
+    path = "/home/kadyklesha/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
+  },
+  ["fidget.nvim"] = {
+    config = { "\27LJ\2\n6\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\27plugins/configs/fidget\frequire\0" },
+    loaded = true,
+    path = "/home/kadyklesha/.local/share/nvim/site/pack/packer/start/fidget.nvim",
+    url = "https://github.com/j-hui/fidget.nvim"
+  },
+  ["gruvbox-material"] = {
+    config = { "\27LJ\2\n7\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\28plugins/configs/gruvbox\frequire\0" },
+    loaded = true,
+    path = "/home/kadyklesha/.local/share/nvim/site/pack/packer/start/gruvbox-material",
+    url = "https://github.com/sainnhe/gruvbox-material"
+  },
+  ["guihua.lua"] = {
+    loaded = true,
+    path = "/home/kadyklesha/.local/share/nvim/site/pack/packer/start/guihua.lua",
+    url = "https://github.com/ray-x/guihua.lua"
+  },
+  ["lspkind-nvim"] = {
+    config = { "\27LJ\2\n7\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\28plugins/configs/lspkind\frequire\0" },
+    loaded = true,
+    path = "/home/kadyklesha/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
+    url = "https://github.com/onsails/lspkind-nvim"
   },
   ["lualine.nvim"] = {
-    config = { "\27LJ\2\nÁ\1\0\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\b\0005\3\3\0005\4\4\0=\4\5\0035\4\6\0=\4\a\3=\3\t\2B\0\2\1K\0\1\0\foptions\1\0\0\25component_separators\1\0\2\nright\bî‚·\tleft\bî‚µ\23section_separators\1\0\2\nright\bî‚¶\tleft\bî‚´\1\0\1\ntheme\fgruvbox\nsetup\flualine\frequire\0" },
+    config = { "\27LJ\2\n7\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\28plugins/configs/lualine\frequire\0" },
     loaded = true,
     path = "/home/kadyklesha/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
-  ["nvim-colorizer.lua"] = {
-    config = { "\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14colorizer\frequire\0" },
+  ["navigator.lua"] = {
+    config = { "\27LJ\2\n9\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\30plugins/configs/navigator\frequire\0" },
     loaded = true,
-    path = "/home/kadyklesha/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
-    url = "https://github.com/norcalli/nvim-colorizer.lua"
+    path = "/home/kadyklesha/.local/share/nvim/site/pack/packer/start/navigator.lua",
+    url = "https://github.com/ray-x/navigator.lua"
   },
-  ["nvim-cursorline"] = {
-    config = { "\27LJ\2\n¹\1\0\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0005\4\a\0=\4\b\3=\3\t\2B\0\2\1K\0\1\0\15cursorword\ahl\1\0\1\14underline\2\1\0\2\15min_length\3\1\venable\2\15cursorline\1\0\0\1\0\3\ftimeout\3¼\5\vnumber\1\venable\2\nsetup\20nvim-cursorline\frequire\0" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/kadyklesha/.local/share/nvim/site/pack/packer/opt/nvim-cursorline",
-    url = "https://github.com/yamatsum/nvim-cursorline"
+  ["nvim-cmp"] = {
+    config = { "\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24plugins/configs/cmp\frequire\0" },
+    loaded = true,
+    path = "/home/kadyklesha/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-lsp-installer"] = {
+    config = { "\27LJ\2\n=\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\"plugins/configs/lsp-installer\frequire\0" },
     loaded = true,
     path = "/home/kadyklesha/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
     url = "https://github.com/williamboman/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
-    config = { "\27LJ\2\nÔ\a\0\0\a\0006\0n6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\0016\0\0\0'\2\3\0B\0\2\0029\1\4\0009\1\2\0014\3\0\0B\1\2\0016\1\0\0'\3\5\0B\1\2\0029\1\6\0015\3\a\0005\4\b\0005\5\f\0006\6\t\0009\6\n\0069\6\v\6>\6\1\5=\5\r\0045\5\15\0006\6\t\0009\6\n\0069\6\14\6>\6\1\5=\5\16\0045\5\18\0006\6\t\0009\6\n\0069\6\17\6>\6\1\5=\5\19\0045\5\21\0006\6\t\0009\6\n\0069\6\20\6>\6\1\5=\5\22\4=\4\23\0035\4\27\0006\5\t\0009\5\24\0059\5\25\0059\5\26\5>\5\1\4=\4\28\0035\4\30\0006\5\t\0009\5\24\0059\5\25\0059\5\29\5>\5\1\4=\4\31\0035\4!\0006\5\t\0009\5\24\0059\5\25\0059\5 \5>\5\1\4=\4\"\0035\4$\0006\5\t\0009\5\24\0059\5\25\0059\5#\5>\5\1\4=\4%\0035\4'\0006\5\t\0009\5\24\0059\5\25\0059\5&\5>\5\1\4=\4(\0035\4*\0006\5\t\0009\5\24\0059\5\25\0059\5)\5>\5\1\4=\4+\0035\4-\0006\5\t\0009\5\24\0059\5\25\0059\5,\5>\5\1\4=\4.\0035\0040\0006\5\t\0009\5\24\0059\5\25\0059\5/\5>\5\1\4=\0041\0035\0043\0006\5\t\0009\5\24\0059\5\25\0059\0052\5>\5\1\4=\0044\0035\0045\0B\1\3\1K\0\1\0\1\0\1\vprefix\14<leader>c\6f\1\3\0\0\0\vFormat\vformat\6r\1\3\0\0\0\15References\15references\6c\1\3\0\0\0\16Code action\16code_action\6R\1\3\0\0\0\vRename\vrename\6t\1\3\0\0\0\21Type definitions\21type_definitions\6i\1\3\0\0\0\20Implementations\20implementations\6K\1\3\0\0\0\nHover\nhover\6d\1\3\0\0\0\16Definitions\16definitions\6D\1\3\0\0\0\17Declarations\17declarations\bbuf\blsp\6g\6e\1\3\0\0\0\15Go to next\14goto_next\6w\1\3\0\0\0\19Go to previous\14goto_prev\6q\1\3\0\0\0\15setloclist\15setloclist\6o\1\3\0\0\0\15Open float\15open_float\15diagnostic\bvim\1\0\1\tname\14Diagnosis\1\0\1\tname\tCode\rregister\14which-key\16sumneko_lua\14lspconfig\nsetup\23nvim-lsp-installer\frequire\0" },
     loaded = true,
     path = "/home/kadyklesha/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-navic"] = {
+    loaded = true,
+    path = "/home/kadyklesha/.local/share/nvim/site/pack/packer/start/nvim-navic",
+    url = "https://github.com/SmiteshP/nvim-navic"
   },
   ["nvim-tree.lua"] = {
     config = { "\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14nvim-tree\frequire\0" },
     loaded = true,
     path = "/home/kadyklesha/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
     url = "https://github.com/kyazdani42/nvim-tree.lua"
+  },
+  ["nvim-treesitter"] = {
+    config = { "\27LJ\2\n;\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0 plugins/configs/tree-sitter\frequire\0" },
+    loaded = true,
+    path = "/home/kadyklesha/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -134,59 +189,64 @@ _G.packer_plugins = {
     path = "/home/kadyklesha/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  ["trouble.nvim"] = {
+    config = { "\27LJ\2\n7\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\28plugins/configs/trouble\frequire\0" },
+    loaded = true,
+    path = "/home/kadyklesha/.local/share/nvim/site/pack/packer/start/trouble.nvim",
+    url = "https://github.com/folke/trouble.nvim"
+  },
   ["vim-searchindex"] = {
     loaded = true,
     path = "/home/kadyklesha/.local/share/nvim/site/pack/packer/start/vim-searchindex",
     url = "https://github.com/google/vim-searchindex"
-  },
-  ["which-key.nvim"] = {
-    config = { "\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14which-key\frequire\0" },
-    loaded = true,
-    path = "/home/kadyklesha/.local/share/nvim/site/pack/packer/start/which-key.nvim",
-    url = "https://github.com/folke/which-key.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: gruvbox
-time([[Config for gruvbox]], true)
-try_loadstring("\27LJ\2\ni\0\0\3\0\4\0\t6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\0\0009\0\1\0'\2\3\0B\0\2\1K\0\1\0&hi Normal guibg=NONE ctermbg=NONE\24colorscheme gruvbox\bcmd\bvim\0", "config", "gruvbox")
-time([[Config for gruvbox]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-try_loadstring("\27LJ\2\nÔ\a\0\0\a\0006\0n6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\0016\0\0\0'\2\3\0B\0\2\0029\1\4\0009\1\2\0014\3\0\0B\1\2\0016\1\0\0'\3\5\0B\1\2\0029\1\6\0015\3\a\0005\4\b\0005\5\f\0006\6\t\0009\6\n\0069\6\v\6>\6\1\5=\5\r\0045\5\15\0006\6\t\0009\6\n\0069\6\14\6>\6\1\5=\5\16\0045\5\18\0006\6\t\0009\6\n\0069\6\17\6>\6\1\5=\5\19\0045\5\21\0006\6\t\0009\6\n\0069\6\20\6>\6\1\5=\5\22\4=\4\23\0035\4\27\0006\5\t\0009\5\24\0059\5\25\0059\5\26\5>\5\1\4=\4\28\0035\4\30\0006\5\t\0009\5\24\0059\5\25\0059\5\29\5>\5\1\4=\4\31\0035\4!\0006\5\t\0009\5\24\0059\5\25\0059\5 \5>\5\1\4=\4\"\0035\4$\0006\5\t\0009\5\24\0059\5\25\0059\5#\5>\5\1\4=\4%\0035\4'\0006\5\t\0009\5\24\0059\5\25\0059\5&\5>\5\1\4=\4(\0035\4*\0006\5\t\0009\5\24\0059\5\25\0059\5)\5>\5\1\4=\4+\0035\4-\0006\5\t\0009\5\24\0059\5\25\0059\5,\5>\5\1\4=\4.\0035\0040\0006\5\t\0009\5\24\0059\5\25\0059\5/\5>\5\1\4=\0041\0035\0043\0006\5\t\0009\5\24\0059\5\25\0059\0052\5>\5\1\4=\0044\0035\0045\0B\1\3\1K\0\1\0\1\0\1\vprefix\14<leader>c\6f\1\3\0\0\0\vFormat\vformat\6r\1\3\0\0\0\15References\15references\6c\1\3\0\0\0\16Code action\16code_action\6R\1\3\0\0\0\vRename\vrename\6t\1\3\0\0\0\21Type definitions\21type_definitions\6i\1\3\0\0\0\20Implementations\20implementations\6K\1\3\0\0\0\nHover\nhover\6d\1\3\0\0\0\16Definitions\16definitions\6D\1\3\0\0\0\17Declarations\17declarations\bbuf\blsp\6g\6e\1\3\0\0\0\15Go to next\14goto_next\6w\1\3\0\0\0\19Go to previous\14goto_prev\6q\1\3\0\0\0\15setloclist\15setloclist\6o\1\3\0\0\0\15Open float\15open_float\15diagnostic\bvim\1\0\1\tname\14Diagnosis\1\0\1\tname\tCode\rregister\14which-key\16sumneko_lua\14lspconfig\nsetup\23nvim-lsp-installer\frequire\0", "config", "nvim-lspconfig")
-time([[Config for nvim-lspconfig]], false)
+-- Config for: navigator.lua
+time([[Config for navigator.lua]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\30plugins/configs/navigator\frequire\0", "config", "navigator.lua")
+time([[Config for navigator.lua]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+try_loadstring("\27LJ\2\n;\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0 plugins/configs/tree-sitter\frequire\0", "config", "nvim-treesitter")
+time([[Config for nvim-treesitter]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+try_loadstring("\27LJ\2\n3\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\24plugins/configs/cmp\frequire\0", "config", "nvim-cmp")
+time([[Config for nvim-cmp]], false)
+-- Config for: trouble.nvim
+time([[Config for trouble.nvim]], true)
+try_loadstring("\27LJ\2\n7\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\28plugins/configs/trouble\frequire\0", "config", "trouble.nvim")
+time([[Config for trouble.nvim]], false)
+-- Config for: bufferline.nvim
+time([[Config for bufferline.nvim]], true)
+try_loadstring("\27LJ\2\n:\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\31plugins/configs/bufferline\frequire\0", "config", "bufferline.nvim")
+time([[Config for bufferline.nvim]], false)
+-- Config for: nvim-lsp-installer
+time([[Config for nvim-lsp-installer]], true)
+try_loadstring("\27LJ\2\n=\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\"plugins/configs/lsp-installer\frequire\0", "config", "nvim-lsp-installer")
+time([[Config for nvim-lsp-installer]], false)
+-- Config for: gruvbox-material
+time([[Config for gruvbox-material]], true)
+try_loadstring("\27LJ\2\n7\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\28plugins/configs/gruvbox\frequire\0", "config", "gruvbox-material")
+time([[Config for gruvbox-material]], false)
 -- Config for: lualine.nvim
 time([[Config for lualine.nvim]], true)
-try_loadstring("\27LJ\2\nÁ\1\0\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\b\0005\3\3\0005\4\4\0=\4\5\0035\4\6\0=\4\a\3=\3\t\2B\0\2\1K\0\1\0\foptions\1\0\0\25component_separators\1\0\2\nright\bî‚·\tleft\bî‚µ\23section_separators\1\0\2\nright\bî‚¶\tleft\bî‚´\1\0\1\ntheme\fgruvbox\nsetup\flualine\frequire\0", "config", "lualine.nvim")
+try_loadstring("\27LJ\2\n7\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\28plugins/configs/lualine\frequire\0", "config", "lualine.nvim")
 time([[Config for lualine.nvim]], false)
--- Config for: which-key.nvim
-time([[Config for which-key.nvim]], true)
-try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
-time([[Config for which-key.nvim]], false)
--- Config for: nvim-colorizer.lua
-time([[Config for nvim-colorizer.lua]], true)
-try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14colorizer\frequire\0", "config", "nvim-colorizer.lua")
-time([[Config for nvim-colorizer.lua]], false)
+-- Config for: fidget.nvim
+time([[Config for fidget.nvim]], true)
+try_loadstring("\27LJ\2\n6\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\27plugins/configs/fidget\frequire\0", "config", "fidget.nvim")
+time([[Config for fidget.nvim]], false)
+-- Config for: lspkind-nvim
+time([[Config for lspkind-nvim]], true)
+try_loadstring("\27LJ\2\n7\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\28plugins/configs/lspkind\frequire\0", "config", "lspkind-nvim")
+time([[Config for lspkind-nvim]], false)
 -- Config for: nvim-tree.lua
 time([[Config for nvim-tree.lua]], true)
 try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
 time([[Config for nvim-tree.lua]], false)
--- Config for: indent-blankline.nvim
-time([[Config for indent-blankline.nvim]], true)
-try_loadstring("\27LJ\2\n¬\6\0\0\4\0\19\0,6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\0\0009\0\1\0'\2\3\0B\0\2\0016\0\0\0009\0\1\0'\2\4\0B\0\2\0016\0\0\0009\0\1\0'\2\5\0B\0\2\0016\0\0\0009\0\1\0'\2\6\0B\0\2\0016\0\0\0009\0\1\0'\2\a\0B\0\2\0016\0\0\0009\0\b\0+\1\2\0=\1\t\0006\0\0\0009\0\b\0009\0\n\0\18\2\0\0009\0\v\0'\3\f\0B\0\3\0016\0\r\0'\2\14\0B\0\2\0029\0\15\0005\2\16\0005\3\17\0=\3\18\2B\0\2\1K\0\1\0\24char_highlight_list\1\a\0\0\27IndentBlanklineIndent1\27IndentBlanklineIndent2\27IndentBlanklineIndent3\27IndentBlanklineIndent4\27IndentBlanklineIndent5\27IndentBlanklineIndent6\1\0\1\25space_char_blankline\6 \nsetup\21indent_blankline\frequire\14space:â‹…\vappend\14listchars\tlist\boptAhighlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombineAhighlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombineAhighlight IndentBlanklineIndent4 guifg=#56B6C2 gui=nocombineAhighlight IndentBlanklineIndent3 guifg=#98C379 gui=nocombineAhighlight IndentBlanklineIndent2 guifg=#E5C07B gui=nocombineAhighlight IndentBlanklineIndent1 guifg=#E06C75 gui=nocombine\bcmd\bvim\0", "config", "indent-blankline.nvim")
-time([[Config for indent-blankline.nvim]], false)
--- Config for: bufferline.nvim
-time([[Config for bufferline.nvim]], true)
-try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15bufferline\frequire\0", "config", "bufferline.nvim")
-time([[Config for bufferline.nvim]], false)
-vim.cmd [[augroup packer_load_aucmds]]
-vim.cmd [[au!]]
-  -- Event lazy-loads
-time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'nvim-cursorline'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
-time([[Defining lazy-load event autocommands]], false)
-vim.cmd("augroup END")
 if should_profile then save_profiles() end
 
 end)
