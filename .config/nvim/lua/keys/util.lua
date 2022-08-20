@@ -1,6 +1,6 @@
-local map = vim.api.nvim_set_keymap 
+local map = vim.api.nvim_set_keymap
 
-function nm(key, command) 
+function nm(key, command)
 	map('n', key, command, {noremap = true})
 end
 

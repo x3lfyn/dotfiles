@@ -138,6 +138,41 @@ return require('packer').startup(function(use)
 		end
 	}
 
+	-- comments
+	use {
+		'numToStr/Comment.nvim',
+		config = function ()
+			require [[plugins/configs/comment]]
+		end
+	}
+
+	-- autopairs
+	use {
+		'windwp/nvim-autopairs',
+		config = function ()
+			require [[plugins/configs/autopairs]]
+		end
+	}
+
+	-- code symbols panel
+	use {
+		'simrat39/symbols-outline.nvim',
+		config = function ()
+			require [[plugins/configs/symbols]]
+		end
+	}
+
+	-- telescope
+	use {
+		'nvim-telescope/telescope.nvim',
+		requires = {
+			'nvim-lua/plenary.nvim'
+		},
+		config = function ()
+			require('telescope').setup()
+		end
+	}
+
 	if packer_bootstrap then
 		require('packer').sync()
 	end
