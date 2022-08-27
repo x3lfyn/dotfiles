@@ -25,10 +25,26 @@ for _, server in ipairs(lspinstaller.get_installed_servers()) do
 	}
 end
 
-lspconfig.sumneko_lua.setup {
+lspconfig["sumneko_lua"].setup {
 	settings = {
 		Lua = {
-			diagnostics = { globals = {'vim'}}
+			workspace = {
+				library = {
+					['/usr/share/nvim/runtime/lua'] = true,
+					['/usr/share/nvim/runtime/lua/lsp'] = true,
+					['/usr/share/awesome/lib'] = true
+				}
+			};
+			diagnostics = {
+				enable = true;
+				globals = {
+					'vim',
+					'use',
+					'awesome',
+					'client',
+					'root'
+				}
+			}
 		}
 	}
 }

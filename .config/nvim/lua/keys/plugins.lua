@@ -12,7 +12,7 @@ nm('ga', '<cmd>lua vim.lsp.buf.code_action()<CR>')
 nm('gR', '<cmd>lua vim.lsp.buf.rename()<CR>')
 
 -- symbols panel
-nm('gs', '<cmd>SymbolsOutline<CR>')
+nm('<F6>', '<cmd>SymbolsOutline<CR>')
 
 -- telescope
 nm('<leader>l', '<cmd>Telescope find_files<CR>') -- search for files in working directory

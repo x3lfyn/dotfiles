@@ -23,6 +23,9 @@ udiskie -ant &
 killall nm-applet
 nm-applet &
 
+# polkit agent
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
 # bspwm configuration
 bspc monitor -d I II III IV V VI VII 
 
@@ -41,6 +44,7 @@ bspc rule -a updates-splash state=floating rectangle=1100x700+730+190
 bspc rule -a ranger state=floating rectangle=1100x700+730+190
 bspc rule -a kotatogram-desktop desktop=^2
 bspc rule -a *:*:splash state=floating
+bspc rule -a Polkit-gnome-authentication-agent-1 state=floating rectangle=650x256+955+412
 
 # cursor, keyboard layout, numlock
 xsetroot -cursor_name left_ptr &
