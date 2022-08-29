@@ -22,6 +22,8 @@ killall udiskie
 udiskie -ant &
 killall nm-applet
 nm-applet &
+killall blueman-applet
+blueman-applet &
 
 # polkit agent
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
