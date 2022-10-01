@@ -17,16 +17,18 @@ picom &
 # wallpapers
 nitrogen --restore
 
-# automount flash drives & nm-applet
+# automount flash drives & nm-applet & bluetooth applet & redshift
 killall udiskie
 udiskie -ant &
 killall nm-applet
 nm-applet &
 killall blueman-applet
 blueman-applet &
+killall redshift-gtk
+redshift-gtk &
 
 # polkit agent
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # bspwm configuration
 bspc monitor -d I II III IV V VI VII 
@@ -58,18 +60,22 @@ bluetoothctl power on
 wmname LG3D
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+# qt5ct
+export QT_QPA_PLATFORMTHEME=gtk2
+
 # audio visualizer
 ~/.scripts/kitty-audiovisualizer.sh &
 
 # applications
+sleep 2
+kotatogram-desktop -startintray &
+
 sleep 10
 
 killall kdeconnect-indi
 kdeconnect-indicator &
 
 element-desktop --hidden &
-
-kotatogram-desktop -startintray &
 
 /home/kadyklesha/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox --minimize &
 
