@@ -1,3 +1,0 @@
-(include "variables.yuck")
-(include "widgets.yuck")
-(include "windows.yuck")

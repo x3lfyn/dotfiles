@@ -1,7 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Type=Application
-NoDisplay=false
-Exec=kitty --class ranger ranger
-Name=ranger-kitty
-StartupWMClass=ranger
