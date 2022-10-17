@@ -4,8 +4,8 @@ set $down j
 set $up k
 set $right l
 
-set $term kitty
-set $menu rofi -show drun 
+set $term footclient
+set $menu wofi
 
 output HDMI-A-1 mode 2560x1080@75Hz
 
@@ -26,6 +26,7 @@ exec {
 	/home/kadyklesha/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox --minimize --enable-features=UseOzonePlatform --ozone-platform=wayland &
 	swww init &
 	swww img ~/Pictures/Wallpapers/wallhaven-6k1dj7_3840x1600.png --transition-step 5 --transition-fps 75 --transition-type any --transition-speed 15 &
+	foot --server &
 }
 
 exec_always {

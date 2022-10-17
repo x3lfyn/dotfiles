@@ -1,0 +1,47 @@
+@define-color bg #282828;
+@define-color bg1 #3c3836;
+@define-color fg #ebdbb2;
+@define-color fg0 #fbf1c7;
+@define-color red #cc241d;
+@define-color green #98971a;
+@define-color green-light #b7bb26;
+@define-color yellow #d79921;
+@define-color blue #458588;
+@define-color purple #b16286;
+@define-color aqua #689d6a;
+@define-color gray #a89984;
+@define-color orange #d65d0e;
+
+window {
+	margin: 50px;
+	padding: 20px;
+	border-radius: 10px;
+	background-color: @bg;
+}
+
+#input {
+	margin: 2px;
+	border: none;
+	background-color: @bg1;
+}
+
+#outer-box {
+	margin: 2px;
+}
+
+.entry {
+	min-height: 30px;
+}
+
+.entry image {
+	margin-right: 20px;
+}
+
+#scroll {
+	margin: 2px;
+}
+
+#text {
+	color: @fg;
+	font-family: "Cascadia Code 14", sans-serif;
+}

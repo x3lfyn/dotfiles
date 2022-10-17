@@ -1,21 +1,46 @@
-
-# The following lines were added by compinstall
-
-zstyle ':completion:*' completer _complete _ignored _approximate
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'l:|=* r:|=*' 'r:|[._-]=* r:|=*'
+HISTFILE=~/.histfile
+HISTSIZE=5000
+SAVEHIST=100000
+setopt autocd beep extendedglob
+bindkey -e
 zstyle :compinstall filename '/home/kadyklesha/.zshrc'
+zstyle ':completion:*:manuals'    separate-sections true
+zstyle ':completion:*:manuals.*'  insert-sections   true
+zstyle ':completion:*:man:*'      menu yes select
 
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=10000
-setopt autocd beep extendedglob notify
-unsetopt nomatch
-bindkey -e
-# End of lines configured by zsh-newuser-install
 
-# starship
+source ${ZDOTDIR:-~}/.antidote/antidote.zsh
+antidote load
+
+autoload -U select-word-style
+select-word-style bash
+
+export EDITOR=nvim
+
+alias cdt="cd ~/temp"
+alias v="nvim"
+alias bspwmrc="$EDITOR ~/.config/bspwm/bspwmrc"
+alias swaycfg="$EDITOR ~/.config/sway/config"
+alias ip="ip -c=auto"
+alias config="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias cat="bat --color always --plain"
+alias homeserver="ssh -l confuser server.home.local"
+alias :q=exit
+alias df="grc --colour=auto df"
+alias free="grc --colour=auto free"
+alias ping="grc --colour=auto ping"
+alias du="grc --colour=auto du"
+
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+bindkey "^[[3~" delete-char
+bindkey "^H" backward-kill-word
+bindkey "^[[3;5~" kill-word
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
 eval "$(starship init zsh)"
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
