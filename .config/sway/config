@@ -1,29 +1,11 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
-# Read `man 5 sway` for a complete reference.
-
-### Variables
-#
-# Logo key. Use Mod1 for Alt.
 set $mod Mod4
-# Home row direction keys, like vim
 set $left h
 set $down j
 set $up k
 set $right l
-# Your preferred terminal emulator
-set $term kitty
-# Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
-set $menu rofi -show drun 
 
-### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-# output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+set $term kitty
+set $menu rofi -show drun 
 
 output HDMI-A-1 mode 2560x1080@75Hz
 
@@ -63,10 +45,6 @@ border_images.focused /home/kadyklesha/.config/sway/active_border.png
 
 set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
 exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
-### Key bindings
-#
-# Basics:
-#
     # Start a terminal
     bindsym $mod+Return exec $term
 	bindsym $mod+Alt+Return exec $term --class term-floating
@@ -98,6 +76,9 @@ exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
 
 	# toggle eww dashboard
 	bindsym $mod+grave exec /home/kadyklesha/.config/eww/toggle.sh
+
+	# screenshot
+	bindsym Print exec /home/kadyklesha/.scripts/screenshot-wl.sh
 
 	# start ranger
 	bindsym $mod+r exec $term --class term-floating -e ranger
@@ -179,7 +160,7 @@ exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
     bindsym $mod+s floating toggle
 
     # Swap focus between the tiling area and the floating area
-   bindsym $mod+Control+space focus mode_toggle
+	bindsym $mod+z focus mode_toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
@@ -223,12 +204,12 @@ default_border none
 default_floating_border none
 smart_borders on
 workspace_auto_back_and_forth yes
-gaps inner 3
-gaps outer 5
+gaps inner 7
+gaps outer 3
 
 for_window {
-#	[class="Spotify"] floating enable; resize set width 1 px height 1 px; move absolute position 1 px 1 px
-	[shell="XWayland"] title_format "%title [XWayland]"
+	[class="Spotify"] floating enable; resize set width 1 px height 1 px; move absolute position 2560 px 1080 px
+	[shell="xwayland"] title_format "%title [XWayland]"
 	[app_id="firefox" title="^Picture-in-Picture$"] floating enable; sticky enable
 	[app_id="term-floating"] floating enable; resize set 1100 700
 	[app_id="qalc"] floating enable; resize set 300 500; move position 1500 290
@@ -237,6 +218,8 @@ for_window {
 
 assign {
 	[app_id="firefox"] 4
+	[app_id="^(.?)-Kotatogram_Desktop"] 2
+	[title="МЭШ"] 6
 }
 
 include /etc/sway/config.d/*

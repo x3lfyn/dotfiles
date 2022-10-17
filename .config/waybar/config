@@ -5,9 +5,9 @@
     // "width": 1280, // Waybar width
     "spacing": 6, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
+    "modules-left": ["sway/workspaces", "sway/mode"], 
     "modules-center": ["sway/window"],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "cpu", "memory", "temperature", "backlight", "keyboard-state", "sway/language","clock", "tray"],
+    "modules-right": ["idle_inhibitor", "pulseaudio", "cpu", "memory", "sway/language","clock", "tray"],
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
@@ -24,6 +24,28 @@
     //         "default": ""
     //     }
     // },
+
+	"sway/workspaces": {
+		"persistent_workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": [],
+			"6": [],
+			"7": []
+		},
+//		"format": "{name} {icon}",
+//		"format-icons": {
+//			"1": "",
+//			"2": "",
+//			"3": "",
+//			"4": "",
+//			"5": "",
+//			"6": "",
+//			"7": ""
+//		}
+	},
 	
 	"sway/language": {
 		"format": " {}",
@@ -86,7 +108,7 @@
     "clock": {
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "{:%H:%M %d-%m-%Y}"
     },
     "cpu": {
         "format": " {usage}%",

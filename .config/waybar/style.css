@@ -31,6 +31,7 @@ label {
 	color: @fg;
 	border-bottom: 2px solid transparent;
 	border-radius: 0;
+	min-width: 20px;
 }
 #workspaces button.focused {
 	background-color: @bg1;
@@ -41,7 +42,7 @@ label {
 }
 
 #pulseaudio, #clock, #cpu, #memory, #language, #idle_inhibitor {
-	padding: 0 7px;
+	padding: 0 6px;
 	margin: 0 3px;
 }
 
