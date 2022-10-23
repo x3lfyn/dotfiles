@@ -1,0 +1,4 @@
+mime ^video,        has mpv,      X, flag f = mpv --hwdec=auto --sub-auto=fuzzy --sub-file-paths=`cat ~/.config/sub-paths` "$@"
+mime ^image, has feh,       X, flag f, !ext gif = feh -- "$@"
+ext pdf, has zathura,  X, flag f = zathura -- "$@"
+mime ^text,  label editor = ${VISUAL:-$EDITOR} -- "$@"

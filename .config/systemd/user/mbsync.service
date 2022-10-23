@@ -1,0 +1,10 @@
+[Unit]
+Description=Mailbox sync
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/mbsync -Va
+ExecStartPost=/usr/bin/mu index
+
+[Install]
+WantedBy=graphical.target

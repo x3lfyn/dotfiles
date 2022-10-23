@@ -7,11 +7,13 @@ set $right l
 set $term footclient
 set $menu wofi
 
-output HDMI-A-1 mode 2560x1080@75Hz
+set $display HDMI-A-1
+
+output $display mode 2560x1080@75Hz
 
 exec swayidle -w \
          timeout 300 'swaylock -i /home/kadyklesha/.config/sway/bluredwp.png -F -k -l --font "Cascadia Code" --font-size 16 --indicator-idle-visible' \
-         timeout 400 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+         timeout 400 'swaymsg "output $display power off"' resume 'swaymsg "output $display power on"' \
          before-sleep 'swaylock -i /home/kadyklesha/.config/sway/bluredwp.png -F -k -l --font "Cascadia Code" --font-size 16 --indicator-idle-visible'
 
 exec {
@@ -48,7 +50,7 @@ set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
 exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
     # Start a terminal
     bindsym $mod+Return exec $term
-	bindsym $mod+Alt+Return exec $term --class term-floating
+	bindsym $mod+Alt+Return exec $term -a term-floating
 
     # Kill focused window
     bindsym $mod+q kill
@@ -82,7 +84,7 @@ exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
 	bindsym Print exec /home/kadyklesha/.scripts/screenshot-wl.sh
 
 	# start ranger
-	bindsym $mod+r exec $term --class term-floating -e ranger
+	bindsym $mod+r exec $term -a term-floating -e ranger
 	# start thunar
 	bindsym $mod+Shift+r exec gtk-launch thunar
 

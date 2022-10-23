@@ -1,0 +1,19 @@
+format = """ 
+$directory> 
+"""
+
+right_format = """
+$time
+"""
+
+[directory]
+style="blue bold"
+format='\[[$path]($style)\]'
+truncation_length = 3
+truncation_symbol = "../"
+
+[time]
+disabled=false
+time_format = "%H:%M:%S"
+style = "italic"
+format = "[$time]($style)"

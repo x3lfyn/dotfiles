@@ -4,6 +4,7 @@ SAVEHIST=100000
 setopt autocd beep extendedglob
 bindkey -e
 zstyle :compinstall filename '/home/kadyklesha/.zshrc'
+zstyle ':completion:*' menu select
 zstyle ':completion:*:manuals'    separate-sections true
 zstyle ':completion:*:manuals.*'  insert-sections   true
 zstyle ':completion:*:man:*'      menu yes select
@@ -32,6 +33,11 @@ alias df="grc --colour=auto df"
 alias free="grc --colour=auto free"
 alias ping="grc --colour=auto ping"
 alias du="grc --colour=auto du"
+alias dig="grc --colour=auto dig"
+alias s="systemctl"
+alias ss="sudo systemctl"
+alias ls="exa -lah"
+alias cd="z"
 
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
@@ -41,6 +47,7 @@ bindkey "^[[3;5~" kill-word
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
+eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
