@@ -33,7 +33,7 @@ label {
 	border-radius: 0;
 	min-width: 20px;
 }
-#workspaces button.focused {
+#workspaces button.focused, #workspaces button.active {
 	background-color: @bg1;
 	border-bottom: 2px solid @fg;
 }
@@ -41,9 +41,10 @@ label {
 	background-color: @red;
 }
 
-#pulseaudio, #clock, #cpu, #memory, #language, #idle_inhibitor {
+#pulseaudio, #clock, #cpu, #memory, #language, #idle_inhibitor, #custom-updates {
 	padding: 0 6px;
 	margin: 0 3px;
+	border-radius: 2px;
 }
 
 #pulseaudio {
@@ -75,4 +76,8 @@ label {
 #idle_inhibitor.activated {
 	background-color: @green-light;
 	color: @fg0;
+}
+
+#custom-updates {
+	background-color: @yellow;
 }

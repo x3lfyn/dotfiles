@@ -5,9 +5,9 @@
     // "width": 1280, // Waybar width
     "spacing": 6, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode"], 
-    "modules-center": ["sway/window"],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "cpu", "memory", "sway/language","clock", "tray"],
+    "modules-left": ["wlr/workspaces", "custom/updates"], 
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["idle_inhibitor", "pulseaudio", "cpu", "memory", "hyprland/language","clock", "tray"],
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
@@ -24,6 +24,13 @@
     //         "default": ""
     //     }
     // },
+
+	"custom/updates": {
+		"exec": "$HOME/.scripts/updates.sh",
+		"interval": 60,
+		"format": "{}",
+		"on-click": "$HOME/.scripts/updates/action-wrapper.sh"
+	},
 
 	"sway/workspaces": {
 //		"persistent_workspaces": {
@@ -51,6 +58,10 @@
 		"format": " {}",
 		"on-click": "swaymsg input type:keyboard xkb_switch_layout next",
 		"tooltip-format": "{long}"
+	},
+
+	"hyprland/language": {
+		"format": " {}"
 	},
 
     "keyboard-state": {

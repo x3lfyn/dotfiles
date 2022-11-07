@@ -3,7 +3,7 @@ $directory>
 """
 
 right_format = """
-$time
+$all$cmd_duration $time
 """
 
 [directory]
@@ -16,4 +16,10 @@ truncation_symbol = "../"
 disabled=false
 time_format = "%H:%M:%S"
 style = "italic"
-format = "[$time]($style)"
+format = " [$time]($style) "
+
+[cmd_duration]
+min_time=0
+show_milliseconds=true
+style="bold yellow"
+format=" [$duration]($style)"

@@ -1,2 +1,7 @@
 font=Cascadia Code
-font-size=13
+font-size=16
+image=/home/kadyklesha/.config/sway/bluredwp.png
+show-failed-attempts
+show-keyboard-layout
+indicator-caps-lock
+indicator-idle-visible

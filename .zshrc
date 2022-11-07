@@ -12,6 +12,9 @@ zstyle ':completion:*:man:*'      menu yes select
 autoload -Uz compinit
 compinit
 
+zmodload zsh/complist
+bindkey -M menuselect '^[[Z' reverse-menu-complete
+
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
 
@@ -46,6 +49,18 @@ bindkey "^H" backward-kill-word
 bindkey "^[[3;5~" kill-word
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
+
+function osc7 {
+    local LC_ALL=C
+    export LC_ALL
+
+    setopt localoptions extendedglob
+    input=( ${(s::)PWD} )
+    uri=${(j::)input/(#b)([^A-Za-z0-9_.\!~*\'\(\)-\/])/%${(l:2::0:)$(([##16]#match))}}
+    print -n "\e]7;file://${HOSTNAME}${uri}\e\\"
+}
+autoload -U add-zsh-hook
+add-zsh-hook -Uz chpwd osc7
 
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"

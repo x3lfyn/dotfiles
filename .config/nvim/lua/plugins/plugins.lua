@@ -173,6 +173,11 @@ return require('packer').startup(function(use)
 		end
 	}
 
+	-- hyprland syntax highlight
+	use {
+		'theRealCarneiro/hyprland-vim-syntax'
+	}
+
 	if packer_bootstrap then
 		require('packer').sync()
 	end

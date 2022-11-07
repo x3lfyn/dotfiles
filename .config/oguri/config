@@ -1,0 +1,4 @@
+[output HDMI-A-1]
+filter=best
+anchor=center
+image=~/Pictures/Wallpapers/wallhaven-6k1dj7_3840x1600.png
