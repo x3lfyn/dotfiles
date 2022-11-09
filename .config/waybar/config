@@ -24,6 +24,10 @@
     //         "default": ""
     //     }
     // },
+	"wlr/workspaces": {
+		"on-click": "activate",
+		"sort-by-number": true
+	},
 
 	"custom/updates": {
 		"exec": "$HOME/.scripts/updates.sh",
