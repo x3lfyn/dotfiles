@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+NoDisplay=true
+Exec=footclient -a qalc qalc
+Name=foot-qalc
+StartupWMClass=qalc

@@ -1,0 +1,25 @@
+format = """ 
+$directory> 
+"""
+
+right_format = """
+$all$cmd_duration $time
+"""
+
+[directory]
+style="blue bold"
+format='\[[$path]($style)\]'
+truncation_length = 3
+truncation_symbol = "../"
+
+[time]
+disabled=false
+time_format = "%H:%M:%S"
+style = "italic"
+format = " [$time]($style) "
+
+[cmd_duration]
+min_time=0
+show_milliseconds=true
+style="bold yellow"
+format=" [$duration]($style)"

@@ -1,0 +1,16 @@
+set selection-clipboard clipboard
+set window-title-home-tilde true
+set statusbar-home-tilde true
+set adjust-open "best-fit"
+
+set font "Cascadia Code"
+
+set adjust-open width
+set recolor true
+set recolor-keephue true
+
+map <C-Tab> toggle_statusbar
+map D set first-page-column 1:1
+map <C-d> set first-page-column 1:2
+
+include gruvbox

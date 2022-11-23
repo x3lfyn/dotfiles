@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=AniList
+Exec=/bin/sh -c "$HOME/NativefierApps/AniList-linux-x64/AniList --enable-features=UseOzonePlatform --ozone-platform=wayland"
+Icon=~/NativefierApps/AniList-linux-x64/icon.png

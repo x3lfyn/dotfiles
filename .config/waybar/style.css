@@ -1,0 +1,83 @@
+@define-color bg #282828;
+@define-color bg1 #3c3836;
+@define-color fg #ebdbb2;
+@define-color fg0 #fbf1c7;
+@define-color red #cc241d;
+@define-color green #98971a;
+@define-color green-light #b7bb26;
+@define-color yellow #d79921;
+@define-color blue #458588;
+@define-color purple #b16286;
+@define-color aqua #689d6a;
+@define-color gray #a89984;
+@define-color orange #d65d0e;
+
+* {
+	font-family: "Cascadia Code", "Font Awesome 6 Free", "Font Awesome 6 Brands", "Font Awesome v4 Compatibility", sans-serif;
+	font-size: 13px;
+}
+
+window#waybar {
+	background-color: @bg;
+}
+
+label {
+	color: @fg;
+}
+
+#workspaces button {
+	padding: 0 5px;
+	background: transparent;
+	color: @fg;
+	border-bottom: 2px solid transparent;
+	border-radius: 0;
+	min-width: 20px;
+}
+#workspaces button.focused, #workspaces button.active {
+	background-color: @bg1;
+	border-bottom: 2px solid @fg;
+}
+#workspaces button.urgent {
+	background-color: @red;
+}
+
+#pulseaudio, #clock, #cpu, #memory, #language, #idle_inhibitor, #custom-updates {
+	padding: 0 6px;
+	margin: 0 3px;
+	border-radius: 2px;
+}
+
+#pulseaudio {
+	background-color: @yellow;
+}
+#pulseaudio.muted {
+	background-color: @red;
+}
+
+#clock {
+	background-color: @orange;
+}
+
+#cpu {
+	background-color: @blue;
+}
+
+#memory {
+	background-color: @aqua;
+}
+
+#language {
+	background-color: @purple;
+}
+
+#idle_inhibitor {
+	background-color: @green;
+}
+#idle_inhibitor.activated {
+	background-color: @green-light;
+	color: @fg0;
+}
+
+#custom-updates {
+	background-color: @yellow;
+}

@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=monkeytype
+Exec=/bin/sh -c "$HOME/NativefierApps/monkeytype-linux-x64/monkeytype --enable-features=UseOzonePlatform --ozone-platform=wayland"
+Icon=~/NativefierApps/monkeytype-linux-x64/icon.png

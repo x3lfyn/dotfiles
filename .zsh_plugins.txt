@@ -1,0 +1,4 @@
+https://github.com/zuxfoucault/colored-man-pages_mod
+https://github.com/joshskidmore/zsh-fzf-history-search
+https://github.com/hcgraf/zsh-sudo
+wazum/zsh-directory-dot-expansion
