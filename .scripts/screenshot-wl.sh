@@ -1,12 +1,16 @@
 #!/bin/bash
 
-SCRSHOT="/home/vobbla16/Pictures/screenshots/$(date +screenshot-%d-%m-%y-%H%M-%S.png)"
+SCRSHOT="$HOME/Pictures/screenshots/$(date +screenshot-%d-%m-%y-%H%M-%S.png)"
+
+NOTIF_ICON="$HOME/.local/share/icons/$(gsettings get org.gnome.desktop.interface icon-theme | tr -d "'")/apps/scalable/gscreenshot.svg"
 
 case $1 in
 	--area)
 		grimshot save area - | tee $SCRSHOT | wl-copy
+		notify-send -i $NOTIF_ICON "Area screenshot created." "<small>$SCRSHOT</small>"
 	;;
 	--screen)
 		grimshot save screen - | tee $SCRSHOT | wl-copy
+		notify-send -i $NOTIF_ICON "Screen screenshot created." "<small>$SCRSHOT</small>"
 	;;
 esac

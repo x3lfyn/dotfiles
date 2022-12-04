@@ -21,6 +21,9 @@ antidote load
 autoload -U select-word-style
 select-word-style bash
 
+
+export PATH=$PATH:$HOME/.local/bin
+
 export EDITOR=nvim
 
 alias cdt="cd ~/temp"
@@ -38,7 +41,7 @@ alias ping="grc --colour=auto ping"
 alias du="dust"
 alias dig="grc --colour=auto dig"
 alias s="systemctl"
-alias ss="sudo systemctl"
+alias ss="sudo EDITOR=nvim systemctl"
 alias ls="exa -lah"
 alias icat="viu"
 alias tree="broot"

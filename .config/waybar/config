@@ -4,7 +4,7 @@
     "spacing": 6,
     "modules-left": ["wlr/workspaces", "custom/updates"], 
     "modules-center": ["hyprland/window"],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "cpu", "memory", "hyprland/language","clock", "tray"],
+    "modules-right": ["pulseaudio", "bluetooth", "cpu", "memory", "hyprland/language","clock", "tray"],
 
 	"wlr/workspaces": {
 		"on-click": "activate",
@@ -69,5 +69,11 @@
         },
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
 		"on-click-right": "pavucontrol"
-    }
+    },
+
+	"bluetooth": {
+		"format-on": "",
+		"format-off": "",
+		"format-connected": " {device_alias}"
+	}
 }

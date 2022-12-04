@@ -7,6 +7,7 @@
 @define-color green-light #b7bb26;
 @define-color yellow #d79921;
 @define-color blue #458588;
+@define-color blue-l #83a598;
 @define-color purple #b16286;
 @define-color aqua #689d6a;
 @define-color gray #a89984;
@@ -41,7 +42,7 @@ label {
 	background-color: @red;
 }
 
-#pulseaudio, #clock, #cpu, #memory, #language, #idle_inhibitor, #custom-updates {
+#pulseaudio, #clock, #cpu, #memory, #language, #idle_inhibitor, #custom-updates, #bluetooth {
 	padding: 0 6px;
 	margin: 0 3px;
 	border-radius: 2px;
@@ -59,7 +60,7 @@ label {
 }
 
 #cpu {
-	background-color: @blue;
+	background-color: @yellow;
 }
 
 #memory {
@@ -80,4 +81,14 @@ label {
 
 #custom-updates {
 	background-color: @yellow;
+}
+
+#bluetooth.off {
+	background-color: @gray;
+}
+#bluetooth {
+	background-color: @blue;
+}
+#bluetooth.on {
+	background-color: @blue;
 }
