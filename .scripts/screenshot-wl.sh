@@ -7,10 +7,10 @@ NOTIF_ICON="$HOME/.local/share/icons/$(gsettings get org.gnome.desktop.interface
 case $1 in
 	--area)
 		grimshot save area - | tee $SCRSHOT | wl-copy
-		notify-send -i $NOTIF_ICON "Area screenshot created." "<small>$SCRSHOT</small>"
+		notify-send -i $NOTIF_ICON -t 1500 "Area screenshot created." "<small>$SCRSHOT</small>"
 	;;
 	--screen)
 		grimshot save screen - | tee $SCRSHOT | wl-copy
-		notify-send -i $NOTIF_ICON "Screen screenshot created." "<small>$SCRSHOT</small>"
+		notify-send -i $NOTIF_ICON -t 1500 "Screen screenshot created." "<small>$SCRSHOT</small>"
 	;;
 esac
