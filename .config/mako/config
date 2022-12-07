@@ -10,6 +10,7 @@ padding=5
 background-color=#282828
 progress-color=#ebdbb2
 text-color=#ebdbb2
+progress-color=#504945
 
 border-size=3
 border-radius=10
