@@ -1,3 +1,6 @@
 [submodule ".scripts/volume-control-rs"]
 	path = .scripts/volume-control-rs
 	url = https://github.com/vobbla16/volume-control-rs
+[submodule ".scripts/kaomoji-rofi"]
+	path = .scripts/kaomoji-rofi
+	url = https://github.com/vobbla16/kaomoji-rofi

@@ -1,4 +1,4 @@
 configuration {
-	font: "Cascadia Code PL 12";
+	font: "CaskaydiaCove Nerd Font 12";
 }
 @theme "gruvbox"
