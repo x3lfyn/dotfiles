@@ -1,5 +1,5 @@
 format = """ 
-$directory> 
+$directory$sudo$character
 """
 
 right_format = """
@@ -9,7 +9,7 @@ $all$cmd_duration $time
 [directory]
 style="blue bold"
 format='\[[$path]($style)\]'
-truncation_length = 3
+truncation_length = 5
 truncation_symbol = "../"
 
 [time]
@@ -23,3 +23,12 @@ min_time=0
 show_milliseconds=true
 style="bold yellow"
 format=" [$duration]($style)"
+
+[character]
+success_symbol="[>](bold green)"
+error_symbol="[>](bold red)"
+
+[sudo]
+disabled=false
+format="[$symbol](green)"
+symbol='S'

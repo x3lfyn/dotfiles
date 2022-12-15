@@ -1,0 +1,70 @@
+configuration {
+	font: "CaskaydiaCove Nerd Font 18";
+	sidebar-mode: 			false;
+	show-icons:			false;
+}
+
+* {
+  transparent: #00000000;
+	bg:				#3c3836;
+	fg:				#d5c4a1;
+	button:				#665c54;
+
+	background-color:		@bg;
+	text-color:			@fg;
+}
+
+window {
+	transparency:                   "real";
+	border-radius:                  8px;
+	width:			    	15%;
+	height: 10%;
+	padding: 			4px;
+	location: 			center;
+}
+
+prompt { enabled: false; }
+
+entry {
+	enabled: false;
+}
+
+inputbar {
+	enabled: false;
+}
+
+listview {
+	columns:                        3;
+	lines:	                        1;
+	cycle:                          false;
+	dynamic:                        false;
+	layout:                         vertical;
+}
+
+mainbox {
+  background-color:               @transparent;
+	children:                       [ listview ];
+	spacing:                       	1%;
+	padding:                        0.5% 0.5% 0.5% 0.5%;
+}
+
+element {
+	orientation:                    horizontal;
+	border-radius:                  0%;
+	padding:                        0.75% 0.75% 0.75% 0.75%;
+	childrenl: [element-text];
+}
+
+element-text {
+/*	expand:                         true;*/
+/*	vertical-align:                 0.5;*/
+	margin:                         0.5% 1% 0.5% 1%;
+	background-color:               inherit;
+        text-color:                     inherit;
+}
+
+element selected {
+	background-color:               @fg;
+	text-color:                     @bg;
+	border-radius:                  6px;
+}
