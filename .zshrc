@@ -38,7 +38,7 @@ alias :q=exit
 alias df="duf"
 alias free="grc --colour=auto free"
 alias ping="grc --colour=auto ping"
-alias du="dust"
+alias du="dust -r"
 alias dig="grc --colour=auto dig"
 alias s="systemctl"
 alias ss="sudo EDITOR=nvim systemctl"
@@ -55,17 +55,9 @@ bindkey "^[[3;5~" kill-word
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
-function osc7 {
-    local LC_ALL=C
-    export LC_ALL
-
-    setopt localoptions extendedglob
-    input=( ${(s::)PWD} )
-    uri=${(j::)input/(#b)([^A-Za-z0-9_.\!~*\'\(\)-\/])/%${(l:2::0:)$(([##16]#match))}}
-    print -n "\e]7;file://${HOSTNAME}${uri}\e\\"
+function precmd () {
+  echo -ne "\033]0;$(pwd | sed -e "s;^$HOME;~;")\a"
 }
-autoload -U add-zsh-hook
-add-zsh-hook -Uz chpwd osc7
 
 eval "$(starship init zsh)"
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
