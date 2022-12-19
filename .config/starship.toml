@@ -29,6 +29,6 @@ success_symbol="[>](bold green)"
 error_symbol="[>](bold red)"
 
 [sudo]
-disabled=false
+disabled=true
 format="[$symbol](green)"
 symbol='S'
