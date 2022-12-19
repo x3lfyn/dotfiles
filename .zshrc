@@ -21,7 +21,7 @@ antidote load
 autoload -U select-word-style
 select-word-style bash
 
-export TERM=xterm
+
 export PATH=$PATH:$HOME/.local/bin
 
 export EDITOR=nvim
@@ -33,6 +33,7 @@ alias bspwmrc="$EDITOR ~/.config/bspwm/bspwmrc"
 alias swaycfg="$EDITOR ~/.config/sway/config"
 alias ip="ip -c=auto"
 alias cat="bat --color always --plain"
+alias homeserver="ssh -l confuser server.home.local"
 alias :q=exit
 alias df="duf"
 alias free="grc --colour=auto free"
