@@ -1,5 +1,6 @@
 local opt = vim.opt
 local g = vim.g
+local cmd = vim.cmd
 
 --[[Numbers]]--
 	-- show line numbers
@@ -53,3 +54,6 @@ local g = vim.g
 
 	-- enable mouse
 	opt.mouse = "a"
+
+	-- -- russian keymap
+	-- cmd("set keymap=russian-jcukenwin")

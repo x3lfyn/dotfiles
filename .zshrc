@@ -21,6 +21,8 @@ antidote load
 autoload -U select-word-style
 select-word-style bash
 
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=7'
+
 export TERM=xterm
 export PATH=$PATH:$HOME/.local/bin
 
@@ -39,12 +41,12 @@ alias free="grc --colour=auto free"
 alias ping="grc --colour=auto ping"
 alias du="dust -r"
 alias dig="grc --colour=auto dig"
-alias s="systemctl"
-alias ss="sudo EDITOR=nvim systemctl"
 alias ls="exa -lah"
 alias icat="viu"
 alias tree="broot"
 alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias sc='systemctl'
+alias sudo='sudo '
 
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
