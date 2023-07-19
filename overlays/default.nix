@@ -11,6 +11,12 @@
     # example = prev.example.overrideAttrs (oldAttrs: rec {
     # ...
     # });
+    obsidian = prev.obsidian.overrideAttrs (oldAttrs: {
+      postInstall = (oldAttrs.postInstall or "") + ''
+        substituteInPlace $out/share/applications/obsidian.desktop\
+	  --replace "obsidian %u" "obsidian %u --ozone-platform-hint=auto"
+      '';
+    });
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will

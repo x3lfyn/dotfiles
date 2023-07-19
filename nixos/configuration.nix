@@ -18,8 +18,11 @@
     ./hardware-configuration.nix
   ];
 
+  boot.loader.timeout = 0;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  systemd.services.NetworkManager-wait-online.enable = false;
 
   networking.hostName = "MAIN-PC-NIX"; # Define your hostname.
 
@@ -31,6 +34,8 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
+
+  services.ratbagd.enable = true;
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
@@ -51,6 +56,17 @@
     videoDrivers = [
       "nvidia"
     ];
+  };
+
+  services.greetd = {
+    enable = true;
+    settings = rec {
+      initial_session = {
+        command = "${pkgs.hyprland}/bin/Hyprland";
+	user = "vobbla16";
+      };
+      default_session = initial_session;
+    };
   };
 
   users.users.vobbla16 = {
@@ -90,8 +106,18 @@
     git
   ];
 
-  hardware.nvidia.modesetting.enable = true;
-  hardware.opengl.enable = true;
+  hardware.nvidia = {
+    modesetting.enable = true;
+    open = true;
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
+
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
   programs.xwayland.enable = true;
 
   programs.zsh.enable = true;
@@ -118,6 +144,9 @@
   };
 
   security.polkit.enable = true;
+
+  security.pki.certificateFiles = [ ./hn-root-ca.crt ];
+
   systemd = {
     user.services.polkit-gnome-authentication-agent-1 = {
       description = "polkit-gnome-authentication-agent-1";
@@ -133,6 +162,10 @@
       };
     };
   };
+
+  security.sudo.extraConfig = ''
+Defaults pwfeedback
+  '';
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -150,7 +183,7 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

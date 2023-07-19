@@ -16,6 +16,7 @@
     hyprland.url = "github:hyprwm/Hyprland";
     nurpkgs.url = "github:nix-community/NUR";
     nix-colors.url = "github:misterio77/nix-colors";
+    spicetify-nix.url = "github:the-argus/spicetify-nix";
 
     # TODO: Add any other flake you might need
     # hardware.url = "github:nixos/nixos-hardware";
