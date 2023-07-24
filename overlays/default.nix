@@ -17,6 +17,12 @@
 	  --replace "obsidian %u" "obsidian %u --ozone-platform-hint=auto"
       '';
     });
+    spotify = prev.spotify.overrideAttrs (oldAttrs: {
+      postInstall = (oldAttrs.postInstall or "") + ''
+        substituteInPlace $out/share/applications/spotify.desktop\
+	  --replace "spotify %u" "spotify %u --enable-features=UseOzonePlatform --ozone-platform=wayland"
+      '';
+    });
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will

@@ -24,6 +24,8 @@
     ./syncthing.nix
     ./desktopEntries.nix
     ./spotify.nix
+    ./xdg-mime.nix
+    ./ssh.nix
   ];
 
   colorScheme = nix-colors.colorSchemes.catppuccin-mocha;
@@ -68,10 +70,15 @@
     pkgs.slurp
     pkgs.grim
     pkgs.wl-clipboard
+    pkgs.rofi-power-menu
+    pkgs.xorg.libX11
+    pkgs.gnome.file-roller
+    pkgs.xdg-utils
 
-    pkgs.roboto
-    pkgs.roboto-mono
-    pkgs.nerdfonts
+    pkgs.roboto-slab
+    pkgs.inter
+    pkgs.google-sans-display
+    pkgs.jetbrainsmono-nf-ligs
 
     pkgs.grc
     pkgs.duf
@@ -81,17 +88,20 @@
     pkgs.fd
     pkgs.ripgrep
     pkgs.fzf
+    pkgs.jq
 
     pkgs.gparted
     pkgs.telegram-desktop
     pkgs.jetbrains-toolbox
     pkgs.obsidian
+    pkgs.qview
 
     pkgs.dconf
     pkgs.libsForQt5.qtstyleplugins
     pkgs.gtk-engine-murrine
     pkgs.gtk3
     pkgs.playerctl
+    pkgs.git-crypt
   ];
 
   programs.rofi = {
@@ -135,7 +145,7 @@
   gtk = {
     enable = true;
     font = {
-      name = "JetBrainsMono NF";
+      name = "Inter";
       package = pkgs.nerdfonts;
       size = 10;
     };
@@ -184,7 +194,8 @@
     ".config/hypr/hyprpaper.conf".text = ''
 preload = ~/Pictures/wallpapers/wallhaven-r7ywwm.png
 preload = ~/Pictures/wallpapers/wallhaven-2ygz3x.jpg
-wallpaper = HDMI-A-1,~/Pictures/wallpapers/wallhaven-2ygz3x.jpg
+#wallpaper = HDMI-A-1,~/Pictures/wallpapers/wallhaven-2ygz3x.jpg
+wallpaper = HDMI-A-1,~/Pictures/wallpapers/wallhaven-r7ywwm.png
     '';
 
     ".config/electron-flags.conf".text = ''
@@ -224,9 +235,7 @@ wallpaper = HDMI-A-1,~/Pictures/wallpapers/wallhaven-2ygz3x.jpg
 --ozone-platform=wayland
     '';
     ".scripts/volume.sh".text = builtins.readFile ./scripts/volume.sh;
-    ".config/wlogout/layout".text = builtins.readFile ./wlogout/layout;
-    ".config/wlogout/style.css".text = builtins.readFile ./wlogout/style.css;
-    ".config/wlogout/reboot.svg".text = builtins.readFile ./wlogout/reboot.svg;
+    ".scripts/screenshot.sh".text = builtins.readFile ./scripts/screenshot.sh;
   };
 
   programs.gpg = {
@@ -238,7 +247,7 @@ wallpaper = HDMI-A-1,~/Pictures/wallpapers/wallhaven-2ygz3x.jpg
     userName = "vobbla16";
     userEmail = "novikovprojects@gmail.com";
     signing = {
-      key = "C1190C108C849FA4";
+      key = "F2EE41860B238D993139AF94C1190C108C849FA4";
       signByDefault = true;
     };
     extraConfig = {
@@ -268,9 +277,71 @@ wallpaper = HDMI-A-1,~/Pictures/wallpapers/wallhaven-2ygz3x.jpg
     platformTheme = "gtk"; 
   };
 
+  services.gpg-agent = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   home = {
     username = "vobbla16";
     homeDirectory = "/home/vobbla16";
+  };
+
+
+  programs.zathura = {
+    enable = true;
+    options = {
+	    adjust-open       ="best-fit";
+
+	    pages-per-row =1;
+
+	    scroll-step = 100;
+	    zoom-min = 10;
+	    scroll-page-aware     ="true";
+	    smooth-scroll         ="true";
+	    guioptions            ="sv";
+	    selection-clipboard   ="clipboard";
+
+	    font                  ="JetBrainsMono NF 10";
+
+	    notification-error-bg       ="#1F1F28";
+	    notification-error-fg       ="#FF5D62";
+	    notification-warning-bg     ="#1F1F28";
+	    notification-warning-fg     ="#FFA066";
+	    notification-bg             ="#1F1F28";
+	    notification-fg             ="#DCD7BA";
+
+	    completion-bg               ="#1F1F28";
+	    completion-fg               ="#C8C093";
+	    completion-group-bg         ="#2A2A37";
+	    completion-group-fg         ="#C8C093";
+	    completion-highlight-bg     ="#957FB8";
+	    completion-highlight-fg     ="#1F1F28";
+
+	    index-bg                    ="#1F1F28";
+	    index-fg                    ="#957FB8";
+	    index-active-bg             ="#957FB8";
+	    index-active-fg             ="#1F1F28";
+
+	    inputbar-bg                 ="#1F1F28";
+	    inputbar-fg                 ="#C8C093";
+
+	    statusbar-bg                ="#1F1F28";
+	    statusbar-fg                ="#C8C093";
+
+	    highlight-color             ="#FFA066";
+	    highlight-active-color      ="#FF5D62";
+
+	    default-bg                  ="#1F1F28";
+	    default-fg                  ="#C8C093";
+	    render-loading              ="true";
+	    render-loading-bg           ="#1F1F28";
+	    render-loading-fg           ="#C8C093";
+
+	    recolor-lightcolor          ="#1F1F28";
+	    recolor-darkcolor           ="#C8C093";
+	    recolor                     ="true";
+    };
   };
 
   # Add stuff for your user as you see fit:

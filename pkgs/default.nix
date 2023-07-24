@@ -25,4 +25,38 @@
                 runHook postInstall;
             '';
           };
+  google-sans-display = pkgs.stdenv.mkDerivation rec {
+    name = "Google Sans Display font";
+    src = [
+      ./google-sans-display.ttf
+    ];
+
+    unpackPhase = ''
+      for srcFile in $src; do
+        cp $srcFile $(stripHash $srcFile)
+      done
+    '';
+
+    installPhase = ''
+      mkdir -p $out/share/fonts/truetype
+      cp -a *.ttf $out/share/fonts/truetype/
+    '';
+  };
+  jetbrainsmono-nf-ligs = pkgs.stdenv.mkDerivation rec {
+    name = "JetBrains Mono Nerd font with ligatures";
+    src = [
+      ./jetbrainsmono-nf-ligs.ttf
+    ];
+
+    unpackPhase = ''
+      for srcFile in $src; do
+        cp $srcFile $(stripHash $srcFile)
+      done
+    '';
+
+    installPhase = ''
+      mkdir -p $out/share/fonts/truetype
+      cp -a *.ttf $out/share/fonts/truetype/
+    '';
+  };
 }

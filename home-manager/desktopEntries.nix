@@ -10,5 +10,10 @@
       name = "Floating terminal";
       exec = "footclient -a floating";
     };
+
+    nvim-foot = {
+      name = "Neovim on foot";
+      exec = "foot nvim %U";
+    };
   };
 }

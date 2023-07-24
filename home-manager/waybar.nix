@@ -140,6 +140,8 @@ margin: 0 2px;
 
 #window {
 color: @fg;
+font-family: "Inter", sans-serif;
+font-size: 13px;
 }
 #cpu {
 background-color: @cpuBg;

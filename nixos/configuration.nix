@@ -22,6 +22,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  boot.kernelPackages = pkgs.linuxPackages;
+
   systemd.services.NetworkManager-wait-online.enable = false;
 
   networking.hostName = "MAIN-PC-NIX"; # Define your hostname.
@@ -36,6 +38,7 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   services.ratbagd.enable = true;
+  programs.adb.enable = true;
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
@@ -56,26 +59,36 @@
     videoDrivers = [
       "nvidia"
     ];
+#    displayManager.lightdm.enable = true;
+    libinput.enable = true;
   };
 
   services.greetd = {
     enable = true;
     settings = rec {
-      initial_session = {
-        command = "${pkgs.hyprland}/bin/Hyprland";
-	user = "vobbla16";
+      default_session = {
+#        command = "${pkgs.hyprland}/bin/Hyprland";
+         command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
       };
-      default_session = initial_session;
     };
   };
+
+  environment.etc."greetd/environments".text = ''
+Hyprland
+zsh
+  '';
 
   users.users.vobbla16 = {
     isNormalUser = true;
     description = "vobbla16";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "adbusers"];
     packages = with pkgs; [];
     shell = pkgs.zsh;
   };
+
+  services.udev.packages = [
+    pkgs.android-udev-rules
+  ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -104,13 +117,20 @@
     polkit_gnome
     pulseaudio
     git
+
+    libva
+    nvidia-vaapi-driver
+
+    greetd.greetd
+    greetd.tuigreet
   ];
+
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   hardware.nvidia = {
     modesetting.enable = true;
-    open = true;
     nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidia_x11;
   };
 
   hardware.opengl = {
@@ -166,6 +186,21 @@
   security.sudo.extraConfig = ''
 Defaults pwfeedback
   '';
+
+
+  fonts.fontconfig = {
+    enable = true;
+    antialias = true;
+    defaultFonts = {
+      monospace = [ "JetBrainsMono NF" ];
+      sansSerif = [ "Inter" ];
+      serif = [ "Roboto Slab" ];
+    };
+    hinting = {
+      enable = true;
+      style = "hintslight";
+    };
+  };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

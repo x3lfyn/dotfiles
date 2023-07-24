@@ -21,6 +21,8 @@ env = SDL_VIDEODRIVER,wayland
 env = CLUTTER_BACKEND,wayland
 env = MOZ_ENABLE_WAYLAND,1
 
+env = _JAVA_OPTIONS,'-Dawt.useSystemAAFontSettings=on'
+
 exec-once = hyprpaper
 exec-once = waybar
 #exec-once = sleep 2
@@ -99,6 +101,8 @@ windowrulev2 = move 1500 290,class:(qalc)
 
 windowrulev2 = float,class:(floating)
 
+windowrulev2 = float,class:(.blueman-manager-wrapped)
+
 bind = SUPER, Return, exec, footclient
 bind = SUPER ALT, Return, exec, gtk-launch floating-terminal
 bind = CONTROL, SPACE, exec, rofi -show drun
@@ -172,6 +176,12 @@ bind = , XF86AudioPrev, exec, playerctl previous
 bind = SUPER SHIFT, mouse_down, exec, playerctl next
 bind = SUPER SHIFT, mouse_up, exec, playerctl previous
 
+# screenshots
+bind = , Print, exec, sh ~/.scripts/screenshot.sh --area
+bind = SUPER, Print, exec, sh ~/.scripts/screenshot.sh --screen
+
+# power menu
+bind = SUPER, Escape, exec, rofi -show power-menu -modi "power-menu:rofi-power-menu --choices=suspend/reboot/shutdown"
     '';
   };
 }
