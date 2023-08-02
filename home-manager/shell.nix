@@ -21,10 +21,12 @@
     history = {
       size = 20000;
       path = "${config.xdg.dataHome}/zsh/history";
+      ignoreDups = true;
+      expireDuplicatesFirst = true;
     };
     enableAutosuggestions = true;
     enableCompletion = true;
-    enableSyntaxHighlighting = true;
+    enableSyntaxHighlighting = true; # use fast-syntax-highlighting
     initExtra = ''
 # show completion menus
 #zstyle ':completion:*' menu select
@@ -47,13 +49,16 @@ bindkey "^[[3;5~" kill-word
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
-# correct work of alt-delete
-autoload -U select-word-style
-select-word-style bash
+# correct work of alt-delete # use env WORDCHARS
+# autoload -U select-word-style
+# select-word-style bash
+
+# customize zsh-syntax-highlighting
+#ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets pattern cursor)
     '';
     sessionVariables = {
-      SUDO_PROMPT = ''Password for ->\033[32;05;16m %u\033[0m  '';
       ZSH_AUTOSUGGEST_USE_ASYNC = "true";
+      WORDCHARS = "";
     };
     completionInit = ''
 autoload -Uz compinit
@@ -127,6 +132,15 @@ compinit -i
 	  sha256 = "PXHxPxFeoYXYMOC29YQKDdMnqTO0toyA7eJTSCV6PGE=";
         };
       }
+#      {
+#        name = "fast-syntax-highlighting";
+#	src = pkgs.fetchFromGitHub {
+#	  owner = "zdharma-continuum";
+#	  repo = "fast-syntax-highlighting";
+#	  rev = "5351bd907ea39d9000b7bd60b5bb5b0b1d5c8046";
+#	  sha256 = "DWVFBoICroKaKgByLmDEo4O+xo6eA8YO792g8t8R7kA=";
+#       };
+#      }
     ];
 
     envExtra = ''

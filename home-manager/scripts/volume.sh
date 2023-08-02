@@ -21,7 +21,8 @@ notify() {
 
 	fi
 
-	notify-send -a volume-notify -u normal -t 1300 -r 1337 -i $ICON -h int:value:$VOLUME -h string:synchronous:volume -h string:x-canonical-private-synchronous:sys-notify Volume $MSG
+	time notify-send -a volume-notify -u normal -t 1300 -r 1337 -h int:value:$VOLUME -h string:x-canonical-private-synchronous:sys-notify -h string:synchronous:volume Volume $MSG
+	#    -i $ICON
 
 }
 

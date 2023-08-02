@@ -39,6 +39,7 @@
 
   services.ratbagd.enable = true;
   programs.adb.enable = true;
+  virtualisation.docker.enable = true;
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
@@ -81,14 +82,20 @@ zsh
   users.users.vobbla16 = {
     isNormalUser = true;
     description = "vobbla16";
-    extraGroups = [ "networkmanager" "wheel" "adbusers"];
+    extraGroups = [ "networkmanager" "wheel" "adbusers" "docker" "hidrawgrp" ];
     packages = with pkgs; [];
     shell = pkgs.zsh;
   };
 
+  users.groups.hidrawgrp = {};
+
   services.udev.packages = [
     pkgs.android-udev-rules
   ];
+
+  services.udev.extraRules = ''
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="hidrawgrp"
+  '';
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -120,23 +127,34 @@ zsh
 
     libva
     nvidia-vaapi-driver
+    egl-wayland
 
     greetd.greetd
     greetd.tuigreet
+
+    wireguard-tools
   ];
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   hardware.nvidia = {
     modesetting.enable = true;
+    open = true;
     nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidia_x11;
+    powerManagement.enable = false;
   };
 
   hardware.opengl = {
     enable = true;
     driSupport = true;
     driSupport32Bit = true;
+
+    extraPackages = with pkgs; [
+      vaapiVdpau
+      libvdpau-va-gl
+
+      nvidia-vaapi-driver
+    ];
   };
   programs.xwayland.enable = true;
 
@@ -187,6 +205,7 @@ zsh
 Defaults pwfeedback
   '';
 
+  environment.pathsToLink = [ "/share/zsh" ];
 
   fonts.fontconfig = {
     enable = true;

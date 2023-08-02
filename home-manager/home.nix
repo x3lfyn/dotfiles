@@ -74,6 +74,7 @@
     pkgs.xorg.libX11
     pkgs.gnome.file-roller
     pkgs.xdg-utils
+    pkgs.btrfs-progs
 
     pkgs.roboto-slab
     pkgs.inter
@@ -89,12 +90,19 @@
     pkgs.ripgrep
     pkgs.fzf
     pkgs.jq
+    pkgs.openssl
+    pkgs.unzip
+    pkgs.unrar
+    pkgs.file
 
     pkgs.gparted
     pkgs.telegram-desktop
     pkgs.jetbrains-toolbox
     pkgs.obsidian
     pkgs.qview
+#    pkgs.lutris
+    pkgs.google-chrome
+    pkgs.via
 
     pkgs.dconf
     pkgs.libsForQt5.qtstyleplugins
@@ -128,7 +136,7 @@
   services.mako = {
     enable = true;
     anchor = "top-center";
-    font = "JetBrainsMono NF 12";
+    font = "Inter 12";
     backgroundColor = "#1f1f28";
     textColor = "#dcd7ba";
     progressColor = "#43242B";
@@ -136,6 +144,31 @@
     borderRadius = 10; 
     padding = "8";
     iconPath = "${config.home.homeDirectory}/.nix-profile/share/icons/Papirus-Dark";
+    layer = "overlay";
+    defaultTimeout = 3000;
+  };
+
+  services.dunst = {
+    enable = false;
+    iconTheme = {
+      package = config.gtk.iconTheme.package;
+      name = config.gtk.iconTheme.name;
+    };
+    settings = {
+      global = {
+        width = 350;
+	height = 200;
+	origin = "top-center";
+	progress_bar = true;
+	progress_bar_height = 16;
+	progress_bar_corner_radius = 4;
+	indicate_hidden = true;
+	notification_limit = 5;
+	font = "Inter 12";
+	frame_width = 2;
+	frame_color = "#C8C093";
+      };
+    };
   };
 
   xdg.userDirs = {
