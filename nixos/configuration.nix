@@ -160,8 +160,18 @@ KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="hidrawgrp"
 
   programs.zsh.enable = true;
 
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+    settings = {
+      General = {
+        Experimental = true;
+	KernelExperimental = true;
+      };
+    };
+  };
   services.blueman.enable = true;
+
+  services.upower.enable = true;
 
   security.rtkit.enable = true;
   services.pipewire = {

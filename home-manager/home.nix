@@ -71,6 +71,8 @@
     pkgs.grim
     pkgs.wl-clipboard
     pkgs.rofi-power-menu
+    pkgs.rofi-bluetooth
+    pkgs.bc
     pkgs.xorg.libX11
     pkgs.gnome.file-roller
     pkgs.xdg-utils

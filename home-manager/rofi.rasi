@@ -13,7 +13,10 @@
   magenta : #957FB8;
   cyan    : #7AA89F;
 
-  accent: @red;
+  orange  : #FFA066;
+  lBlue   : #7FB4CA;
+
+  accent: @orange;
   urgent: @yellow;
 
   background-color : transparent;
@@ -68,7 +71,7 @@ listview {
   lines        : 12;
   columns      : 1;
   scrollbar    : true;
-  fixed-height : false;
+/*  fixed-height : false;*/
   dynamic      : true;
 }
 
@@ -104,6 +107,6 @@ element-text {
 
 scrollbar {
   handle-width : 4px;
-  handle-color : @fg2;
+  handle-color : @lBlue;
   padding      : 0 4px;
 }
