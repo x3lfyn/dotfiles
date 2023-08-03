@@ -18,7 +18,7 @@
 	modules-right = [ "pulseaudio" "bluetooth" "hyprland/language" "clock" "tray" ];
 
 	"wlr/workspaces" = {
-          on-click = "activate";
+          on-click = "";
 	  sort-by-number = true;
 	  persistent_workspaces = {
             "1" = [];

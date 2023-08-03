@@ -77,6 +77,7 @@
     pkgs.gnome.file-roller
     pkgs.xdg-utils
     pkgs.btrfs-progs
+    pkgs.cava
 
     pkgs.roboto-slab
     pkgs.inter
