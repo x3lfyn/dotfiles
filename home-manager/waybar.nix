@@ -20,6 +20,23 @@
 	"wlr/workspaces" = {
           on-click = "activate";
 	  sort-by-number = true;
+	  persistent_workspaces = {
+            "1" = [];
+	    "2" = [];
+	    "3" = [];
+	    "4" = [];
+	    "5" = [];
+	    "6" = [];
+	    "7" = [];
+	    "8" = [];
+	    "9" = [];
+	    "10" = [];
+	  };
+	  format-icons = {
+            default = "■";
+	    active = "■";
+	  };
+	  format = "{icon}";
 	};
 	"cpu" = {
           format = " {usage}%";
@@ -84,6 +101,7 @@ tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{num_con
 @define-color bg #16161D;
 @define-color urgentBg #C34043;
 @define-color fg #C8C093;
+@define-color disabledFg #717C7C;
 @define-color defaultFg #1F1F28;
 @define-color selectedBg #2d4f67;
 @define-color cpuBg #7e9cd8;
@@ -105,72 +123,81 @@ tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{num_con
 @define-color clockBg #${config.colorScheme.colors.base0A};*/
 
 * {
-font-family: "JetBrainsMono NF", monospace;
-font-size: 12px;
+	font-family: "JetBrainsMono NF", monospace;
+	font-size: 12px;
 }
 
 window#waybar {
-background-color: @bg;
+	background-color: @bg;
 }
 label {
-color: @defaultFg;
+	color: @defaultFg;
 }
 tooltip {
-color: @fg;
+	color: @fg;
 }
 tooltip * {
-color: @fg;
+	color: @fg;
 }
 
-#workspaces label {
-color: @fg;
-}
+
 #workspaces button {
-padding: 0 5px;
-background-color: @bg;
-border-bottom: 2px solid transparent;
-border-radius: 0;
-min-width: 13px;
+	padding: 0px 3px;
+	background-color: @bg;
+	border-radius: 0px;
 }
-#workspaces button:hover {
-background: @bg;
-border-bottom: 2px solid @fg;
+
+#workspaces button label {
+	min-width: 16px;
+	padding: 0px;
+	margin: 5px 0px;
+	border-radius: 8px;
+	color: transparent;
+	font-size: 8px;
+
+	background: @disabledFg;
 }
-#workspaces button.active {
-background-color: @selectedBg;
-border-bottom: 2px solid @fg;
+
+#workspaces button.active label {
+	background: @fg;
+	min-width: 26px;
 }
-#workspaces button.urgent {
-background-color: @urgentBg;
+
+#workspaces button.persistent label {
+	background: @selectedBg;
+}
+
+#workspaces button.urgent label {
+	background: @urgentBg;
 }
 
 #cpu, #memory, #language, #clock, #bluetooth, #pulseaudio {
-padding: 0 5px;
-margin: 0 2px;
+	padding: 0 5px;
+	margin: 0 2px;
 }
 
 #window {
-color: @fg;
-font-family: "Inter", sans-serif;
-font-size: 13px;
+	color: @fg;
+	font-family: "Inter", sans-serif;
+	font-size: 13px;
 }
 #cpu {
-background-color: @cpuBg;
+	background-color: @cpuBg;
 }
 #memory {
-background-color: @memBg;
+	background-color: @memBg;
 }
 #language {
-background-color: @langBg;
+	background-color: @langBg;
 }
 #clock {
-background-color: @clockBg;
+	background-color: @clockBg;
 }
 #bluetooth {
-background-color: @bluetoothBg;
+	background-color: @bluetoothBg;
 }
 #pulseaudio {
-background-color: @pulseBg;
+	background-color: @pulseBg;
 }
     '';
   };
