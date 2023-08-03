@@ -96,6 +96,10 @@ zsh
   services.udev.extraRules = ''
 KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="hidrawgrp"
   '';
+  
+  services.udisks2 = {
+    enable = true;
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

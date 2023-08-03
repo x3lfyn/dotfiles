@@ -135,6 +135,8 @@
     enable = true;
   };
 
+  services.udiskie.enable = true;
+
   services.mako = {
     enable = true;
     anchor = "top-center";
