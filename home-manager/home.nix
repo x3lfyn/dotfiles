@@ -1,4 +1,4 @@
-{ inputs, outputs, lib, config, pkgs, nix-colors, ... }: {
+{ inputs, outputs, lib, config, pkgs, ... }: {
   # You can import other home-manager modules here
   imports = [
     # If you want to use modules your own flake exports (from modules/home-manager):
@@ -13,8 +13,6 @@
     inputs.nurpkgs.nixosModules.nur
     inputs.spicetify-nix.homeManagerModule
 
-    nix-colors.homeManagerModules.default
-
     ./terminal.nix
     ./hyprland.nix
     ./waybar.nix
@@ -27,8 +25,6 @@
     ./xdg-mime.nix
     ./ssh.nix
   ];
-
-  colorScheme = nix-colors.colorSchemes.catppuccin-mocha;
 
   nixpkgs = {
     # You can add overlays here
@@ -78,6 +74,8 @@
     pkgs.xdg-utils
     pkgs.btrfs-progs
     pkgs.cava
+    pkgs.discord
+    pkgs.betterdiscordctl
 
     pkgs.roboto-slab
     pkgs.inter
@@ -323,6 +321,9 @@ wallpaper = HDMI-A-1,~/Pictures/wallpapers/wallhaven-r7ywwm.png
   home = {
     username = "vobbla16";
     homeDirectory = "/home/vobbla16";
+    sessionVariables = {
+      GTK_THEME = config.gtk.theme.name;
+    };
   };
 
 

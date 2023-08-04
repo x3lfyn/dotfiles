@@ -1,4 +1,4 @@
-{ inputs, outputs, lib, config, pkgs, nix-colors, ... }: {
+{ inputs, outputs, lib, config, pkgs, ... }: {
   programs.waybar = {
     enable = true;
 
@@ -110,17 +110,6 @@ tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{num_con
 @define-color bluetoothBg #7fb4ca;
 @define-color langBg #938aa9;
 @define-color clockBg #c0a36e;
-
-/*@define-color bg #${config.colorScheme.colors.base01};
-@define-color fg #${config.colorScheme.colors.base05};
-@define-color defaultFg #${config.colorScheme.colors.base00};
-@define-color selectedBg #${config.colorScheme.colors.base02};
-@define-color cpuBg #${config.colorScheme.colors.base0F};
-@define-color memBg #${config.colorScheme.colors.base0C};
-@define-color pulseBg #${config.colorScheme.colors.base08};
-@define-color bluetoothBg #${config.colorScheme.colors.base0D};
-@define-color langBg #${config.colorScheme.colors.base06};
-@define-color clockBg #${config.colorScheme.colors.base0A};*/
 
 * {
 	font-family: "JetBrainsMono NF", monospace;

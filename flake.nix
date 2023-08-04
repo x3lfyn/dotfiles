@@ -15,7 +15,6 @@
 
     hyprland.url = "github:hyprwm/Hyprland";
     nurpkgs.url = "github:nix-community/NUR";
-    nix-colors.url = "github:misterio77/nix-colors";
     spicetify-nix.url = "github:the-argus/spicetify-nix";
 
     # TODO: Add any other flake you might need
@@ -26,7 +25,7 @@
     # nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-colors, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
       inherit (self) outputs;
       forAllSystems = nixpkgs.lib.genAttrs [
@@ -79,7 +78,7 @@
         # FIXME replace with your username@hostname
         "vobbla16@MAIN-PC-NIX" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-          extraSpecialArgs = { inherit inputs outputs nix-colors; };
+          extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             # > Our main home-manager configuration file <
             ./home-manager/home.nix
