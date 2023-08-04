@@ -55,62 +55,62 @@
     };
   };
 
-  home.packages = [
+  home.packages = with pkgs; [
     # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
-    pkgs.libnotify
-    pkgs.pavucontrol
-    pkgs.pulseaudio
-    pkgs.hyprpaper
-    pkgs.libqalculate
-    pkgs.slurp
-    pkgs.grim
-    pkgs.wl-clipboard
-    pkgs.rofi-power-menu
-    pkgs.rofi-bluetooth
-    pkgs.bc
-    pkgs.xorg.libX11
-    pkgs.gnome.file-roller
-    pkgs.xdg-utils
-    pkgs.btrfs-progs
-    pkgs.cava
-    pkgs.discord
-    pkgs.betterdiscordctl
+    libnotify
+    pavucontrol
+    pulseaudio
+    hyprpaper
+    libqalculate
+    slurp
+    grim
+    wl-clipboard
+    rofi-power-menu
+    rofi-bluetooth
+    bc
+    xorg.libX11
+    gnome.file-roller
+    xdg-utils
+    btrfs-progs
+    cava
+    discord
+    betterdiscordctl
 
-    pkgs.roboto-slab
-    pkgs.inter
-    pkgs.google-sans-display
-    pkgs.jetbrainsmono-nf-ligs
+    roboto-slab
+    inter
+    google-sans-display
+    jetbrainsmono-nf-ligs
 
-    pkgs.grc
-    pkgs.duf
-    pkgs.du-dust
-    pkgs.dogdns
-    pkgs.tealdeer
-    pkgs.fd
-    pkgs.ripgrep
-    pkgs.fzf
-    pkgs.jq
-    pkgs.openssl
-    pkgs.unzip
-    pkgs.unrar
-    pkgs.file
+    grc
+    duf
+    du-dust
+    dogdns
+    tealdeer
+    fd
+    ripgrep
+    fzf
+    jq
+    openssl
+    unzip
+    unrar
+    file
 
-    pkgs.gparted
-    pkgs.telegram-desktop
-    pkgs.jetbrains-toolbox
-    pkgs.obsidian
-    pkgs.qview
-#    pkgs.lutris
-    pkgs.google-chrome
-    pkgs.via
+    gparted
+    telegram-desktop
+    jetbrains-toolbox
+    obsidian
+    qview
+#    lutris
+    google-chrome
+    via
 
-    pkgs.dconf
-    pkgs.libsForQt5.qtstyleplugins
-    pkgs.gtk-engine-murrine
-    pkgs.gtk3
-    pkgs.playerctl
-    pkgs.git-crypt
+    dconf
+    libsForQt5.qtstyleplugins
+    gtk-engine-murrine
+    gtk3
+    playerctl
+    git-crypt
   ];
 
   programs.rofi = {
