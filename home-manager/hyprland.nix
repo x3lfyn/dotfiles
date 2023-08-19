@@ -1,11 +1,10 @@
 { inputs, outputs, lib, config, pkgs, nix-colors, ... }: {
   wayland.windowManager.hyprland = {
     enable = true;
-    nvidiaPatches = true;
+    enableNvidiaPatches = true;
 
     xwayland = {
       enable = true;
-      hidpi = false;
     };
 
     extraConfig = ''
