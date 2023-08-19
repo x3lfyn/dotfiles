@@ -102,7 +102,7 @@
     jetbrains-toolbox
     obsidian
     qview
-#    lutris
+    #    lutris
     google-chrome
     via
 
@@ -145,7 +145,7 @@
     textColor = "#dcd7ba";
     progressColor = "#43242B";
     borderSize = 2;
-    borderRadius = 10; 
+    borderRadius = 10;
     padding = "8";
     iconPath = "${config.home.homeDirectory}/.nix-profile/share/icons/Papirus-Dark";
     layer = "overlay";
@@ -161,16 +161,16 @@
     settings = {
       global = {
         width = 350;
-	height = 200;
-	origin = "top-center";
-	progress_bar = true;
-	progress_bar_height = 16;
-	progress_bar_corner_radius = 4;
-	indicate_hidden = true;
-	notification_limit = 5;
-	font = "Inter 12";
-	frame_width = 2;
-	frame_color = "#C8C093";
+        height = 200;
+        origin = "top-center";
+        progress_bar = true;
+        progress_bar_height = 16;
+        progress_bar_corner_radius = 4;
+        indicate_hidden = true;
+        notification_limit = 5;
+        font = "Inter 12";
+        frame_width = 2;
+        frame_color = "#C8C093";
       };
     };
   };
@@ -229,47 +229,47 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
     ".config/hypr/hyprpaper.conf".text = ''
-preload = ~/Pictures/wallpapers/wallhaven-r7ywwm.png
-preload = ~/Pictures/wallpapers/wallhaven-2ygz3x.jpg
-#wallpaper = HDMI-A-1,~/Pictures/wallpapers/wallhaven-2ygz3x.jpg
-wallpaper = HDMI-A-1,~/Pictures/wallpapers/wallhaven-r7ywwm.png
+      preload = ~/Pictures/wallpapers/wallhaven-r7ywwm.png
+      preload = ~/Pictures/wallpapers/wallhaven-2ygz3x.jpg
+      #wallpaper = HDMI-A-1,~/Pictures/wallpapers/wallhaven-2ygz3x.jpg
+      wallpaper = HDMI-A-1,~/Pictures/wallpapers/wallhaven-r7ywwm.png
     '';
 
     ".config/electron-flags.conf".text = ''
---enable-features=UseOzonePlatform
---ozone-platform=wayland
+      --enable-features=UseOzonePlatform
+      --ozone-platform=wayland
     '';
     ".config/electron13-flags.conf".text = ''
---enable-features=UseOzonePlatform
---ozone-platform=wayland
+      --enable-features=UseOzonePlatform
+      --ozone-platform=wayland
     '';
     ".config/electron15-flags.conf".text = ''
---enable-features=UseOzonePlatform
---ozone-platform=wayland
+      --enable-features=UseOzonePlatform
+      --ozone-platform=wayland
     '';
     ".config/electron18-flags.conf".text = ''
---enable-features=UseOzonePlatform
---ozone-platform=wayland
+      --enable-features=UseOzonePlatform
+      --ozone-platform=wayland
     '';
     ".config/electron19-flags.conf".text = ''
---enable-features=UseOzonePlatform
---ozone-platform=wayland
+      --enable-features=UseOzonePlatform
+      --ozone-platform=wayland
     '';
     ".config/electron22-flags.conf".text = ''
---enable-features=UseOzonePlatform
---ozone-platform=wayland
+      --enable-features=UseOzonePlatform
+      --ozone-platform=wayland
     '';
     ".config/electron23-flags.conf".text = ''
---enable-features=UseOzonePlatform
---ozone-platform=wayland
+      --enable-features=UseOzonePlatform
+      --ozone-platform=wayland
     '';
     ".config/electron24-flags.conf".text = ''
---enable-features=UseOzonePlatform
---ozone-platform=wayland
+      --enable-features=UseOzonePlatform
+      --ozone-platform=wayland
     '';
     ".config/electron25-flags.conf".text = ''
---enable-features=UseOzonePlatform
---ozone-platform=wayland
+      --enable-features=UseOzonePlatform
+      --ozone-platform=wayland
     '';
     ".scripts/volume.sh".text = builtins.readFile ./scripts/volume.sh;
     ".scripts/screenshot.sh".text = builtins.readFile ./scripts/screenshot.sh;
@@ -311,7 +311,7 @@ wallpaper = HDMI-A-1,~/Pictures/wallpapers/wallhaven-r7ywwm.png
     style = {
       name = "gtk2";
     };
-    platformTheme = "gtk"; 
+    platformTheme = "gtk";
   };
 
   services.gpg-agent = {
@@ -331,56 +331,56 @@ wallpaper = HDMI-A-1,~/Pictures/wallpapers/wallhaven-r7ywwm.png
   programs.zathura = {
     enable = true;
     options = {
-	    adjust-open       ="best-fit";
+      adjust-open = "best-fit";
 
-	    pages-per-row =1;
+      pages-per-row = 1;
 
-	    scroll-step = 100;
-	    zoom-min = 10;
-	    scroll-page-aware     ="true";
-	    smooth-scroll         ="true";
-	    guioptions            ="sv";
-	    selection-clipboard   ="clipboard";
+      scroll-step = 100;
+      zoom-min = 10;
+      scroll-page-aware = "true";
+      smooth-scroll = "true";
+      guioptions = "sv";
+      selection-clipboard = "clipboard";
 
-	    font                  ="JetBrainsMono NF 10";
+      font = "JetBrainsMono NF 10";
 
-	    notification-error-bg       ="#1F1F28";
-	    notification-error-fg       ="#FF5D62";
-	    notification-warning-bg     ="#1F1F28";
-	    notification-warning-fg     ="#FFA066";
-	    notification-bg             ="#1F1F28";
-	    notification-fg             ="#DCD7BA";
+      notification-error-bg = "#1F1F28";
+      notification-error-fg = "#FF5D62";
+      notification-warning-bg = "#1F1F28";
+      notification-warning-fg = "#FFA066";
+      notification-bg = "#1F1F28";
+      notification-fg = "#DCD7BA";
 
-	    completion-bg               ="#1F1F28";
-	    completion-fg               ="#C8C093";
-	    completion-group-bg         ="#2A2A37";
-	    completion-group-fg         ="#C8C093";
-	    completion-highlight-bg     ="#957FB8";
-	    completion-highlight-fg     ="#1F1F28";
+      completion-bg = "#1F1F28";
+      completion-fg = "#C8C093";
+      completion-group-bg = "#2A2A37";
+      completion-group-fg = "#C8C093";
+      completion-highlight-bg = "#957FB8";
+      completion-highlight-fg = "#1F1F28";
 
-	    index-bg                    ="#1F1F28";
-	    index-fg                    ="#957FB8";
-	    index-active-bg             ="#957FB8";
-	    index-active-fg             ="#1F1F28";
+      index-bg = "#1F1F28";
+      index-fg = "#957FB8";
+      index-active-bg = "#957FB8";
+      index-active-fg = "#1F1F28";
 
-	    inputbar-bg                 ="#1F1F28";
-	    inputbar-fg                 ="#C8C093";
+      inputbar-bg = "#1F1F28";
+      inputbar-fg = "#C8C093";
 
-	    statusbar-bg                ="#1F1F28";
-	    statusbar-fg                ="#C8C093";
+      statusbar-bg = "#1F1F28";
+      statusbar-fg = "#C8C093";
 
-	    highlight-color             ="#FFA066";
-	    highlight-active-color      ="#FF5D62";
+      highlight-color = "#FFA066";
+      highlight-active-color = "#FF5D62";
 
-	    default-bg                  ="#1F1F28";
-	    default-fg                  ="#C8C093";
-	    render-loading              ="true";
-	    render-loading-bg           ="#1F1F28";
-	    render-loading-fg           ="#C8C093";
+      default-bg = "#1F1F28";
+      default-fg = "#C8C093";
+      render-loading = "true";
+      render-loading-bg = "#1F1F28";
+      render-loading-fg = "#C8C093";
 
-	    recolor-lightcolor          ="#1F1F28";
-	    recolor-darkcolor           ="#C8C093";
-	    recolor                     ="true";
+      recolor-lightcolor = "#1F1F28";
+      recolor-darkcolor = "#C8C093";
+      recolor = "true";
     };
   };
 

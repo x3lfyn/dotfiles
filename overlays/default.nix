@@ -13,14 +13,14 @@
     # });
     obsidian = prev.obsidian.overrideAttrs (oldAttrs: {
       postInstall = (oldAttrs.postInstall or "") + ''
-        substituteInPlace $out/share/applications/obsidian.desktop\
-	  --replace "obsidian %u" "obsidian %u --ozone-platform-hint=auto"
+                substituteInPlace $out/share/applications/obsidian.desktop\
+        	  --replace "obsidian %u" "obsidian %u --ozone-platform-hint=auto"
       '';
     });
     spotify = prev.spotify.overrideAttrs (oldAttrs: {
       postInstall = (oldAttrs.postInstall or "") + ''
-        substituteInPlace $out/share/applications/spotify.desktop\
-	  --replace "spotify %u" "spotify %u --enable-features=UseOzonePlatform --ozone-platform=wayland"
+                substituteInPlace $out/share/applications/spotify.desktop\
+        	  --replace "spotify %u" "spotify %u --enable-features=UseOzonePlatform --ozone-platform=wayland"
       '';
     });
   };

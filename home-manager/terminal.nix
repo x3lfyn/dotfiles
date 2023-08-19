@@ -83,9 +83,9 @@
     settings = {
       main = {
         font = "JetBrainsMono NF:size=12";
-	pad = "8x8 center";
-	term = "xterm-256color";
-	resize-delay-ms = 0;
+        pad = "8x8 center";
+        term = "xterm-256color";
+        resize-delay-ms = 0;
       };
       colors = {
         alpha = 0.93;
@@ -95,7 +95,7 @@
 
         selection-foreground = "c8c093";
         selection-background = "2d4f67";
-        
+
         regular0 = "090618";
         regular1 = "c34043";
         regular2 = "76946a";
@@ -104,18 +104,18 @@
         regular5 = "957fb8";
         regular6 = "6a9589";
         regular7 = "c8c093";
-        
-        bright0  = "727169";
-        bright1  = "e82424";
-        bright2  = "98bb6c";
-        bright3  = "e6c384";
-        bright4  = "7fb4ca";
-        bright5  = "938aa9";
-        bright6  = "7aa89f";
-        bright7  = "dcd7ba";
-        
-        "16"       = "ffa066";
-        "17"       = "ff5d62";
+
+        bright0 = "727169";
+        bright1 = "e82424";
+        bright2 = "98bb6c";
+        bright3 = "e6c384";
+        bright4 = "7fb4ca";
+        bright5 = "938aa9";
+        bright6 = "7aa89f";
+        bright7 = "dcd7ba";
+
+        "16" = "ffa066";
+        "17" = "ff5d62";
       };
     };
   };

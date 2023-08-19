@@ -6,7 +6,7 @@
       "image/*" = [ "com.interversehq.qView.desktop" ];
       "text/*" = [ "nvim-foot.desktop" ];
       "application/ecmascript" = [ "nvim-foot.desktop" ];
-      "application/json" = [ "nvim-foot.desktop" ]; 
+      "application/json" = [ "nvim-foot.desktop" ];
       "application/pdf" = [ "org.pwmt.zathura.desktop" ];
       "application/x-latex" = [ "nvim-foot.desktop" ];
       "application/x-perl" = [ "nvim-foot.desktop" ];

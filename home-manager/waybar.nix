@@ -10,64 +10,64 @@
     settings = {
       mainBar = {
         layer = "top";
-	position = "top";
-	height = 27;
-	spacing = 5;
-	modules-left = [ "wlr/workspaces" "cpu" "memory" "disk" ];
-	modules-center = [ "hyprland/window" ];
-	modules-right = [ "pulseaudio" "bluetooth" "hyprland/language" "clock" "tray" ];
+        position = "top";
+        height = 27;
+        spacing = 5;
+        modules-left = [ "wlr/workspaces" "cpu" "memory" "disk" ];
+        modules-center = [ "hyprland/window" ];
+        modules-right = [ "pulseaudio" "bluetooth" "hyprland/language" "clock" "tray" ];
 
-	"wlr/workspaces" = {
+        "wlr/workspaces" = {
           on-click = "";
-	  sort-by-number = true;
-	  persistent_workspaces = {
-            "1" = [];
-	    "2" = [];
-	    "3" = [];
-	    "4" = [];
-	    "5" = [];
-	    "6" = [];
-	    "7" = [];
-	    "8" = [];
-	    "9" = [];
-	    "10" = [];
-	  };
-	  format-icons = {
+          sort-by-number = true;
+          persistent_workspaces = {
+            "1" = [ ];
+            "2" = [ ];
+            "3" = [ ];
+            "4" = [ ];
+            "5" = [ ];
+            "6" = [ ];
+            "7" = [ ];
+            "8" = [ ];
+            "9" = [ ];
+            "10" = [ ];
+          };
+          format-icons = {
             default = "■";
-	    active = "■";
-	  };
-	  format = "{icon}";
-	};
-	"cpu" = {
+            active = "■";
+          };
+          format = "{icon}";
+        };
+        "cpu" = {
           format = " {usage}%";
-	  interval = 5;
-	};
-	"memory" = {
+          interval = 5;
+        };
+        "memory" = {
           format = " {}%";
-	  interval = 5;
-	};
-	"clock" = {
+          interval = 5;
+        };
+        "clock" = {
           format = "󰥔 {:%d.%m.%Y %H:%M}";
           tooltip-format = "<tt><small>{calendar}</small></tt>";
           calendar = {
-	    mode          = "year";
-	    mode-mon-col  = 3;
-	    weeks-pos     = "right";
-	    on-scroll     = 1;
-	    on-click-right= "mode";
-	    format= {
-	      months=     "<span color='#DCD7BA'><b>{}</b></span>";
-	      days=       "<span color='#A3D4D5'><b>{}</b></span>";
-	      weeks=      "<span color='#98BB6C'><b>W{}</b></span>";
-	      weekdays=   "<span color='#957FB8'><b>{}</b></span>";
-	      today=      "<span color='#FF5D62'><b><u>{}</u></b></span>";
+            mode = "year";
+            mode-mon-col = 3;
+            weeks-pos = "right";
+            on-scroll = 1;
+            on-click-right = "mode";
+            format = {
+              months = "<span color='#DCD7BA'><b>{}</b></span>";
+              days = "<span color='#A3D4D5'><b>{}</b></span>";
+              weeks = "<span color='#98BB6C'><b>W{}</b></span>";
+              weekdays = "<span color='#957FB8'><b>{}</b></span>";
+              today = "<span color='#FF5D62'><b><u>{}</u></b></span>";
             };
-	  };
-	};
-	"hyprland/language" = {
+          };
+        };
+        "hyprland/language" = {
           format = "󰌌 {}";
-	};
-	"pulseaudio" = {
+        };
+        "pulseaudio" = {
           format = "{volume}% {icon} {format_source}";
           format-bluetooth = "{volume}% {icon} 󰂰 {format_source}";
           format-bluetooth-muted = "󰝟 {icon} 󰂰 {format_source}";
@@ -81,136 +81,136 @@
             phone = "󰏲";
             portable = "<U+F095>";
             car = "󰄋";
-            default = ["󰕿" "󰖀" "󰕾"];
+            default = [ "󰕿" "󰖀" "󰕾" ];
           };
           on-click = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
           on-click-right = "pavucontrol";
-	};
-	"bluetooth" = {
+        };
+        "bluetooth" = {
           format-on = "󰂯";
           format-off = "󰂲";
-	  format-connected = "󰂱 {device_alias}";
-	  format-connected-battery = "󰥉 {device_alias} {device_battery_percentage}%";
-	  on-click = "rofi-bluetooth";
-	  tooltip-format = "{controller_alias}\t{controller_address}\n\n{num_connections} connected";
-tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}";
-	tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
-	tooltip-format-enumerate-connected-battery = "{device_alias}\t{device_address}\t{device_battery_percentage}%";
-	};
-	"disk" = {
+          format-connected = "󰂱 {device_alias}";
+          format-connected-battery = "󰥉 {device_alias} {device_battery_percentage}%";
+          on-click = "rofi-bluetooth";
+          tooltip-format = "{controller_alias}\t{controller_address}\n\n{num_connections} connected";
+          tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}";
+          tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
+          tooltip-format-enumerate-connected-battery = "{device_alias}\t{device_address}\t{device_battery_percentage}%";
+        };
+        "disk" = {
           interval = 30;
-	  format = "󰋊 {percentage_used}%";
-	};
+          format = "󰋊 {percentage_used}%";
+        };
       };
     };
     style = ''
-/*      @define-color bg #16161D;
-@define-color bg2 #223249; / waveBlue1 /
-@define-color bg3 #2D4F67; / waveBlue2 /
-@define-color bg4 #658594; / dragonBlue /
-@define-color fg #DCD7BA;
-@define-color red #C34043;
-@define-color dragonBlue #658594;
-@define-color autumnGreen #76946A;
-@define-color roninYellow #FF9E3B;
-@define-color katanaGray #717c7c;
-@define-color crystalBlue #7E9CD8;
-@define-color peachRed #FF5D62;*/
+      /*      @define-color bg #16161D;
+      @define-color bg2 #223249; / waveBlue1 /
+      @define-color bg3 #2D4F67; / waveBlue2 /
+      @define-color bg4 #658594; / dragonBlue /
+      @define-color fg #DCD7BA;
+      @define-color red #C34043;
+      @define-color dragonBlue #658594;
+      @define-color autumnGreen #76946A;
+      @define-color roninYellow #FF9E3B;
+      @define-color katanaGray #717c7c;
+      @define-color crystalBlue #7E9CD8;
+      @define-color peachRed #FF5D62;*/
 
-@define-color bg #16161D;
-@define-color urgentBg #C34043;
-@define-color fg #C8C093;
-@define-color disabledFg #717C7C;
-@define-color defaultFg #1F1F28;
-@define-color selectedBg #2d4f67;
-@define-color cpuBg #7e9cd8;
-@define-color memBg #6a9589;
-@define-color pulseBg #7aa89f;
-@define-color bluetoothBg #7fb4ca;
-@define-color langBg #938aa9;
-@define-color clockBg #c0a36e;
-@define-color diskBg #DCA561;
+      @define-color bg #16161D;
+      @define-color urgentBg #C34043;
+      @define-color fg #C8C093;
+      @define-color disabledFg #717C7C;
+      @define-color defaultFg #1F1F28;
+      @define-color selectedBg #2d4f67;
+      @define-color cpuBg #7e9cd8;
+      @define-color memBg #6a9589;
+      @define-color pulseBg #7aa89f;
+      @define-color bluetoothBg #7fb4ca;
+      @define-color langBg #938aa9;
+      @define-color clockBg #c0a36e;
+      @define-color diskBg #DCA561;
 
-* {
-	font-family: "JetBrainsMono NF", monospace;
-	font-size: 12px;
-}
+      * {
+      	font-family: "JetBrainsMono NF", monospace;
+      	font-size: 12px;
+      }
 
-window#waybar {
-	background-color: @bg;
-}
-label {
-	color: @defaultFg;
-}
-tooltip {
-	color: @fg;
-}
-tooltip * {
-	color: @fg;
-}
+      window#waybar {
+      	background-color: @bg;
+      }
+      label {
+      	color: @defaultFg;
+      }
+      tooltip {
+      	color: @fg;
+      }
+      tooltip * {
+      	color: @fg;
+      }
 
 
-#workspaces button {
-	padding: 0px 3px;
-	background-color: @bg;
-	border-radius: 0px;
-}
+      #workspaces button {
+      	padding: 0px 3px;
+      	background-color: @bg;
+      	border-radius: 0px;
+      }
 
-#workspaces button label {
-	min-width: 16px;
-	padding: 0px;
-	margin: 5px 0px;
-	border-radius: 8px;
-	color: transparent;
-	font-size: 8px;
+      #workspaces button label {
+      	min-width: 16px;
+      	padding: 0px;
+      	margin: 5px 0px;
+      	border-radius: 8px;
+      	color: transparent;
+      	font-size: 8px;
 
-	background: @disabledFg;
-}
+      	background: @disabledFg;
+      }
 
-#workspaces button.active label {
-	background: @fg;
-	min-width: 26px;
-}
+      #workspaces button.active label {
+      	background: @fg;
+      	min-width: 26px;
+      }
 
-#workspaces button.persistent label {
-	background: @selectedBg;
-}
+      #workspaces button.persistent label {
+      	background: @selectedBg;
+      }
 
-#workspaces button.urgent label {
-	background: @urgentBg;
-}
+      #workspaces button.urgent label {
+      	background: @urgentBg;
+      }
 
-#cpu, #memory, #language, #clock, #bluetooth, #pulseaudio, #disk {
-	padding: 0 5px;
-	margin: 0 2px;
-}
+      #cpu, #memory, #language, #clock, #bluetooth, #pulseaudio, #disk {
+      	padding: 0 5px;
+      	margin: 0 2px;
+      }
 
-#window {
-	color: @fg;
-	font-family: "Inter", sans-serif;
-	font-size: 13px;
-}
-#cpu {
-	background-color: @cpuBg;
-}
-#memory {
-	background-color: @memBg;
-}
-#language {
-	background-color: @langBg;
-}
-#clock {
-	background-color: @clockBg;
-}
-#bluetooth {
-	background-color: @bluetoothBg;
-}
-#pulseaudio {
-	background-color: @pulseBg;
-}
-#disk {
-	background-color: @diskBg;
-}
+      #window {
+      	color: @fg;
+      	font-family: "Inter", sans-serif;
+      	font-size: 13px;
+      }
+      #cpu {
+      	background-color: @cpuBg;
+      }
+      #memory {
+      	background-color: @memBg;
+      }
+      #language {
+      	background-color: @langBg;
+      }
+      #clock {
+      	background-color: @clockBg;
+      }
+      #bluetooth {
+      	background-color: @bluetoothBg;
+      }
+      #pulseaudio {
+      	background-color: @pulseBg;
+      }
+      #disk {
+      	background-color: @diskBg;
+      }
     '';
   };
 }

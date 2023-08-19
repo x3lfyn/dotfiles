@@ -60,7 +60,7 @@
     videoDrivers = [
       "nvidia"
     ];
-#    displayManager.lightdm.enable = true;
+    #    displayManager.lightdm.enable = true;
     libinput.enable = true;
   };
 
@@ -68,35 +68,35 @@
     enable = true;
     settings = rec {
       default_session = {
-#        command = "${pkgs.hyprland}/bin/Hyprland";
-         command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+        #        command = "${pkgs.hyprland}/bin/Hyprland";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
       };
     };
   };
 
   environment.etc."greetd/environments".text = ''
-Hyprland
-zsh
+    Hyprland
+    zsh
   '';
 
   users.users.vobbla16 = {
     isNormalUser = true;
     description = "vobbla16";
     extraGroups = [ "networkmanager" "wheel" "adbusers" "docker" "hidrawgrp" ];
-    packages = with pkgs; [];
+    packages = with pkgs; [ ];
     shell = pkgs.zsh;
   };
 
-  users.groups.hidrawgrp = {};
+  users.groups.hidrawgrp = { };
 
   services.udev.packages = [
     pkgs.android-udev-rules
   ];
 
   services.udev.extraRules = ''
-KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="hidrawgrp"
+    KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="hidrawgrp"
   '';
-  
+
   services.udisks2 = {
     enable = true;
   };
@@ -169,7 +169,7 @@ KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="hidrawgrp"
     settings = {
       General = {
         Experimental = true;
-	KernelExperimental = true;
+        KernelExperimental = true;
       };
     };
   };
@@ -216,7 +216,7 @@ KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="hidrawgrp"
   };
 
   security.sudo.extraConfig = ''
-Defaults pwfeedback
+    Defaults pwfeedback
   '';
 
   environment.pathsToLink = [ "/share/zsh" ];
