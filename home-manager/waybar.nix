@@ -13,7 +13,7 @@
 	position = "top";
 	height = 27;
 	spacing = 5;
-	modules-left = [ "wlr/workspaces" "cpu" "memory" ];
+	modules-left = [ "wlr/workspaces" "cpu" "memory" "disk" ];
 	modules-center = [ "hyprland/window" ];
 	modules-right = [ "pulseaudio" "bluetooth" "hyprland/language" "clock" "tray" ];
 
@@ -48,6 +48,21 @@
 	};
 	"clock" = {
           format = "󰥔 {:%d.%m.%Y %H:%M}";
+          tooltip-format = "<tt><small>{calendar}</small></tt>";
+          calendar = {
+	    mode          = "year";
+	    mode-mon-col  = 3;
+	    weeks-pos     = "right";
+	    on-scroll     = 1;
+	    on-click-right= "mode";
+	    format= {
+	      months=     "<span color='#DCD7BA'><b>{}</b></span>";
+	      days=       "<span color='#A3D4D5'><b>{}</b></span>";
+	      weeks=      "<span color='#98BB6C'><b>W{}</b></span>";
+	      weekdays=   "<span color='#957FB8'><b>{}</b></span>";
+	      today=      "<span color='#FF5D62'><b><u>{}</u></b></span>";
+            };
+	  };
 	};
 	"hyprland/language" = {
           format = "󰌌 {}";
@@ -82,6 +97,10 @@ tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{num_con
 	tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
 	tooltip-format-enumerate-connected-battery = "{device_alias}\t{device_address}\t{device_battery_percentage}%";
 	};
+	"disk" = {
+          interval = 30;
+	  format = "󰋊 {percentage_used}%";
+	};
       };
     };
     style = ''
@@ -110,6 +129,7 @@ tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{num_con
 @define-color bluetoothBg #7fb4ca;
 @define-color langBg #938aa9;
 @define-color clockBg #c0a36e;
+@define-color diskBg #DCA561;
 
 * {
 	font-family: "JetBrainsMono NF", monospace;
@@ -160,7 +180,7 @@ tooltip * {
 	background: @urgentBg;
 }
 
-#cpu, #memory, #language, #clock, #bluetooth, #pulseaudio {
+#cpu, #memory, #language, #clock, #bluetooth, #pulseaudio, #disk {
 	padding: 0 5px;
 	margin: 0 2px;
 }
@@ -187,6 +207,9 @@ tooltip * {
 }
 #pulseaudio {
 	background-color: @pulseBg;
+}
+#disk {
+	background-color: @diskBg;
 }
     '';
   };
