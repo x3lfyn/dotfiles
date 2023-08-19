@@ -95,6 +95,7 @@
     unzip
     unrar
     file
+    jless
 
     gparted
     telegram-desktop

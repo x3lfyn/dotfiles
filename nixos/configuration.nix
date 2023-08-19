@@ -143,9 +143,9 @@ KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="hidrawgrp"
 
   hardware.nvidia = {
     modesetting.enable = true;
-    open = true;
+    open = false;
     nvidiaSettings = true;
-    powerManagement.enable = false;
+    powerManagement.enable = true;
   };
 
   hardware.opengl = {
