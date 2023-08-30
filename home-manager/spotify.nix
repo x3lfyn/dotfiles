@@ -6,7 +6,7 @@ in
   programs.spicetify = {
     enable = true;
     theme = spicePkgs.themes.Ziro;
-    colorScheme = "custom";
+    colorScheme = "rose-pine";
     customColorScheme = {
       text = "DCD7BA";
       subtext = "C8C093";

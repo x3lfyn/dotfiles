@@ -105,6 +105,7 @@
     #    lutris
     google-chrome
     via
+    wpsoffice
 
     dconf
     libsForQt5.qtstyleplugins
@@ -112,13 +113,24 @@
     gtk3
     playerctl
     git-crypt
+    networkmanagerapplet
+    corefonts
+    noto-fonts-cjk-sans
+
+    rustc
+    cargo
+    rustPlatform.rustcSrc
+    gcc
+    pkg-config
+    libiconv
+    openssl.dev
   ];
 
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;
     theme = ./rofi.rasi;
-    font = "JetBrainsMono NF 12";
+    font = "Inter 12";
     extraConfig = {
       show-icons = true;
     };
@@ -183,7 +195,7 @@
     enable = true;
     font = {
       name = "Inter";
-      package = pkgs.nerdfonts;
+      package = pkgs.inter;
       size = 10;
     };
 

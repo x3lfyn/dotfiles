@@ -19,13 +19,16 @@
       env = SDL_VIDEODRIVER,wayland
       env = CLUTTER_BACKEND,wayland
       env = MOZ_ENABLE_WAYLAND,1
+      env = NVD_BACKEND,direct
+      env = MOZ_DISABLE_RDD_SANDBOX,1
 
       env = _JAVA_OPTIONS,'-Dawt.useSystemAAFontSettings=on'
 
       exec-once = hyprpaper
       exec-once = waybar
-      #exec-once = sleep 2
-      #exec-once = kdeconnect-indicator
+      exec-once = telegram-desktop -startintray
+      exec-once = nm-applet
+      exec-once = blueman-applet
 
       monitor = HDMI-A-1,2560x1080@75,0x0,1
 

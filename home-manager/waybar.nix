@@ -132,7 +132,7 @@
       @define-color diskBg #DCA561;
 
       * {
-      	font-family: "JetBrainsMono NF", monospace;
+      	font-family: "JetBrainsMono Nerd Font Propo", monospace;
       	font-size: 12px;
       }
 

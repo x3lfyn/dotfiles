@@ -20,12 +20,12 @@
 
           #          "gfx.x11-egl.force-enabled" = true;
           #          "layers.acceleration.force-enabled" = true;
-          #          "media.av1.enabled" = false;
+          "media.av1.enabled" = false;
           #          "media.ffmpeg.vaapi.enabled" = true;
-          #          "media.hardware-video-decoding.force-enabled" = true;
+          "media.hardware-video-decoding.force-enabled" = true;
           #          "media.rdd-ffmpeg.enabled" = true;
           #          "widget.dmabuf.force-enabled" = true;
-
+          "media.ffmpeg.vaapi.enabled" = true;
           "widget.use-xdg-desktop-portal" = true;
           "extensions.pocket.enabled" = false;
           "extensions.pocket.onSaveRecs" = false;

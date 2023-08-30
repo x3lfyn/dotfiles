@@ -132,6 +132,7 @@
     libva
     nvidia-vaapi-driver
     egl-wayland
+    ffmpeg
 
     greetd.greetd
     greetd.tuigreet
