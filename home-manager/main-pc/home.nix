@@ -15,4 +15,11 @@
     monitor = HDMI-A-1,2560x1080@75,0x0,1
     '' + (import ../shared/hyprland-config.nix);
   };
+
+  home.file.".config/hypr/hyprpaper.conf".text = ''
+      preload = ~/Pictures/wallpapers/wallhaven-r7ywwm.png
+      preload = ~/Pictures/wallpapers/wallhaven-2ygz3x.jpg
+      #wallpaper = HDMI-A-1,~/Pictures/wallpapers/wallhaven-2ygz3x.jpg
+      wallpaper = HDMI-A-1,~/Pictures/wallpapers/wallhaven-r7ywwm.png
+  '';
 }
