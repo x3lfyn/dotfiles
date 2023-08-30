@@ -1,27 +1,10 @@
-{ inputs, outputs, lib, config, pkgs, nix-colors, ... }: {
-  wayland.windowManager.hyprland = {
-    enable = true;
-    enableNvidiaPatches = true;
-
-    xwayland = {
-      enable = true;
-    };
-
-    extraConfig = ''
-      env = LIBVA_DRIVER_NAME,nvidia
+''
       env = XDG_SESSION_TYPE,wayland
-      env = GBM_BACKEND,nvidia-drm
-      env = __GLX_VENDOR_LIBRARY_NAME,nvidia
-      env = WLR_NO_HARDWARE_CURSORS,1
-
       env = GDK_BACKEND,wayland,x11
       env = QT_QPA_PLATFORM,wayland;xcb
       env = SDL_VIDEODRIVER,wayland
       env = CLUTTER_BACKEND,wayland
       env = MOZ_ENABLE_WAYLAND,1
-      env = NVD_BACKEND,direct
-      env = MOZ_DISABLE_RDD_SANDBOX,1
-
       env = _JAVA_OPTIONS,'-Dawt.useSystemAAFontSettings=on'
 
       exec-once = hyprpaper
@@ -29,8 +12,6 @@
       exec-once = telegram-desktop -startintray
       exec-once = nm-applet
       exec-once = blueman-applet
-
-      monitor = HDMI-A-1,2560x1080@75,0x0,1
 
       input {
         kb_layout = us, ru
@@ -187,6 +168,4 @@
 
       # power menu
       bind = SUPER, Escape, exec, rofi -show power-menu -modi "power-menu:rofi-power-menu --choices=suspend/reboot/shutdown"
-    '';
-  };
-}
+''
