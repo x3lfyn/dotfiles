@@ -12,7 +12,7 @@
     };
 
     extraConfig = ''
-    monitor = ,highres,auto,auto
+    monitor = eDP-1,2256x1504,0x0,1.5
     '' + (import ../shared/hyprland-config.nix);
   };
 }
