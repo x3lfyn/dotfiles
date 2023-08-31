@@ -13,6 +13,10 @@
 
     extraConfig = ''
     monitor = eDP-1,2256x1504,0x0,1.5
+
+    animations {
+      enabled = false
+    }
     '' + (import ../shared/hyprland-config.nix);
   };
 
