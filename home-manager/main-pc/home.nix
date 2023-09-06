@@ -32,6 +32,30 @@
     '' + (import ../shared/hyprland-config.nix);
   };
 
+  programs.waybar.style = ''
+            #workspaces button {
+            	padding: 0px 3px;
+            	background-color: @bg;
+            	border-radius: 0px;
+            }
+
+            #workspaces button label {
+            	min-width: 16px;
+            	padding: 0px;
+            	margin: 5px 0px;
+            	border-radius: 8px;
+            	color: transparent;
+            	font-size: 8px;
+
+            	background: @disabledFg;
+            }
+
+            #workspaces button.active label {
+            	background: @fg;
+            	min-width: 26px;
+            }
+  '' + (import ../shared/waybar-style.nix);
+
   home.file.".config/hypr/hyprpaper.conf".text = ''
     preload = ~/Pictures/wallpapers/wallhaven-r7ywwm.png
     preload = ~/Pictures/wallpapers/wallhaven-2ygz3x.jpg
