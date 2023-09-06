@@ -1,164 +1,164 @@
 ''
-      env = XDG_SESSION_TYPE,wayland
-      env = GDK_BACKEND,wayland,x11
-      env = QT_QPA_PLATFORM,wayland;xcb
-      env = SDL_VIDEODRIVER,wayland
-      env = CLUTTER_BACKEND,wayland
-      env = MOZ_ENABLE_WAYLAND,1
-      env = _JAVA_OPTIONS,'-Dawt.useSystemAAFontSettings=on'
+        env = XDG_SESSION_TYPE,wayland
+        env = GDK_BACKEND,wayland,x11
+        env = QT_QPA_PLATFORM,wayland;xcb
+        env = SDL_VIDEODRIVER,wayland
+        env = CLUTTER_BACKEND,wayland
+        env = MOZ_ENABLE_WAYLAND,1
+        env = _JAVA_OPTIONS,'-Dawt.useSystemAAFontSettings=on'
 
-      exec-once = hyprpaper
-      exec-once = waybar
-      exec-once = telegram-desktop -startintray
-      exec-once = nm-applet
-      exec-once = blueman-applet
+        exec-once = hyprpaper
+        exec-once = waybar
+        exec-once = telegram-desktop -startintray
+        exec-once = nm-applet
+        exec-once = blueman-applet
 
-      input {
-        kb_layout = us, ru
-        kb_variant =
-        kb_model =
-        kb_options = grp:win_space_toggle
-        kb_rules =
-        numlock_by_default = 1
-        follow_mouse = 1
-        sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
-        accel_profile = adaptive
+        input {
+          kb_layout = us, ru
+          kb_variant =
+          kb_model =
+          kb_options = grp:win_space_toggle
+          kb_rules =
+          numlock_by_default = 1
+          follow_mouse = 1
+          sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
+          accel_profile = adaptive
 
-	touchpad {
-          natural_scroll = true
-	}
-      }
-
-      gestures {
-        workspace_swipe = true
-      }
-
-      general {
-        gaps_in = 2
-        gaps_out = 1
-        border_size = 2
-        col.active_border = rgba(dcd7baee)
-        col.inactive_border = rgba(727169ee)
-
-        cursor_inactive_timeout = 15
-      }
-
-      decoration {
-        rounding = 10
-
-        blur {
-          enabled = true
-          size = 10
-          passes = 2
-          new_optimizations = on
+  	touchpad {
+            natural_scroll = true
+  	}
         }
 
-        drop_shadow = yes
-        shadow_range = 4
-        shadow_render_power = 3
-        col.shadow = rgba(717c7cee)
-      }
+        gestures {
+          workspace_swipe = true
+        }
 
-      binds {
-      	scroll_event_delay = 0
-      }
+        general {
+          gaps_in = 2
+          gaps_out = 1
+          border_size = 2
+          col.active_border = rgba(dcd7baee)
+          col.inactive_border = rgba(727169ee)
 
-      misc {
-      	disable_hyprland_logo = true
-      	disable_splash_rendering = true
-      	vrr = 1
-	disable_autoreload = true
-      }
+          cursor_inactive_timeout = 15
+        }
 
-      debug {
-      	overlay = false
-      }
+        decoration {
+          rounding = 10
 
-      windowrulev2 = float,class:(qalc)
-      windowrulev2 = size 300 500,class:(qalc)
-      windowrulev2 = move 1500 290,class:(qalc)
+          blur {
+            enabled = true
+            size = 10
+            passes = 2
+            new_optimizations = on
+          }
 
-      windowrulev2 = float,class:(floating)
+          drop_shadow = yes
+          shadow_range = 4
+          shadow_render_power = 3
+          col.shadow = rgba(717c7cee)
+        }
 
-      windowrulev2 = float,class:(.blueman-manager-wrapped)
+        binds {
+        	scroll_event_delay = 0
+        }
 
-      bind = SUPER, Return, exec, footclient
-      bind = SUPER ALT, Return, exec, gtk-launch floating-terminal
-      bind = CONTROL, SPACE, exec, rofi -show drun
+        misc {
+        	disable_hyprland_logo = true
+        	disable_splash_rendering = true
+        	vrr = 1
+  	disable_autoreload = true
+        }
 
-      bind = SUPER, q, killactive
-      bind = SUPER_ALT, q, exit
-      bind = SUPER, s, togglefloating
-      bind = SUPER, f, fullscreen
+        debug {
+        	overlay = false
+        }
 
-      bind = SUPER, left, movefocus, l
-      bind = SUPER, right, movefocus, r
-      bind = SUPER, up, movefocus, u
-      bind = SUPER, down, movefocus, d
-      bind = SUPER, c, togglesplit
+        windowrulev2 = float,class:(qalc)
+        windowrulev2 = size 300 500,class:(qalc)
+        windowrulev2 = move 1500 290,class:(qalc)
 
-      bind = SUPER SHIFT, left, movewindow, l
-      bind = SUPER SHIFT, right, movewindow, r
-      bind = SUPER SHIFT, up, movewindow, u
-      bind = SUPER SHIFT, down, movewindow, d
+        windowrulev2 = float,class:(floating)
 
-      bind = SUPER, 1, workspace, 1
-      bind = SUPER, 2, workspace, 2
-      bind = SUPER, 3, workspace, 3
-      bind = SUPER, 4, workspace, 4
-      bind = SUPER, 5, workspace, 5
-      bind = SUPER, 6, workspace, 6
-      bind = SUPER, 7, workspace, 7
-      bind = SUPER, 8, workspace, 8
-      bind = SUPER, 9, workspace, 9
-      bind = SUPER, 0, workspace, 10
+        windowrulev2 = float,class:(.blueman-manager-wrapped)
 
-      bind = SUPER SHIFT, 1, movetoworkspacesilent, 1
-      bind = SUPER SHIFT, 2, movetoworkspacesilent, 2
-      bind = SUPER SHIFT, 3, movetoworkspacesilent, 3
-      bind = SUPER SHIFT, 4, movetoworkspacesilent, 4
-      bind = SUPER SHIFT, 5, movetoworkspacesilent, 5
-      bind = SUPER SHIFT, 6, movetoworkspacesilent, 6
-      bind = SUPER SHIFT, 7, movetoworkspacesilent, 7
-      bind = SUPER SHIFT, 8, movetoworkspacesilent, 8
-      bind = SUPER SHIFT, 9, movetoworkspacesilent, 9
-      bind = SUPER SHIFT, 0, movetoworkspacesilent, 10
+        bind = SUPER, Return, exec, footclient
+        bind = SUPER ALT, Return, exec, gtk-launch floating-terminal
+        bind = CONTROL, SPACE, exec, rofi -show drun
 
-      bind = SUPER, mouse_down, workspace, e+1
-      bind = SUPER, mouse_up, workspace, e-1
+        bind = SUPER, q, killactive
+        bind = SUPER_ALT, q, exit
+        bind = SUPER, s, togglefloating
+        bind = SUPER, f, fullscreen
 
-      bindm = SUPER, mouse:272, movewindow
-      bindm = SUPER, mouse:273, resizewindow
+        bind = SUPER, left, movefocus, l
+        bind = SUPER, right, movefocus, r
+        bind = SUPER, up, movefocus, u
+        bind = SUPER, down, movefocus, d
+        bind = SUPER, c, togglesplit
 
-      # open floating calculator
-      bind = , XF86Calculator, exec, gtk-launch qalc
+        bind = SUPER SHIFT, left, movewindow, l
+        bind = SUPER SHIFT, right, movewindow, r
+        bind = SUPER SHIFT, up, movewindow, u
+        bind = SUPER SHIFT, down, movewindow, d
 
-      # control volume with kb keys
-      binde = , XF86AudioLowerVolume, exec, sh ~/.scripts/volume.sh --down
-      binde = , XF86AudioRaiseVolume, exec, sh ~/.scripts/volume.sh --up
-      bind = , XF86AudioMute, exec, sh ~/.scripts/volume.sh --mute
+        bind = SUPER, 1, workspace, 1
+        bind = SUPER, 2, workspace, 2
+        bind = SUPER, 3, workspace, 3
+        bind = SUPER, 4, workspace, 4
+        bind = SUPER, 5, workspace, 5
+        bind = SUPER, 6, workspace, 6
+        bind = SUPER, 7, workspace, 7
+        bind = SUPER, 8, workspace, 8
+        bind = SUPER, 9, workspace, 9
+        bind = SUPER, 0, workspace, 10
 
-      # control volume with additional mouse buttons
-      bind = SUPER ALT, mouse:275, exec, sh ~/.scripts/volume.sh --down
-      bind = SUPER ALT, mouse:276, exec, sh ~/.scripts/volume.sh --up
+        bind = SUPER SHIFT, 1, movetoworkspacesilent, 1
+        bind = SUPER SHIFT, 2, movetoworkspacesilent, 2
+        bind = SUPER SHIFT, 3, movetoworkspacesilent, 3
+        bind = SUPER SHIFT, 4, movetoworkspacesilent, 4
+        bind = SUPER SHIFT, 5, movetoworkspacesilent, 5
+        bind = SUPER SHIFT, 6, movetoworkspacesilent, 6
+        bind = SUPER SHIFT, 7, movetoworkspacesilent, 7
+        bind = SUPER SHIFT, 8, movetoworkspacesilent, 8
+        bind = SUPER SHIFT, 9, movetoworkspacesilent, 9
+        bind = SUPER SHIFT, 0, movetoworkspacesilent, 10
 
-      # control volume with scroll
-      bind = SUPER ALT, mouse_down, exec, sh ~/.scripts/volume.sh --up
-      bind = SUPER ALT, mouse_up, exec, sh ~/.scripts/volume.sh --down
+        bind = SUPER, mouse_down, workspace, e+1
+        bind = SUPER, mouse_up, workspace, e-1
 
-      # control player with kb keys
-      bind = , XF86AudioPlay, exec, playerctl play-pause
-      bind = , XF86AudioNext, exec, playerctl next
-      bind = , XF86AudioPrev, exec, playerctl previous
+        bindm = SUPER, mouse:272, movewindow
+        bindm = SUPER, mouse:273, resizewindow
 
-      # control player with scroll
-      bind = SUPER SHIFT, mouse_down, exec, playerctl next
-      bind = SUPER SHIFT, mouse_up, exec, playerctl previous
+        # open floating calculator
+        bind = , XF86Calculator, exec, gtk-launch qalc
 
-      # screenshots
-      bind = , Print, exec, sh ~/.scripts/screenshot.sh --area
-      bind = SUPER, Print, exec, sh ~/.scripts/screenshot.sh --screen
+        # control volume with kb keys
+        binde = , XF86AudioLowerVolume, exec, sh ~/.scripts/volume.sh --down
+        binde = , XF86AudioRaiseVolume, exec, sh ~/.scripts/volume.sh --up
+        bind = , XF86AudioMute, exec, sh ~/.scripts/volume.sh --mute
 
-      # power menu
-      bind = SUPER, Escape, exec, rofi -show power-menu -modi "power-menu:rofi-power-menu --choices=suspend/reboot/shutdown"
+        # control volume with additional mouse buttons
+        bind = SUPER ALT, mouse:275, exec, sh ~/.scripts/volume.sh --down
+        bind = SUPER ALT, mouse:276, exec, sh ~/.scripts/volume.sh --up
+
+        # control volume with scroll
+        bind = SUPER ALT, mouse_down, exec, sh ~/.scripts/volume.sh --up
+        bind = SUPER ALT, mouse_up, exec, sh ~/.scripts/volume.sh --down
+
+        # control player with kb keys
+        bind = , XF86AudioPlay, exec, playerctl play-pause
+        bind = , XF86AudioNext, exec, playerctl next
+        bind = , XF86AudioPrev, exec, playerctl previous
+
+        # control player with scroll
+        bind = SUPER SHIFT, mouse_down, exec, playerctl next
+        bind = SUPER SHIFT, mouse_up, exec, playerctl previous
+
+        # screenshots
+        bind = , Print, exec, sh ~/.scripts/screenshot.sh --area
+        bind = SUPER, Print, exec, sh ~/.scripts/screenshot.sh --screen
+
+        # power menu
+        bind = SUPER, Escape, exec, rofi -show power-menu -modi "power-menu:rofi-power-menu --choices=suspend/reboot/shutdown"
 ''

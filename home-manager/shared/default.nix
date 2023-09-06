@@ -14,7 +14,7 @@
     inputs.spicetify-nix.homeManagerModule
 
     ./terminal.nix
-#    ./hyprland.nix
+    #    ./hyprland.nix
     ./waybar.nix
     ./shell.nix
     ./firefox.nix
