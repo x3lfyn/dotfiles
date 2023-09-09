@@ -124,6 +124,7 @@
     pkg-config
     libiconv
     openssl.dev
+    python3
   ];
 
   programs.rofi = {
