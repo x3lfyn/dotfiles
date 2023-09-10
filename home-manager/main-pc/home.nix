@@ -29,6 +29,22 @@
           animation = fadeDim, 1, 5, smoothIn
           animation = workspaces, 1, 6, default
         }
+
+        decoration {
+          rounding = 10
+
+          blur {
+            enabled = true
+            size = 10
+            passes = 2
+            new_optimizations = on
+          }
+
+          drop_shadow = yes
+          shadow_range = 4
+          shadow_render_power = 3
+          col.shadow = rgba(717c7cee)
+        }
     '' + (import ../shared/hyprland-config.nix);
   };
 

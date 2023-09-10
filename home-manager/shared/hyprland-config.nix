@@ -24,9 +24,9 @@
           sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
           accel_profile = adaptive
 
-  	touchpad {
-            natural_scroll = true
-  	}
+	  	touchpad {
+        	    natural_scroll = true
+  		}
         }
 
         gestures {
@@ -43,22 +43,6 @@
           cursor_inactive_timeout = 15
         }
 
-        decoration {
-          rounding = 10
-
-          blur {
-            enabled = true
-            size = 10
-            passes = 2
-            new_optimizations = on
-          }
-
-          drop_shadow = yes
-          shadow_range = 4
-          shadow_render_power = 3
-          col.shadow = rgba(717c7cee)
-        }
-
         binds {
         	scroll_event_delay = 0
         }
@@ -67,7 +51,7 @@
         	disable_hyprland_logo = true
         	disable_splash_rendering = true
         	vrr = 1
-  	disable_autoreload = true
+		disable_autoreload = true
         }
 
         debug {
@@ -161,4 +145,8 @@
 
         # power menu
         bind = SUPER, Escape, exec, rofi -show power-menu -modi "power-menu:rofi-power-menu --choices=suspend/reboot/shutdown"
+
+	# brightness
+	bind = SUPER, XF86MonBrightnessUp, exec, brightnessctl set +5%
+	bind = SUPER, XF86MonBrightnessDown, exec, brightnessctl set -5%
 ''
