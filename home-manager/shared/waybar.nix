@@ -4,7 +4,7 @@
 
     systemd.enable = false;
 
-    package = pkgs.waybar.overrideAttrs (oldAttrs: {
+    package = pkgs.unstable.waybar.overrideAttrs (oldAttrs: {
       mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
     });
     settings = {
@@ -13,24 +13,15 @@
         position = "top";
         height = 27;
         spacing = 5;
-        modules-left = [ "wlr/workspaces" "cpu" "memory" "disk" ];
+        modules-left = [ "hyprland/workspaces" "cpu" "memory" "disk" ];
         modules-center = [ "hyprland/window" ];
         modules-right = [ "pulseaudio" "bluetooth" "hyprland/language" "clock" "tray" ];
 
-        "wlr/workspaces" = {
-          on-click = "";
-          sort-by-number = true;
+        "hyprland/workspaces" = {
+#          on-click = "";
+#          sort-by-number = true;
           persistent_workspaces = {
-            "1" = [ ];
-            "2" = [ ];
-            "3" = [ ];
-            "4" = [ ];
-            "5" = [ ];
-            "6" = [ ];
-            "7" = [ ];
-            "8" = [ ];
-            "9" = [ ];
-            "10" = [ ];
+	    "*" = 10;
           };
           format-icons = {
             default = "■";
