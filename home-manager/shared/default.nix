@@ -81,6 +81,7 @@
     inter
     google-sans-display
     jetbrainsmono-nf-ligs
+    noto-fonts-emoji
 
     grc
     duf
