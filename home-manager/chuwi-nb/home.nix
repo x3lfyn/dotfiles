@@ -65,8 +65,10 @@
   programs.waybar.settings.mainBar.modules-left = pkgs.lib.mkAfter [ "battery" "network" ];
   programs.waybar.settings.mainBar.modules-right = pkgs.lib.mkBefore [ "backlight" ];
 
+
+    #preload = ~/Pictures/wallpapers/wallpaperflare.com_wallpaper.jpg
   home.file.".config/hypr/hyprpaper.conf".text = ''
-    preload = ~/Pictures/wallpapers/wallpaperflare.com_wallpaper.jpg
-    wallpaper = eDP-1,~/Pictures/wallpapers/wallpaperflare.com_wallpaper.jpg
+    preload = ~/Pictures/wallpapers/wallhaven-2ewx8x.jpg
+    wallpaper = eDP-1,~/Pictures/wallpapers/wallhaven-2ewx8x.jpg
   '';
 }

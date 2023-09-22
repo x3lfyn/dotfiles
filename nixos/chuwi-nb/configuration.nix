@@ -25,4 +25,18 @@
   environment.sessionVariables = {
 #    GDK_SCALE = "2";
   };
+
+  services.tlp = {
+    enable = true;
+    settings = {
+        CPU_SCALING_GOVERNOR_ON_AC = "performance";
+        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+	CPU_BOOST_ON_BAT = "0";
+    };
+  };
+  powerManagement = {
+    enable = true;
+    powertop.enable = true;
+  };
+  services.thermald.enable = true;
 }
