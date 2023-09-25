@@ -56,8 +56,6 @@
   };
 
   home.packages = with pkgs; [
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
     libnotify
     pavucontrol
     pulseaudio
@@ -76,6 +74,7 @@
     cava
     discord
     betterdiscordctl
+    libappindicator-gtk3
 
     roboto-slab
     inter
@@ -97,6 +96,15 @@
     unrar
     file
     jless
+    gping
+    alsa-utils
+    alsa-tools
+    patchelf
+    pciutils
+    smartmontools
+    tree
+    usbutils
+    wget
 
     gparted
     telegram-desktop

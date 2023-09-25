@@ -60,7 +60,7 @@
 
         windowrulev2 = float,class:(qalc)
         windowrulev2 = size 300 500,class:(qalc)
-        windowrulev2 = move 1500 290,class:(qalc)
+        windowrulev2 = move 1200 290,class:(qalc)
 
         windowrulev2 = float,class:(floating)
 
@@ -116,6 +116,7 @@
 
         # open floating calculator
         bind = , XF86Calculator, exec, gtk-launch qalc
+	bind = SUPER SHIFT, C, exec, gtk-launch qalc
 
         # control volume with kb keys
         binde = , XF86AudioLowerVolume, exec, sh ~/.scripts/volume.sh --down
@@ -147,6 +148,6 @@
         bind = SUPER, Escape, exec, rofi -show power-menu -modi "power-menu:rofi-power-menu --choices=suspend/reboot/shutdown"
 
 	# brightness
-	bind = SUPER, XF86MonBrightnessUp, exec, brightnessctl set +5%
-	bind = SUPER, XF86MonBrightnessDown, exec, brightnessctl set -5%
+	bind = , XF86MonBrightnessUp, exec, brightnessctl set +5%
+	bind = , XF86MonBrightnessDown, exec, brightnessctl set 5%-
 ''

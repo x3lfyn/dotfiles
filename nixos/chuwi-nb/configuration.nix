@@ -26,6 +26,10 @@
 #    GDK_SCALE = "2";
   };
 
+  environment.variables = {
+    VDPAU_DRIVER = "va_gl";
+  };
+
   services.tlp = {
     enable = true;
     settings = {
