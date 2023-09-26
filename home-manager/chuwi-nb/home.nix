@@ -5,6 +5,7 @@
 
   home.packages = with pkgs; [
     brightnessctl
+    packettracer
   ];
 
   wayland.windowManager.hyprland = {
