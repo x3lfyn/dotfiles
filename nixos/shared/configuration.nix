@@ -85,7 +85,7 @@
   users.users.vobbla16 = {
     isNormalUser = true;
     description = "vobbla16";
-    extraGroups = [ "networkmanager" "wheel" "adbusers" "docker" "hidrawgrp" ];
+    extraGroups = [ "networkmanager" "wheel" "adbusers" "docker" "hidrawgrp" "scanner" "lp" ];
     packages = with pkgs; [ ];
     shell = pkgs.zsh;
   };
@@ -247,8 +247,7 @@
   #   enableSSHSupport = true;
   # };
 
-  # List services that you want to enable:
-
+  # List services that you want to enable
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
@@ -265,4 +264,8 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
+
+  networking.extraHosts = ''
+    10.129.138.179 analytical.htb data.analytical.htb
+  '';
 }

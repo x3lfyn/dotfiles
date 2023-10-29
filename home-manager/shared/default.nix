@@ -111,7 +111,6 @@
     jetbrains-toolbox
     obsidian
     qview
-    #    lutris
     google-chrome
     via
     wpsoffice
@@ -126,14 +125,27 @@
     corefonts
     noto-fonts-cjk-sans
 
-    rustc
-    cargo
-    rustPlatform.rustcSrc
+    rustup
     gcc
     pkg-config
     libiconv
     openssl.dev
     python3
+    jdk
+
+    # ctf things
+    binwalk
+    nmap
+    jadx
+    python310Packages.ipython
+    python310Packages.pycryptodome
+    hashcat
+    pwntools
+    gdb
+    exiftool
+    exiv2
+    stegsolve
+    bkcrack
   ];
 
   programs.rofi = {
@@ -237,20 +249,8 @@
     x11.enable = true;
     gtk.enable = true;
   };
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
+
   home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
-
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
-
     ".config/electron-flags.conf".text = ''
       --enable-features=UseOzonePlatform
       --ozone-platform=wayland
@@ -303,6 +303,7 @@
       key = "F2EE41860B238D993139AF94C1190C108C849FA4";
       signByDefault = true;
     };
+    lfs.enable = true;
     extraConfig = {
       core = {
         editor = "nvim";

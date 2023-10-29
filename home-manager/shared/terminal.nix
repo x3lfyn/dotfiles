@@ -82,8 +82,8 @@
     server.enable = true;
     settings = {
       main = {
-        font = "JetBrainsMono Nerd Font Propo:size=12";
-        pad = "8x8 center";
+        font = "JetBrainsMono Nerd Font Propo:size=13";
+        pad = "10x10 center";
         term = "xterm-256color";
         resize-delay-ms = 0;
       };

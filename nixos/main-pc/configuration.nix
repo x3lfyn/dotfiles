@@ -49,6 +49,8 @@
       nvidia-vaapi-driver
   ];
 
+  hardware.sane.enable = true;
+
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "nvidia";
     GBM_BACKEND = "nvidia-drm";
