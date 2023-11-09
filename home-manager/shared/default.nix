@@ -143,6 +143,7 @@
     jadx
     python310Packages.ipython
     python310Packages.pycryptodome
+    python310Packages.requests
     hashcat
     pwntools
     gdb
@@ -150,6 +151,11 @@
     exiv2
     stegsolve
     bkcrack
+    ffuf
+    bkcrack
+    ghidra-bin
+    radare2
+    apktool
   ];
 
   programs.rofi = {
