@@ -142,6 +142,7 @@
     greetd.tuigreet
 
     wireguard-tools
+    openvpn
   ];
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
