@@ -10,6 +10,8 @@
       ls = "exa -lah";
       cat = "bat --color always --plain";
       c = "cat";
+      g = "git";
+      d = "docker";
       free = "grc --colour=auto free -h";
       ip = "ip -c=auto";
       ping = "grc --colour=auto ping";

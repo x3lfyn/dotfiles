@@ -71,7 +71,7 @@
     #preload = ~/Pictures/wallpapers/wallhaven-2ewx8x.jpg
     #preload = ~/Pictures/wallpapers/wallhaven-y8883g.png
   home.file.".config/hypr/hyprpaper.conf".text = ''
-    preload = ~/Pictures/wallpapers/wallhaven-oxz8l7.jpg
-    wallpaper = eDP-1,~/Pictures/wallpapers/wallhaven-oxz8l7.jpg
+    preload = ~/Pictures/wallpapers/wallpaperflare.com_wallpaper.jpg
+    wallpaper = eDP-1,~/Pictures/wallpapers/wallpaperflare.com_wallpaper.jpg
   '';
 }

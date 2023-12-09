@@ -109,6 +109,13 @@
     tree
     usbutils
     wget
+    p7zip
+    zip
+    cmake
+    btop
+    iptables
+    mpv
+    openvpn
 
     gparted
     telegram-desktop
@@ -135,6 +142,7 @@
     libiconv
     openssl.dev
     python3
+    pypy3
     jdk
 
     # ctf things
@@ -156,6 +164,21 @@
     ghidra-bin
     radare2
     apktool
+    gnome.ghex
+    xortool
+    sqlite3
+
+    # libs
+    xorg.libX11
+    libpulseaudio
+    gtk3
+    gtk4
+
+    # devops
+    ansible
+    terraform
+    dive
+    trivy
   ];
 
   programs.rofi = {
@@ -314,6 +337,10 @@
       signByDefault = true;
     };
     lfs.enable = true;
+    aliases = {
+      s = "status";
+      a = "add";
+    }
     extraConfig = {
       core = {
         editor = "nvim";
