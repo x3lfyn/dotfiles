@@ -11,7 +11,7 @@
     # ./nvim.nix
     inputs.hyprland.homeManagerModules.default
     inputs.nurpkgs.nixosModules.nur
-    inputs.spicetify-nix.homeManagerModule
+#    inputs.spicetify-nix.homeManagerModule
 
     ./terminal.nix
     #    ./hyprland.nix
@@ -21,7 +21,7 @@
     ./kdeconnect.nix
     ./syncthing.nix
     ./desktopEntries.nix
-    ./spotify.nix
+#    ./spotify.nix
     ./xdg-mime.nix
     ./ssh.nix
   ];
@@ -62,7 +62,6 @@
   home.packages = with pkgs; [
     libnotify
     pavucontrol
-    pulseaudio
     hyprpaper
     libqalculate
     slurp
@@ -166,11 +165,10 @@
     apktool
     gnome.ghex
     xortool
-    sqlite3
+    sqlite
 
     # libs
     xorg.libX11
-    libpulseaudio
     gtk3
     gtk4
 
@@ -193,7 +191,7 @@
 
   programs.gh = {
     enable = true;
-    enableGitCredentialHelper = true;
+    gitCredentialHelper.enable = true;
   };
 
   dconf.enable = true;
@@ -340,7 +338,7 @@
     aliases = {
       s = "status";
       a = "add";
-    }
+    };
     extraConfig = {
       core = {
         editor = "nvim";

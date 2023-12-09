@@ -10,7 +10,6 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    enableNvidiaPatches = false;
 
     xwayland = {
       enable = true;

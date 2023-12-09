@@ -130,6 +130,7 @@
     neovim
     polkit_gnome
     pulseaudio
+    libpulseaudio
     git
 
 #    libva
@@ -237,7 +238,7 @@
     };
     hinting = {
       enable = true;
-      style = "hintslight";
+      style = "medium";
     };
   };
   # Some programs need SUID wrappers, can be configured further or are

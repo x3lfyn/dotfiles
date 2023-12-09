@@ -1,5 +1,5 @@
 { inputs, outputs, lib, config, pkgs, ... }: {
-  programs.exa.enable = true;
+  programs.eza.enable = true;
   programs.bat.enable = true;
 
   programs.zsh = {
@@ -28,7 +28,7 @@
     };
     enableAutosuggestions = true;
     enableCompletion = true;
-    enableSyntaxHighlighting = true; # use fast-syntax-highlighting
+    syntaxHighlighting.enable = true; # use fast-syntax-highlighting
     initExtra = ''
       # show completion menus
       #zstyle ':completion:*' menu select
