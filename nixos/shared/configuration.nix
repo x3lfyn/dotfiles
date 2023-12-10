@@ -238,7 +238,7 @@
     };
     hinting = {
       enable = true;
-      style = "medium";
+      style = "full";
     };
   };
   # Some programs need SUID wrappers, can be configured further or are
