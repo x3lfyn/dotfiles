@@ -33,6 +33,7 @@
     libva
     nvidia-vaapi-driver
     egl-wayland
+    gscan2pdf
   ];
 
   hardware.nvidia = {

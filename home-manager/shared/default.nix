@@ -124,6 +124,8 @@
     google-chrome
     via
     wpsoffice
+    anki-bin
+    qbittorrent
 
     dconf
     libsForQt5.qtstyleplugins
