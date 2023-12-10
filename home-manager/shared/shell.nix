@@ -19,6 +19,7 @@
       du = "dust";
       dig = "dog --time";
       s = "sudo ";
+      ipy = "ipython";
     };
     history = {
       size = 20000;

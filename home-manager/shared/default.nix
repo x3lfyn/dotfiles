@@ -140,7 +140,15 @@
     pkg-config
     libiconv
     openssl.dev
-    python3
+    (python3.withPackages (ps: with ps; [
+      ipython
+      pycryptodome
+      requests
+      gmpy2
+      sympy
+      pillow
+      z3
+    ]))
     pypy3
     jdk
 
@@ -148,9 +156,6 @@
     binwalk
     nmap
     jadx
-    python310Packages.ipython
-    python310Packages.pycryptodome
-    python310Packages.requests
     hashcat
     pwntools
     gdb
@@ -166,6 +171,7 @@
     gnome.ghex
     xortool
     sqlite
+    frida-tools
 
     # libs
     xorg.libX11
