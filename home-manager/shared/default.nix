@@ -11,7 +11,7 @@
     # ./nvim.nix
     inputs.hyprland.homeManagerModules.default
     inputs.nurpkgs.nixosModules.nur
-#    inputs.spicetify-nix.homeManagerModule
+    inputs.spicetify-nix.homeManagerModule
 
     ./terminal.nix
     #    ./hyprland.nix
@@ -21,7 +21,7 @@
     ./kdeconnect.nix
     ./syncthing.nix
     ./desktopEntries.nix
-#    ./spotify.nix
+    ./spotify.nix
     ./xdg-mime.nix
     ./ssh.nix
   ];
