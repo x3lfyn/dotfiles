@@ -145,6 +145,8 @@
     networkmanagerapplet
     corefonts
     noto-fonts-cjk-sans
+    junction
+    glib
 
     rustup
     gcc
@@ -261,6 +263,7 @@
 
   xdg.userDirs = {
     enable = true;
+    createDirectories = true;
   };
 
   gtk = {

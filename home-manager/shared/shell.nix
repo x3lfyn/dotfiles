@@ -20,6 +20,7 @@
       dig = "dog --time";
       s = "sudo ";
       ipy = "ipython";
+      open = "re.sonny.Junction";
     };
     history = {
       size = 20000;
