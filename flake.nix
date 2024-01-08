@@ -19,9 +19,12 @@
 
     nix-ld.url = "github:Mic92/nix-ld";
     nix-ld.inputs.nixpkgs.follows = "nixpkgs";
+
+    aagl.url = "github:ezKEa/aagl-gtk-on-nix";
+    aagl.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-ld, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nix-ld, aagl, ... }@inputs:
     let
       inherit (self) outputs;
       forAllSystems = nixpkgs.lib.genAttrs [
@@ -62,18 +65,16 @@
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#your-hostname'
       nixosConfigurations = {
-        # FIXME replace with your hostname
         MAIN-PC-NIX = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
-            # > Our main nixos configuration file <
+	    nix-ld.nixosModules.nix-ld
             ./nixos/main-pc/configuration.nix
           ];
         };
         CHUWI-NB-NIX = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
-            # > Our main nixos configuration file <
 	    nix-ld.nixosModules.nix-ld
             ./nixos/chuwi-nb/configuration.nix
           ];

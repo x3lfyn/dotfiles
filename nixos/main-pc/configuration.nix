@@ -17,15 +17,21 @@
     # Import your generated (nixos-generate-config) hardware configuration
     ../shared
     ./hardware-configuration.nix
+    inputs.aagl.nixosModules.default
   ];
+
+  programs.an-anime-game-launcher.enable = true;
 
   boot.loader.timeout = 0;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  programs.nix-ld.dev.enable = true;
+
   networking.hostName = "MAIN-PC-NIX";
 
   services.ratbagd.enable = true;
+  services.flatpak.enable = true;
 
   services.xserver.videoDrivers = [ "nvidia" ];
 

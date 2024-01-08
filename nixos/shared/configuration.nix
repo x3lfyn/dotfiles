@@ -26,6 +26,13 @@
 
   systemd.services.NetworkManager-wait-online.enable = false;
 
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    config.common.default = "*";
+  };
+
 #  networking.hostName = "MAIN-PC-NIX"; # Define your hostname.
 
   # Enable networking
@@ -121,6 +128,9 @@
       experimental-features = "nix-command flakes";
       # Deduplicate and optimize nix store
       auto-optimise-store = true;
+
+      substituters = [ "https://ezkea.cachix.org" "https://hyprland.cachix.org" ];
+      trusted-public-keys = [ "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI=" "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
     };
   };
 
@@ -237,8 +247,7 @@
       serif = [ "Roboto Slab" ];
     };
     hinting = {
-      enable = true;
-      style = "full";
+      enable = false;
     };
   };
   # Some programs need SUID wrappers, can be configured further or are

@@ -11,6 +11,8 @@
 
   networking.hostName = "CHUWI-NB-NIX";
 
+  programs.nix-ld.dev.enable = true;
+
   hardware.opengl.extraPackages = with pkgs; [
     vaapiVdpau
     intel-media-driver
@@ -51,7 +53,6 @@
   };
   services.thermald.enable = true;
 
-  programs.nix-ld.dev.enable = true;
 
   networking.extraHosts = ''
     0.0.0.0 cisco.com www.cisco.com

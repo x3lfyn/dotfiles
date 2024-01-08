@@ -26,6 +26,13 @@
     ./ssh.nix
   ];
 
+#  xdg.configFile."nvim".source = pkgs.fetchFromGitHub {
+#    owner = "NvChad";
+#    repo = "NvChad";
+#    rev = "bb87d70fd6dedce65c67a4390c9faecc55b0ed72";
+#    sha256 = "sha256-Z8UgxAKvC25EWT+6U3E8RjQIFNraDqlHCTcijt/2190=";
+#  };
+
   nixpkgs = {
     # You can add overlays here
     overlays = [
@@ -55,6 +62,7 @@
 
       permittedInsecurePackages = [
         "electron-24.8.6"
+        "electron-25.9.0"
       ];
     };
   };
@@ -85,6 +93,7 @@
     jetbrainsmono-nf-ligs
     noto-fonts-emoji
 
+    screen
     grc
     duf
     du-dust
@@ -118,14 +127,14 @@
 
     gparted
     telegram-desktop
-    jetbrains-toolbox
+    unstable.jetbrains-toolbox
     obsidian
     qview
     google-chrome
     via
     wpsoffice
     anki-bin
-    qbittorrent
+    fragments
 
     dconf
     libsForQt5.qtstyleplugins
@@ -153,6 +162,8 @@
     ]))
     pypy3
     jdk
+    clojure
+    ghc
 
     # ctf things
     binwalk
@@ -282,8 +293,8 @@
   };
 
   home.pointerCursor = {
-    package = pkgs.nur.repos.ambroisie.vimix-cursors;
-    name = "Vimix-cursors";
+    package = pkgs.phinger-cursors;
+    name = "phinger-cursors";
     size = 28;
     x11.enable = true;
     gtk.enable = true;
