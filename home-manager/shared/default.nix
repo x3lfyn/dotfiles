@@ -124,6 +124,14 @@
     iptables
     mpv
     openvpn
+    libsixel
+    zip
+    hyperfine
+    glow
+    killall
+    p7zip
+    socat
+    yt-dlp
 
     gparted
     telegram-desktop
