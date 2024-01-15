@@ -12,22 +12,22 @@
             @define-color crystalBlue #7E9CD8;
             @define-color peachRed #FF5D62;*/
 
-            @define-color bg #16161D;
-            @define-color urgentBg #C34043;
-            @define-color fg #C8C093;
-            @define-color disabledFg #717C7C;
-            @define-color defaultFg #1F1F28;
-            @define-color selectedBg #2d4f67;
-            @define-color cpuBg #7e9cd8;
-            @define-color memBg #6a9589;
-            @define-color pulseBg #7aa89f;
-            @define-color bluetoothBg #7fb4ca;
-            @define-color langBg #938aa9;
-            @define-color clockBg #c0a36e;
-            @define-color diskBg #DCA561;
-            @define-color batteryBg #938056;
-            @define-color networkBg #98BB6C;
-	    @define-color brightnessBg #FFA066;
+            @define-color bg #0A0E14;
+            @define-color urgentBg #cc241d;
+            @define-color fg #ebdbb2;
+            @define-color disabledFg #a89984;
+            @define-color defaultFg #00010A;
+            @define-color selectedBg #273747;
+            @define-color cpuBg #458588;
+            @define-color memBg #427b58;
+            @define-color pulseBg #626A73;
+            @define-color bluetoothBg #6994BF;
+            @define-color langBg #b16286;
+            @define-color clockBg #FF8F40;
+            @define-color diskBg #b57614;
+            @define-color batteryBg #79740e;
+            @define-color networkBg #076678;
+	    @define-color brightnessBg #fabd2f;
 
             * {
             	font-family: "JetBrainsMono Nerd Font Propo", monospace;
