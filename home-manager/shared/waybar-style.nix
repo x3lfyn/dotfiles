@@ -49,7 +49,7 @@
 
 
 
-            #workspaces button.persistent label {
+            #workspaces button.empty label {
             	background: @selectedBg;
             }
 
