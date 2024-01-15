@@ -90,32 +90,32 @@
       colors = {
         alpha = 0.7;
 
-        foreground = "dcd7ba";
-        background = "1f1f28";
+        foreground = "B3B1AD";
+        background = "0A0E14";
 
-        selection-foreground = "c8c093";
-        selection-background = "2d4f67";
+        selection-foreground = "f2e5bc";
+        selection-background = "32302f";
 
-        regular0 = "090618";
-        regular1 = "c34043";
-        regular2 = "76946a";
-        regular3 = "c0a36e";
-        regular4 = "7e9cd8";
-        regular5 = "957fb8";
-        regular6 = "6a9589";
-        regular7 = "c8c093";
+        regular0 = "7c6f64";
+        regular1 = "cc241d";
+        regular2 = "98971a";
+        regular3 = "d79921";
+        regular4 = "458588";
+        regular5 = "b16286";
+        regular6 = "689d6a";
+        regular7 = "fbf1c7";
 
-        bright0 = "727169";
-        bright1 = "e82424";
-        bright2 = "98bb6c";
-        bright3 = "e6c384";
-        bright4 = "7fb4ca";
-        bright5 = "938aa9";
-        bright6 = "7aa89f";
-        bright7 = "dcd7ba";
+        bright0 = "665c54";
+        bright1 = "fb4934";
+        bright2 = "b8bb26";
+        bright3 = "fabd2f";
+        bright4 = "83a598";
+        bright5 = "d3869b";
+        bright6 = "8ec07c";
+        bright7 = "f9f5d7";
 
-        "16" = "ffa066";
-        "17" = "ff5d62";
+#        "16" = "ffa066";
+#        "17" = "ff5d62";
       };
     };
   };
