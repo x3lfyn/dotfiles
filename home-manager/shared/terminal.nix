@@ -88,7 +88,7 @@
         resize-delay-ms = 0;
       };
       colors = {
-        alpha = 0.93;
+        alpha = 0.7;
 
         foreground = "dcd7ba";
         background = "1f1f28";
