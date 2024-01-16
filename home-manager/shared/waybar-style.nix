@@ -40,6 +40,9 @@
             label {
             	color: @defaultFg;
             }
+            #tray label {
+              color: @fg;
+            }
             tooltip {
             	color: @fg;
             }
