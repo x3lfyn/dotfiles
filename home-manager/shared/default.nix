@@ -86,6 +86,8 @@
     discord
     betterdiscordctl
     libappindicator-gtk3
+    fuse
+    fuse3
 
     roboto-slab
     inter
