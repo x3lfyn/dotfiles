@@ -171,7 +171,6 @@
       sympy
       pillow
       z3
-      pwntools
     ]))
     pypy3
     jdk
