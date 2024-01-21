@@ -171,6 +171,7 @@
       sympy
       pillow
       z3
+      pwntools
     ]))
     pypy3
     jdk
@@ -197,6 +198,7 @@
     xortool
     sqlite
     frida-tools
+    gef
 
     # libs
     xorg.libX11
