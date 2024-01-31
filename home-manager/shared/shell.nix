@@ -35,7 +35,7 @@
     };
     enableAutosuggestions = true;
     enableCompletion = true;
-    syntaxHighlighting.enable = true; # use fast-syntax-highlighting
+    syntaxHighlighting.enable = false; # use fast-syntax-highlighting
     initExtra = ''
       # show completion menus
       #zstyle ':completion:*' menu select
@@ -151,15 +151,15 @@
           sha256 = "oQpYKBt0gmOSBgay2HgbXiDoZo5FoUKwyHSlUrOAP5E=";
         };
       }
-      #      {
-      #        name = "fast-syntax-highlighting";
-      #	src = pkgs.fetchFromGitHub {
-      #	  owner = "zdharma-continuum";
-      #	  repo = "fast-syntax-highlighting";
-      #	  rev = "5351bd907ea39d9000b7bd60b5bb5b0b1d5c8046";
-      #	  sha256 = "DWVFBoICroKaKgByLmDEo4O+xo6eA8YO792g8t8R7kA=";
-      #       };
-      #      }
+      {
+        name = "fast-syntax-highlighting";
+        src = pkgs.fetchFromGitHub {
+          owner = "zdharma-continuum";
+          repo = "fast-syntax-highlighting";
+          rev = "cf318e06a9b7c9f2219d78f41b46fa6e06011fd9";
+          sha256 = "sha256-RVX9ZSzjBW3LpFs2W86lKI6vtcvDWP6EPxzeTcRZua4=";
+        };
+      }
     ];
 
     envExtra = ''

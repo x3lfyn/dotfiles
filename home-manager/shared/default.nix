@@ -208,6 +208,8 @@
     terraform
     dive
     trivy
+
+    jetbrains-mono
   ];
 
   programs.rofi = {

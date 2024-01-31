@@ -1,76 +1,62 @@
 { inputs, outputs, lib, config, pkgs, ... }: {
   programs.alacritty = {
-    enable = false;
+    enable = true;
     settings = {
       font = {
         normal = {
-          family = "JetBrainsMono NF";
+          family = "JetBrainsMono Nerd Font Propo";
           style = "Regular";
         };
-        bold = {
-          family = "JetBrainsMono NF";
-          style = "Bold";
-        };
-        italic = {
-          family = "JetBrainsMono NF";
-          style = "Italic";
-        };
-        bold_italic = {
-          family = "JetBrainsMono NF";
-          style = "Bold Italic";
-        };
-        size = 11;
+#        bold = {
+#          family = "JetBrainsMono Nerd Font Propo";
+#          style = "Bold";
+#        };
+#        italic = {
+#          family = "JetBrainsMono Nerd Font Propo";
+#          style = "Italic";
+#        };
+#        bold_italic = {
+#          family = "JetBrainsMono Nerd Font Propo";
+#          style = "Bold Italic";
+#        };
+        size = 13;
       };
       env = { TERM = "xterm-256color"; };
       window = {
         padding = {
-          x = 8;
-          y = 8;
+          x = 10;
+          y = 10;
         };
-        opacity = 0.9;
+        opacity = 0.7;
       };
       dynamic_title = true;
-      scrolling = { history = 20000; };
-      cursor = { style = "Block"; };
+      scrolling = { history = 100000; };
+      cursor = { style = "Beam"; };
       colors = {
         bright = {
-          black = "0x727169";
-          blue = "0x7fb4ca";
-          cyan = "0x7aa89f";
-          green = "0x98bb6c";
-          magenta = "0x938aa9";
-          red = "0xe82424";
-          white = "0xdcd7ba";
-          yellow = "0xe6c384";
+          black = "0x665c54";
+          red = "0xfb4934";
+          green = "0xb8bb26";
+          yellow = "0xfabd2f";
+          blue = "0x83a598";
+          magenta = "0xd3869b";
+          cyan = "0x8ec07c";
+          white = "0xf9f5d7";
         };
-        indexed_colors = [
-          {
-            color = "0xffa066";
-            index = 16;
-          }
-          {
-            color = "0xff5d62";
-            index = 17;
-          }
-        ];
         normal = {
-          black = "0x090618";
-          blue = "0x7e9cd8";
-          cyan = "0x6a9589";
-          green = "0x76946a";
-          magenta = "0x957fb8";
-          red = "0xc34043";
-          white = "0xc8c093";
-          yellow = "0xc0a36e";
+          black = "0x7c6f64";
+          red = "0xcc241d";
+          green = "0x98971a";
+          yellow = "0xd79921";
+          blue = "0x458588";
+          magenta = "0xb16286";
+          cyan = "0x689d6a";
+          white = "0xfbf1c7";
         };
         primary = {
-          background = "0x1f1f28";
-          foreground = "0xdcd7ba";
+          background = "0x0A0E14";
+          foreground = "0xB3B1AD";
         };
-        #    selection = {
-        #      background = "0x2d4f67";
-        #      foreground = "0xc8c093";
-        #    };
       };
     };
   };
@@ -86,6 +72,13 @@
         pad = "10x10 center";
         term = "xterm-256color";
         resize-delay-ms = 0;
+      };
+      scrollback = {
+        multiplier = 13.0;
+      };
+      cursor = {
+        style = "beam";
+        blink = true;
       };
       colors = {
         alpha = 0.7;

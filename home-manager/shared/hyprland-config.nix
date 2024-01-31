@@ -68,7 +68,7 @@
 
         windowrulev2 = float,class:(.blueman-manager-wrapped)
 
-        bind = SUPER, Return, exec, footclient
+        bind = SUPER, Return, exec, alacritty
         bind = SUPER ALT, Return, exec, gtk-launch floating-terminal
         bind = CONTROL, SPACE, exec, rofi -show drun
 
