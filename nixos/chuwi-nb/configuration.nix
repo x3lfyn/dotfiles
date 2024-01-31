@@ -56,5 +56,7 @@
 
   networking.extraHosts = ''
     0.0.0.0 cisco.com www.cisco.com
+
+    10.10.11.235 drive.htb
   '';
 }

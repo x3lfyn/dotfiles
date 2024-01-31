@@ -6,6 +6,7 @@
         env = CLUTTER_BACKEND,wayland
         env = MOZ_ENABLE_WAYLAND,1
         env = _JAVA_OPTIONS,'-Dawt.useSystemAAFontSettings=on'
+        env = _JAVA_AWT_WM_NONREPARENTING,1
 
         exec-once = hyprpaper
         exec-once = waybar
@@ -21,13 +22,13 @@
           kb_rules =
           numlock_by_default = 1
           follow_mouse = 1
-          sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
+          sensitivity = 0
           accel_profile = flat
 
-	  	touchpad {
-        	    natural_scroll = true
-		    scroll_factor = 0.5
-  		}
+          touchpad {
+            natural_scroll = true
+            scroll_factor = 0.15
+          }
         }
 
         gestures {

@@ -175,7 +175,6 @@
     pypy3
     jdk
     clojure
-    ghc
 
     # ctf things
     binwalk
