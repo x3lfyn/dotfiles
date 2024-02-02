@@ -1,24 +1,17 @@
 { inputs, outputs, lib, config, pkgs, ... }: {
+#  programs.wezterm = {
+#    enable = true;
+#    colorSchemes =
+#  };
+
   programs.alacritty = {
     enable = true;
     settings = {
       font = {
         normal = {
-          family = "JetBrainsMono Nerd Font Propo";
+          family = "JetBrains Mono";
           style = "Regular";
         };
-#        bold = {
-#          family = "JetBrainsMono Nerd Font Propo";
-#          style = "Bold";
-#        };
-#        italic = {
-#          family = "JetBrainsMono Nerd Font Propo";
-#          style = "Italic";
-#        };
-#        bold_italic = {
-#          family = "JetBrainsMono Nerd Font Propo";
-#          style = "Bold Italic";
-#        };
         size = 13;
       };
       env = { TERM = "xterm-256color"; };
@@ -31,7 +24,15 @@
       };
       dynamic_title = true;
       scrolling = { history = 100000; };
-      cursor = { style = "Beam"; };
+      cursor = {
+        style =  {
+          shape = "Beam";
+          blinking = "Always";
+        };
+      };
+      scrolling = {
+        multiplier = 7;
+      };
       colors = {
         bright = {
           black = "0x665c54";

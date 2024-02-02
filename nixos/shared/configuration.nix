@@ -154,6 +154,8 @@
 
     wireguard-tools
     openvpn
+
+    xorg.libX11
   ];
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
