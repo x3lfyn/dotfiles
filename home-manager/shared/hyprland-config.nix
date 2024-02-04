@@ -8,7 +8,6 @@
         env = _JAVA_OPTIONS,'-Dawt.useSystemAAFontSettings=on'
         env = _JAVA_AWT_WM_NONREPARENTING,1
 
-        exec-once = hyprpaper
         exec-once = waybar
         exec-once = telegram-desktop -startintray
         exec-once = nm-applet
@@ -40,7 +39,7 @@
           gaps_out = 1
           border_size = 2
           col.active_border = rgba(dcd7baee)
-          col.inactive_border = rgba(727169ee)
+          col.inactive_border = rgba(72716900)
 
           cursor_inactive_timeout = 15
         }

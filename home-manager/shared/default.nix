@@ -71,6 +71,7 @@
     libnotify
     pavucontrol
     hyprpaper
+    swww
     libqalculate
     slurp
     grim
