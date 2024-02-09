@@ -1,9 +1,4 @@
 { inputs, outputs, lib, config, pkgs, ... }: {
-  #  programs.wezterm = {
-  #    enable = true;
-  #    colorSchemes =
-  #  };
-
   programs.alacritty = {
     enable = true;
     settings = {
@@ -61,8 +56,6 @@
       };
     };
   };
-
-
 
   programs.foot = {
     enable = true;

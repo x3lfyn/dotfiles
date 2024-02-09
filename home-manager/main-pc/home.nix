@@ -13,30 +13,30 @@
     extraConfig = ''
       monitor = HDMI-A-1,2560x1080@75,0x0,1
 
-        animations {
+      animations {
+        enabled = true
+
+        bezier = ease,0.4,0.02,0.21,1
+
+        animation = windows, 1, 3.5, ease, slide
+        animation = windowsOut, 1, 3.5, ease, slide
+        animation = border, 1, 6, default
+        animation = fade, 1, 3, ease
+        animation = workspaces, 1, 3.5, ease
+      }
+
+      decoration {
+        rounding = 10
+
+        blur {
           enabled = true
-
-          bezier = ease,0.4,0.02,0.21,1
-
-          animation = windows, 1, 3.5, ease, slide
-          animation = windowsOut, 1, 3.5, ease, slide
-          animation = border, 1, 6, default
-          animation = fade, 1, 3, ease
-          animation = workspaces, 1, 3.5, ease
+          size = 7
+          passes = 2
+          new_optimizations = on
         }
 
-        decoration {
-          rounding = 10
-
-          blur {
-            enabled = true
-            size = 7
-            passes = 2
-            new_optimizations = on
-          }
-
-          drop_shadow = no
-        }
+        drop_shadow = no
+      }
     '' + (import ../shared/hyprland-config.nix);
   };
 

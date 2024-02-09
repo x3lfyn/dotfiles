@@ -54,7 +54,7 @@
           	disable_hyprland_logo = true
           	disable_splash_rendering = true
           	vrr = 1
-  		disable_autoreload = true
+  		      disable_autoreload = true
           }
 
           debug {
@@ -119,7 +119,7 @@
 
           # open floating calculator
           bind = , XF86Calculator, exec, gtk-launch qalc
-  	bind = SUPER SHIFT, C, exec, gtk-launch qalc
+  	      bind = SUPER SHIFT, C, exec, gtk-launch qalc
 
           # control volume with kb keys
           binde = , XF86AudioLowerVolume, exec, sh ~/.scripts/volume.sh --down
@@ -150,7 +150,7 @@
           # power menu
           bind = SUPER, Escape, exec, rofi -show power-menu -modi "power-menu:rofi-power-menu --choices=suspend/reboot/shutdown"
 
-  	# brightness
-  	bind = , XF86MonBrightnessUp, exec, brightnessctl set +5%
-  	bind = , XF86MonBrightnessDown, exec, brightnessctl set 5%-
+  	      # brightness
+  	      bind = , XF86MonBrightnessUp, exec, brightnessctl set +5%
+  	      bind = , XF86MonBrightnessDown, exec, brightnessctl set 5%-
 ''

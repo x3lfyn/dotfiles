@@ -26,15 +26,15 @@
         force_zero_scaling = true
       }
 
-        decoration {
-          rounding = 0
+      decoration {
+        rounding = 0
 
-          blur {
-            enabled = false
-          }
-
-          drop_shadow = false
+        blur {
+          enabled = false
         }
+
+        drop_shadow = false
+      }
     '' + (import ../shared/hyprland-config.nix);
   };
 

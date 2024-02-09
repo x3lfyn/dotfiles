@@ -1,20 +1,10 @@
 { inputs, outputs, lib, config, pkgs, ... }: {
-  # You can import other home-manager modules here
   imports = [
-    # If you want to use modules your own flake exports (from modules/home-manager):
-    # outputs.homeManagerModules.example
-
-    # Or modules exported from other flakes (such as nix-colors):
-    # inputs.nix-colors.homeManagerModules.default
-
-    # You can also split up your configuration and import pieces of it here:
-    # ./nvim.nix
     inputs.hyprland.homeManagerModules.default
     inputs.nurpkgs.nixosModules.nur
     inputs.spicetify-nix.homeManagerModule
 
     ./terminal.nix
-    #    ./hyprland.nix
     ./waybar.nix
     ./shell.nix
     ./firefox.nix
@@ -24,6 +14,8 @@
     ./spotify.nix
     ./xdg-mime.nix
     ./ssh.nix
+    ./mako.nix
+    ./zathura.nix
   ];
 
   xdg.configFile."nvim".source = pkgs.fetchFromGitHub {
@@ -34,30 +26,16 @@
   };
 
   nixpkgs = {
-    # You can add overlays here
     overlays = [
-      # Add overlays your own flake exports (from overlays and pkgs dir):
       outputs.overlays.additions
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
 
       inputs.nurpkgs.overlay
-
-      # You can also add overlays exported from other flakes:
-      # neovim-nightly-overlay.overlays.default
-
-      # Or define it inline, for example:
-      # (final: prev: {
-      #   hi = final.hello.overrideAttrs (oldAttrs: {
-      #     patches = [ ./change-hello-to-hi.patch ];
-      #   });
-      # })
     ];
-    # Configure your nixpkgs instance
+
     config = {
-      # Disable if you don't want unfree packages
       allowUnfree = true;
-      # Workaround for https://github.com/nix-community/home-manager/issues/2942
       allowUnfreePredicate = (_: true);
 
       permittedInsecurePackages = [
@@ -172,6 +150,7 @@
       sympy
       pillow
       z3
+      pwntools
     ]))
     pypy3
     jdk
@@ -182,7 +161,6 @@
     nmap
     jadx
     hashcat
-    pwntools
     gdb
     exiftool
     exiv2
@@ -223,11 +201,6 @@
     };
   };
 
-  programs.gh = {
-    enable = true;
-    gitCredentialHelper.enable = true;
-  };
-
   dconf.enable = true;
 
   fonts.fontconfig = {
@@ -235,44 +208,6 @@
   };
 
   services.udiskie.enable = true;
-
-  services.mako = {
-    enable = true;
-    anchor = "top-center";
-    font = "Inter 12";
-    backgroundColor = "#1f1f28";
-    textColor = "#dcd7ba";
-    progressColor = "#43242B";
-    borderSize = 2;
-    borderRadius = 10;
-    padding = "8";
-    iconPath = "${config.home.homeDirectory}/.nix-profile/share/icons/Papirus-Dark";
-    layer = "overlay";
-    defaultTimeout = 3000;
-  };
-
-  services.dunst = {
-    enable = false;
-    iconTheme = {
-      package = config.gtk.iconTheme.package;
-      name = config.gtk.iconTheme.name;
-    };
-    settings = {
-      global = {
-        width = 350;
-        height = 200;
-        origin = "top-center";
-        progress_bar = true;
-        progress_bar_height = 16;
-        progress_bar_corner_radius = 4;
-        indicate_hidden = true;
-        notification_limit = 5;
-        font = "Inter 12";
-        frame_width = 2;
-        frame_color = "#C8C093";
-      };
-    };
-  };
 
   xdg.userDirs = {
     enable = true;
@@ -357,53 +292,12 @@
     ".scripts/screenshot.sh".text = builtins.readFile ./scripts/screenshot.sh;
   };
 
-  programs.gpg = {
-    enable = true;
-  };
-
-  programs.git = {
-    enable = true;
-    userName = "vobbla16";
-    userEmail = "novikovprojects@gmail.com";
-    signing = {
-      key = "F2EE41860B238D993139AF94C1190C108C849FA4";
-      signByDefault = true;
-    };
-    lfs.enable = true;
-    aliases = {
-      s = "status";
-      a = "add";
-    };
-    extraConfig = {
-      core = {
-        editor = "nvim";
-      };
-      color = {
-        ui = true;
-      };
-      push = {
-        default = "simple";
-      };
-      pull = {
-        ff = "only";
-      };
-      init = {
-        defaultBranch = "main";
-      };
-    };
-  };
-
   qt = {
     enable = true;
     style = {
       name = "gtk2";
     };
     platformTheme = "gtk";
-  };
-
-  services.gpg-agent = {
-    enable = true;
-    enableZshIntegration = true;
   };
 
   home = {
@@ -414,63 +308,6 @@
     };
   };
 
-
-  programs.zathura = {
-    enable = true;
-    options = {
-      adjust-open = "best-fit";
-
-      pages-per-row = 1;
-
-      scroll-step = 100;
-      zoom-min = 10;
-      scroll-page-aware = "true";
-      smooth-scroll = "true";
-      guioptions = "sv";
-      selection-clipboard = "clipboard";
-
-      font = "JetBrainsMono NF 10";
-
-      notification-error-bg = "#1F1F28";
-      notification-error-fg = "#FF5D62";
-      notification-warning-bg = "#1F1F28";
-      notification-warning-fg = "#FFA066";
-      notification-bg = "#1F1F28";
-      notification-fg = "#DCD7BA";
-
-      completion-bg = "#1F1F28";
-      completion-fg = "#C8C093";
-      completion-group-bg = "#2A2A37";
-      completion-group-fg = "#C8C093";
-      completion-highlight-bg = "#957FB8";
-      completion-highlight-fg = "#1F1F28";
-
-      index-bg = "#1F1F28";
-      index-fg = "#957FB8";
-      index-active-bg = "#957FB8";
-      index-active-fg = "#1F1F28";
-
-      inputbar-bg = "#1F1F28";
-      inputbar-fg = "#C8C093";
-
-      statusbar-bg = "#1F1F28";
-      statusbar-fg = "#C8C093";
-
-      highlight-color = "#FFA066";
-      highlight-active-color = "#FF5D62";
-
-      default-bg = "#1F1F28";
-      default-fg = "#C8C093";
-      render-loading = "true";
-      render-loading-bg = "#1F1F28";
-      render-loading-fg = "#C8C093";
-
-      recolor-lightcolor = "#1F1F28";
-      recolor-darkcolor = "#C8C093";
-      recolor = "true";
-    };
-  };
-
   services.gammastep = {
     enable = true;
     latitude = "52.422451";
@@ -478,7 +315,6 @@
     provider = "manual";
     tray = true;
   };
-
 
   programs.home-manager.enable = true;
 
