@@ -471,6 +471,15 @@
     };
   };
 
+  services.gammastep = {
+    enable = true;
+    latitude = "52.422451";
+    longitude = "31.014012";
+    provider = "manual";
+    tray = true;
+  };
+
+
   programs.home-manager.enable = true;
 
   # Nicely reload system units when changing configs
