@@ -21,6 +21,7 @@
           kb_rules =
           numlock_by_default = 1
           follow_mouse = 1
+          mouse_refocus = false
           sensitivity = 0
           accel_profile = flat
 

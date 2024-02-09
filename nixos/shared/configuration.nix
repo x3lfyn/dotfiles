@@ -16,6 +16,7 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     #./hardware-configuration.nix
+    inputs.nix-gaming.nixosModules.pipewireLowLatency
   ];
 
 #  boot.loader.timeout = 0;
@@ -202,6 +203,10 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+
+    lowLatency = {
+      enable = true;
+    };
   };
   environment.etc = {
     "wireplumber/bluetooth.lua.d/51-bluez-config.lua".text = ''

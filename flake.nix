@@ -22,6 +22,8 @@
 
     aagl.url = "github:ezKEa/aagl-gtk-on-nix";
     aagl.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-gaming.url = "github:fufexan/nix-gaming";
   };
 
   outputs = { self, nixpkgs, home-manager, nix-ld, aagl, ... }@inputs:

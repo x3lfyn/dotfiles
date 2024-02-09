@@ -20,7 +20,7 @@
     inputs.aagl.nixosModules.default
   ];
 
-  programs.an-anime-game-launcher.enable = true;
+  programs.anime-game-launcher.enable = true;
 
   boot.loader.timeout = 0;
   boot.loader.systemd-boot.enable = true;
