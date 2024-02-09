@@ -39,27 +39,27 @@
   };
 
   programs.waybar.style = ''
-      #workspaces button {
-        padding: 0px 1px;
-        background-color: @bg;
-        border-radius: 0px;
-      }
+    #workspaces button {
+      padding: 0px 1px;
+      background-color: @bg;
+      border-radius: 0px;
+    }
 
-      #workspaces button label {
-        min-width: 8px;
-        padding: 0px;
-        margin: 6px 0px;
-        border-radius: 8px;
-        color: transparent;
-        font-size: 8px;
+    #workspaces button label {
+      min-width: 8px;
+      padding: 0px;
+      margin: 6px 0px;
+      border-radius: 8px;
+      color: transparent;
+      font-size: 8px;
 
-        background: @disabledFg;
-      }
+      background: @disabledFg;
+    }
 
-      #workspaces button.active label {
-        background: @fg;
-        min-width: 10px;
-      }
+    #workspaces button.active label {
+      background: @fg;
+      min-width: 10px;
+    }
   '' + (import ../shared/waybar-style.nix);
 
   programs.waybar.settings.mainBar.modules-left = pkgs.lib.mkAfter [ "battery" "network" ];

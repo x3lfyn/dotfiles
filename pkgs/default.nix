@@ -85,55 +85,55 @@
       qt5.wrapQtAppsHook
     ];
 
-  buildInputs = with pkgs; [
-    alsa-lib
-    dbus
-    expat
-    fontconfig
-    glib
-    qt5.qtbase
-    qt5.qtmultimedia
-    qt5.qtnetworkauth
-    qt5.qtscript
-    qt5.qtspeech
-    qt5.qtwebengine
-    qt5.qtwebsockets
-  ];
+    buildInputs = with pkgs; [
+      alsa-lib
+      dbus
+      expat
+      fontconfig
+      glib
+      qt5.qtbase
+      qt5.qtmultimedia
+      qt5.qtnetworkauth
+      qt5.qtscript
+      qt5.qtspeech
+      qt5.qtwebengine
+      qt5.qtwebsockets
+    ];
 
-  installPhase = ''
-    runHook preInstall
+    installPhase = ''
+      runHook preInstall
 
-    makeWrapper "$out/opt/pt/bin/PacketTracer" "$out/bin/packettracer8" \
-      "''${qtWrapperArgs[@]}" \
-      --prefix LD_LIBRARY_PATH : "$out/opt/pt/bin"
+      makeWrapper "$out/opt/pt/bin/PacketTracer" "$out/bin/packettracer8" \
+        "''${qtWrapperArgs[@]}" \
+        --prefix LD_LIBRARY_PATH : "$out/opt/pt/bin"
 
-    install -D $out/opt/pt/art/app.png $out/share/icons/hicolor/128x128/apps/ciscoPacketTracer8.png
+      install -D $out/opt/pt/art/app.png $out/share/icons/hicolor/128x128/apps/ciscoPacketTracer8.png
 
-    rm $out/opt/pt/bin/libQt5* -f
+      rm $out/opt/pt/bin/libQt5* -f
 
-    runHook postInstall
-  '';
+      runHook postInstall
+    '';
 
-  desktopItems = [
-    (pkgs.makeDesktopItem {
-      name = "cisco-pt8.desktop";
-      desktopName = "Cisco Packet Tracer 8";
-      icon = "ciscoPacketTracer8";
-      exec = "packettracer8 %f";
-      mimeTypes = [ "application/x-pkt" "application/x-pka" "application/x-pkz" ];
-    })
-  ];
+    desktopItems = [
+      (pkgs.makeDesktopItem {
+        name = "cisco-pt8.desktop";
+        desktopName = "Cisco Packet Tracer 8";
+        icon = "ciscoPacketTracer8";
+        exec = "packettracer8 %f";
+        mimeTypes = [ "application/x-pkt" "application/x-pka" "application/x-pkz" ];
+      })
+    ];
 
-  dontWrapQtApps = true;
+    dontWrapQtApps = true;
 
-  meta = with pkgs.lib; {
-    description = "Network simulation tool from Cisco";
-    homepage = "https://www.netacad.com/courses/packet-tracer";
-    sourceProvenance = with sourceTypes; [ binaryNativeCode ];
-    license = licenses.unfree;
-    maintainers = with maintainers; [ lucasew ];
-    platforms = [ "x86_64-linux" ];
-  };
+    meta = with pkgs.lib; {
+      description = "Network simulation tool from Cisco";
+      homepage = "https://www.netacad.com/courses/packet-tracer";
+      sourceProvenance = with sourceTypes; [ binaryNativeCode ];
+      license = licenses.unfree;
+      maintainers = with maintainers; [ lucasew ];
+      platforms = [ "x86_64-linux" ];
+    };
 
   };
 }

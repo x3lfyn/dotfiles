@@ -18,10 +18,10 @@
         modules-right = [ "pulseaudio" "bluetooth" "hyprland/language" "clock" "tray" ];
 
         "hyprland/workspaces" = {
-#          on-click = "";
-#          sort-by-number = true;
+          #          on-click = "";
+          #          sort-by-number = true;
           persistent_workspaces = {
-	    "*" = 10;
+            "*" = 10;
           };
           format-icons = {
             default = "■";
@@ -110,11 +110,11 @@
           tooltip-format = "{ipaddr}/{cidr} on {ifname}";
           tooltip-format-wifi = "{essid}; Signal {signalStrength}%";
         };
-	
-	"backlight" = {
+
+        "backlight" = {
           format = "󰃟 {percent}%";
-	  device = "intel_backlight";
-	};
+          device = "intel_backlight";
+        };
       };
     };
   };

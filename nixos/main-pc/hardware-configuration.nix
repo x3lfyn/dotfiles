@@ -18,7 +18,7 @@
       fsType = "vfat";
     };
 
-  fileSystems."/hdd" = 
+  fileSystems."/hdd" =
     {
       device = "/dev/disk/by-uuid/808e61e4-069a-4728-96da-d198290c0fad";
       fsType = "btrfs";
@@ -27,7 +27,7 @@
       ];
     };
 
-  fileSystems."/iso" = 
+  fileSystems."/iso" =
     {
       device = "/dev/disk/by-uuid/808e61e4-069a-4728-96da-d198290c0fad";
       fsType = "btrfs";

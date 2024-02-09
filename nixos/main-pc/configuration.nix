@@ -50,10 +50,10 @@
   };
 
   hardware.opengl.extraPackages = with pkgs; [
-      vaapiVdpau
-      libvdpau-va-gl
+    vaapiVdpau
+    libvdpau-va-gl
 
-      nvidia-vaapi-driver
+    nvidia-vaapi-driver
   ];
 
   hardware.sane.enable = true;

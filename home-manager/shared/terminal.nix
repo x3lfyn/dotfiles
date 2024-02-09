@@ -1,8 +1,8 @@
 { inputs, outputs, lib, config, pkgs, ... }: {
-#  programs.wezterm = {
-#    enable = true;
-#    colorSchemes =
-#  };
+  #  programs.wezterm = {
+  #    enable = true;
+  #    colorSchemes =
+  #  };
 
   programs.alacritty = {
     enable = true;
@@ -25,7 +25,7 @@
       dynamic_title = true;
       scrolling = { history = 100000; };
       cursor = {
-        style =  {
+        style = {
           shape = "Beam";
           blinking = "Always";
         };
@@ -108,8 +108,8 @@
         bright6 = "8ec07c";
         bright7 = "f9f5d7";
 
-#        "16" = "ffa066";
-#        "17" = "ff5d62";
+        #        "16" = "ffa066";
+        #        "17" = "ff5d62";
       };
     };
   };

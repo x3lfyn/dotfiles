@@ -5,13 +5,13 @@ in
 {
   programs.spicetify = {
     enable = true;
-#    theme = pkgs.fetchFromGitHub {
-#      owner = "Comfy-Themes";
-#      repo = "Spicetify";
-#      rev = "504c876202a97d72b2eecfe4a5786b94f24831cb";
-#      sha256 = "sha256-11111111111111111111111Ec/3liy9PQ8fqFGHAXe0=";
-#    };
-    theme= spicePkgs.themes.Comfy;
+    #    theme = pkgs.fetchFromGitHub {
+    #      owner = "Comfy-Themes";
+    #      repo = "Spicetify";
+    #      rev = "504c876202a97d72b2eecfe4a5786b94f24831cb";
+    #      sha256 = "sha256-11111111111111111111111Ec/3liy9PQ8fqFGHAXe0=";
+    #    };
+    theme = spicePkgs.themes.Comfy;
     colorScheme = "Comfy";
     customColorScheme = {
       text = "DCD7BA";

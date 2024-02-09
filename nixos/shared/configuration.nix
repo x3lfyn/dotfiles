@@ -19,9 +19,9 @@
     inputs.nix-gaming.nixosModules.pipewireLowLatency
   ];
 
-#  boot.loader.timeout = 0;
-#  boot.loader.systemd-boot.enable = true;
-#  boot.loader.efi.canTouchEfiVariables = true;
+  #  boot.loader.timeout = 0;
+  #  boot.loader.systemd-boot.enable = true;
+  #  boot.loader.efi.canTouchEfiVariables = true;
 
   boot.kernelPackages = pkgs.linuxPackages;
 
@@ -34,7 +34,7 @@
     config.common.default = "*";
   };
 
-#  networking.hostName = "MAIN-PC-NIX"; # Define your hostname.
+  #  networking.hostName = "MAIN-PC-NIX"; # Define your hostname.
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -45,7 +45,7 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-#  services.ratbagd.enable = true;
+  #  services.ratbagd.enable = true;
   programs.adb.enable = true;
   virtualisation.docker.enable = true;
 
@@ -65,9 +65,9 @@
   services.xserver = {
     layout = "us";
     xkbVariant = "";
-#    videoDrivers = [
-#      "nvidia"
-#    ];
+    #    videoDrivers = [
+    #      "nvidia"
+    #    ];
     #    displayManager.lightdm.enable = true;
     libinput.enable = true;
   };
@@ -144,9 +144,9 @@
     libpulseaudio
     git
 
-#    libva
-#    nvidia-vaapi-driver
-#    egl-wayland
+    #    libva
+    #    nvidia-vaapi-driver
+    #    egl-wayland
     ffmpeg
     libva-utils
 
@@ -161,24 +161,24 @@
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
-#  hardware.nvidia = {
-#    modesetting.enable = true;
-#    open = false;
-#    nvidiaSettings = true;
-#    powerManagement.enable = true;
-#  };
+  #  hardware.nvidia = {
+  #    modesetting.enable = true;
+  #    open = false;
+  #    nvidiaSettings = true;
+  #    powerManagement.enable = true;
+  #  };
 
   hardware.opengl = {
     enable = true;
     driSupport = true;
     driSupport32Bit = true;
 
-#    extraPackages = with pkgs; [
-#      vaapiVdpau
-#      libvdpau-va-gl
+    #    extraPackages = with pkgs; [
+    #      vaapiVdpau
+    #      libvdpau-va-gl
 
-#      nvidia-vaapi-driver
-#    ];
+    #      nvidia-vaapi-driver
+    #    ];
   };
   programs.xwayland.enable = true;
 

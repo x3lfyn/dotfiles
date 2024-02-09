@@ -70,14 +70,14 @@
         MAIN-PC-NIX = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
-	    nix-ld.nixosModules.nix-ld
+            nix-ld.nixosModules.nix-ld
             ./nixos/main-pc/configuration.nix
           ];
         };
         CHUWI-NB-NIX = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
-	    nix-ld.nixosModules.nix-ld
+            nix-ld.nixosModules.nix-ld
             ./nixos/chuwi-nb/configuration.nix
           ];
         };

@@ -1,1 +1,0 @@
-home-manager/ssh.nix filter=git-crypt diff=git-crypt

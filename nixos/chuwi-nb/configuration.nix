@@ -21,11 +21,11 @@
   ];
 
   environment.systemPackages = with pkgs; [
-#    libva-utils
+    #    libva-utils
   ];
 
   environment.sessionVariables = {
-#    GDK_SCALE = "2";
+    #    GDK_SCALE = "2";
   };
 
   environment.variables = {
