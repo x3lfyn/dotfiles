@@ -13,7 +13,7 @@
         position = "top";
         height = 27;
         spacing = 5;
-        modules-left = [ "hyprland/workspaces" "cpu" "memory" "disk" ];
+        modules-left = [ "hyprland/workspaces" "cpu" "memory" "disk" "mpris" ];
         modules-center = [ "hyprland/window" ];
         modules-right = [ "pulseaudio" "bluetooth" "hyprland/language" "clock" "tray" ];
 
@@ -57,6 +57,8 @@
         };
         "hyprland/language" = {
           format = "󰌌 {}";
+          format-en = "en";
+          format-ru = "ru";
         };
         "pulseaudio" = {
           format = "{volume}% {icon} {format_source}";
@@ -114,6 +116,17 @@
         "backlight" = {
           format = "󰃟 {percent}%";
           device = "intel_backlight";
+        };
+
+        "mpris" = {
+          format = "{status_icon} {dynamic}";
+          dynamic-len = 42;
+          dynamic-separator = " · ";
+          dynamic-order = [ "title" "artist" "album" ];
+          status-icons = {
+            playing = "󰐌";
+            paused = "󰏤";
+          };
         };
       };
     };

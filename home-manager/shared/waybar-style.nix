@@ -15,6 +15,7 @@
   @define-color batteryBg #79740e;
   @define-color networkBg #076678;
   @define-color brightnessBg #fabd2f;
+  @define-color playerBg #79740e;
 
   * {
     font-family: "JetBrainsMono Nerd Font Propo", monospace;
@@ -47,7 +48,8 @@
     background: @urgentBg;
   }
 
-  #cpu, #memory, #language, #clock, #bluetooth, #pulseaudio, #disk, #battery, #network, #backlight {
+  #cpu, #memory, #language, #clock, #bluetooth, #pulseaudio, #disk, #battery, #network, #backlight,
+  #mpris {
     padding: 0 5px;
     margin: 0 2px;
   }
@@ -86,5 +88,8 @@
   }
   #backlight {
     background-color: @brightnessBg;
+  }
+  #mpris {
+    background-color: @playerBg;
   }
 ''

@@ -16,6 +16,7 @@
     ./ssh.nix
     ./mako.nix
     ./zathura.nix
+    ./gitgpg.nix
   ];
 
   xdg.configFile."nvim".source = pkgs.fetchFromGitHub {
