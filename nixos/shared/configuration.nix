@@ -286,4 +286,18 @@
   networking.extraHosts = ''
     10.129.138.179 analytical.htb data.analytical.htb
   '';
+
+  services.avahi = {
+    enable = true;
+    nssmdns = true;
+
+    publish = {
+      enable = true;
+      addresses = true;
+      domain = true;
+      hinfo = true;
+      userServices = true;
+      workstation = true;
+    };
+  };
 }
