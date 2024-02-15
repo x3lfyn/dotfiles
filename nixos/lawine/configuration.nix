@@ -28,7 +28,7 @@
 
   programs.nix-ld.dev.enable = true;
 
-  networking.hostName = "MAIN-PC-NIX";
+  networking.hostName = "lawine";
 
   services.ratbagd.enable = true;
   services.flatpak.enable = true;

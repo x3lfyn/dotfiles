@@ -1,5 +1,5 @@
 {
-  description = "Your new nix config";
+  description = "fucking fuck";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
@@ -52,37 +52,36 @@
       homeManagerModules = import ./modules/home-manager;
 
       nixosConfigurations = {
-        MAIN-PC-NIX = nixpkgs.lib.nixosSystem {
+        lawine = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
             nix-ld.nixosModules.nix-ld
-            ./nixos/main-pc/configuration.nix
+            ./nixos/lawine/configuration.nix
           ];
         };
-        CHUWI-NB-NIX = nixpkgs.lib.nixosSystem {
+        kanne = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
             nix-ld.nixosModules.nix-ld
-            ./nixos/chuwi-nb/configuration.nix
+            ./nixos/kanne/configuration.nix
           ];
         };
 
       };
 
       homeConfigurations = {
-        "vobbla16@MAIN-PC-NIX" = home-manager.lib.homeManagerConfiguration {
+        lawine = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
-            # > Our main home-manager configuration file <
-            ./home-manager/main-pc/home.nix
+            ./home-manager/lawine/home.nix
           ];
         };
-        "vobbla16@CHUWI-NB-NIX" = home-manager.lib.homeManagerConfiguration {
+        kanne = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
-            ./home-manager/chuwi-nb/home.nix
+            ./home-manager/kanne/home.nix
           ];
         };
       };

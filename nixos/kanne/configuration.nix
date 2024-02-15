@@ -9,7 +9,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "CHUWI-NB-NIX";
+  networking.hostName = "kanne";
 
   programs.nix-ld.dev.enable = true;
 
