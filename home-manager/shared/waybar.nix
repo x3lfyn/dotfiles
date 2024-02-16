@@ -4,9 +4,10 @@
 
     systemd.enable = false;
 
-    package = pkgs.unstable.waybar.overrideAttrs (oldAttrs: {
-      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-    });
+#    package = pkgs.unstable.waybar.overrideAttrs (oldAttrs: {
+#      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+#    });
+    package = pkgs.unstable.waybar;
     settings = {
       mainBar = {
         layer = "top";
