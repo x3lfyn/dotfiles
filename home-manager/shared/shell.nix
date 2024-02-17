@@ -102,9 +102,17 @@
       zmodload zsh/zle
       zmodload zsh/zpty
       zmodload zsh/complist
-      compinit -i
     '';
     plugins = [
+      {
+        name = "fast-syntax-highlighting";
+        src = pkgs.fetchFromGitHub {
+          owner = "zdharma-continuum";
+          repo = "fast-syntax-highlighting";
+          rev = "cf318e06a9b7c9f2219d78f41b46fa6e06011fd9";
+          sha256 = "sha256-RVX9ZSzjBW3LpFs2W86lKI6vtcvDWP6EPxzeTcRZua4=";
+        };
+      }
       {
         name = "colored-man-pages_mod";
         src = pkgs.fetchFromGitHub {
@@ -149,15 +157,6 @@
           repo = "zsh-nix-shell";
           rev = "v0.7.0";
           sha256 = "oQpYKBt0gmOSBgay2HgbXiDoZo5FoUKwyHSlUrOAP5E=";
-        };
-      }
-      {
-        name = "fast-syntax-highlighting";
-        src = pkgs.fetchFromGitHub {
-          owner = "zdharma-continuum";
-          repo = "fast-syntax-highlighting";
-          rev = "cf318e06a9b7c9f2219d78f41b46fa6e06011fd9";
-          sha256 = "sha256-RVX9ZSzjBW3LpFs2W86lKI6vtcvDWP6EPxzeTcRZua4=";
         };
       }
     ];
