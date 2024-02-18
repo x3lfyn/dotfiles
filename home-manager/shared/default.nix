@@ -291,6 +291,7 @@
     '';
     ".scripts/volume.sh".text = builtins.readFile ./scripts/volume.sh;
     ".scripts/screenshot.sh".text = builtins.readFile ./scripts/screenshot.sh;
+    ".scripts/wireguard.sh".text = builtins.readFile ./scripts/wireguard.sh;
   };
 
   qt = {

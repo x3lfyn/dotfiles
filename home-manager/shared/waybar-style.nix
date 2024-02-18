@@ -16,6 +16,7 @@
   @define-color networkBg #076678;
   @define-color brightnessBg #fabd2f;
   @define-color playerBg #79740e;
+  @define-color vpnBg #9d0006;
 
   * {
     font-family: "JetBrainsMono Nerd Font Propo", monospace;
@@ -49,7 +50,7 @@
   }
 
   #cpu, #memory, #language, #clock, #bluetooth, #pulseaudio, #disk, #battery, #network, #backlight,
-  #mpris {
+  #mpris, #custom-vpn {
     padding: 0 5px;
     margin: 0 2px;
   }
@@ -91,5 +92,8 @@
   }
   #mpris {
     background-color: @playerBg;
+  }
+  #custom-vpn {
+    background-color: @vpnBg;
   }
 ''

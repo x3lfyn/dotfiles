@@ -16,7 +16,7 @@
         spacing = 5;
         modules-left = [ "hyprland/workspaces" "cpu" "memory" "disk" "mpris" ];
         modules-center = [ "hyprland/window" ];
-        modules-right = [ "pulseaudio" "bluetooth" "hyprland/language" "clock" "tray" ];
+        modules-right = [ "custom/vpn" "pulseaudio" "bluetooth" "hyprland/language" "clock" "tray" ];
 
         "hyprland/workspaces" = {
           #          on-click = "";
@@ -128,6 +128,12 @@
             playing = "󰐌";
             paused = "󰏤";
           };
+        };
+        "custom/vpn" = {
+          on-click = "bash ~/.scripts/wireguard.sh --toggle";
+          exec = "bash ~/.scripts/wireguard.sh --icon";
+          interval = 2;
+          tooltip = false;
         };
       };
     };
