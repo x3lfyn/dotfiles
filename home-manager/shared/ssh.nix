@@ -2,11 +2,11 @@
   programs.ssh = {
     enable = true;
     matchBlocks = {
-      curvy = {
+      linie = {
         hostname = "srv.alterdojec.me";
         port = 7598;
         user = "confu";
-        identityFile = "${config.home.homeDirectory}/.ssh/curvy-dock";
+        identityFile = "${config.home.homeDirectory}/.ssh/linie";
       };
       hs = {
         hostname = "server.home.lan";
