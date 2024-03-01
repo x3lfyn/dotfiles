@@ -19,12 +19,12 @@
     ./gitgpg.nix
   ];
 
-  xdg.configFile."nvim".source = pkgs.fetchFromGitHub {
-    owner = "vobbla16";
-    repo = "CyberNvim";
-    rev = "e3cbcb64ebd1931c1e1d62fdf096a87a3153026f";
-    sha256 = "sha256-lGXe2628xZPeNjfTder1hlgKp5Tw9B5Wobx7pz6A2xI=";
-  };
+#  xdg.configFile."nvim".source = pkgs.fetchFromGitHub {
+#    owner = "vobbla16";
+#    repo = "CyberNvim";
+#    rev = "e3cbcb64ebd1931c1e1d62fdf096a87a3153026f";
+#    sha256 = "sha256-lGXe2628xZPeNjfTder1hlgKp5Tw9B5Wobx7pz6A2xI=";
+#  };
 
   nixpkgs = {
     overlays = [
