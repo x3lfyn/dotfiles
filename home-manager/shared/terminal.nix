@@ -15,7 +15,7 @@
           x = 10;
           y = 10;
         };
-        opacity = 0.7;
+        opacity = 0.85;
       };
       dynamic_title = true;
       scrolling = { history = 100000; };
@@ -28,32 +28,32 @@
       scrolling = {
         multiplier = 7;
       };
-      colors = {
-        bright = {
-          black = "0x665c54";
-          red = "0xfb4934";
-          green = "0xb8bb26";
-          yellow = "0xfabd2f";
-          blue = "0x83a598";
-          magenta = "0xd3869b";
-          cyan = "0x8ec07c";
-          white = "0xf9f5d7";
-        };
-        normal = {
-          black = "0x7c6f64";
-          red = "0xcc241d";
-          green = "0x98971a";
-          yellow = "0xd79921";
-          blue = "0x458588";
-          magenta = "0xb16286";
-          cyan = "0x689d6a";
-          white = "0xfbf1c7";
-        };
-        primary = {
-          background = "0x0A0E14";
-          foreground = "0xB3B1AD";
-        };
-      };
+	  colors = {
+		bright = {
+		  black = "0x737d87";
+		  blue = "0x59c2ff";
+		  cyan = "0x5ccfe6";
+		  green = "0xc2d94c";
+		  magenta = "0xb77ee0";
+		  red = "0xff3333";
+		  white = "0xffffff";
+		  yellow = "0xe7c547";
+		};
+		normal = {
+		  black = "0x000000";
+		  blue = "0x73d0ff";
+		  cyan = "0x83CEC6";
+		  green = "0xbae67e";
+		  magenta = "0xd4bfff";
+		  red = "0xf34a4a";
+		  white = "0xf2f2f2";
+		  yellow = "0xffee99";
+		};
+		primary = {
+		  background = "0x0f1419";
+		  foreground = "0xe6e1cf";
+		};
+	  };
     };
   };
 

@@ -169,8 +169,28 @@
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
-    #    settings = {
-
-    #    };
+    settings = {
+    	format = "$username$hostname $all$directory$character";
+		add_newline = true;
+		line_break.disabled = false;
+		directory = {
+			style = "cyan";
+		};
+		username = {
+			style_user = "#e6b450 bold";
+			style_root = "bold red";
+			format = "[$user]($style)";
+			show_always = true;
+		};
+		hostname = {
+			ssh_only = false;
+			format = "[@$hostname]($style)";
+			style = "#e6b450 bold";
+		};
+		character = {
+			success_symbol = "[λ>](green)";
+			error_symbol = "[λ>](red)";
+		};
+	};
   };
 }
