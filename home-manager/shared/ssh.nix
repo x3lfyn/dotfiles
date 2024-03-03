@@ -3,7 +3,7 @@
     enable = true;
     matchBlocks = {
       linie = {
-        hostname = "srv.alterdojec.me";
+        hostname = "srv.x3lfy.space";
         port = 7598;
         user = "confu";
         identityFile = "${config.home.homeDirectory}/.ssh/linie";
