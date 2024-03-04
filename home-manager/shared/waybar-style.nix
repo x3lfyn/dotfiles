@@ -19,7 +19,7 @@
   @define-color vpnBg #9d0006;
 
   * {
-    font-family: "JetBrainsMono Nerd Font Propo", monospace;
+    font-family: "FantasqueSansM Nerd Font", monospace;
     font-size: 12px;
   }
 

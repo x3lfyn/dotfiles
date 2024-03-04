@@ -190,6 +190,10 @@
     trivy
 
     jetbrains-mono
+
+    burpsuite
+
+    (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
   ];
 
   programs.rofi = {

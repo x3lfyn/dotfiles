@@ -4,10 +4,10 @@
     settings = {
       font = {
         normal = {
-          family = "JetBrains Mono";
+          family = "FantasqueSansM Nerd Font";
           style = "Regular";
         };
-        size = 13;
+        size = 14;
       };
       env = { TERM = "xterm-256color"; };
       window = {
