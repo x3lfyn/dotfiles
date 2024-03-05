@@ -14,7 +14,7 @@
         position = "top";
         height = 27;
         spacing = 5;
-        modules-left = [ "hyprland/workspaces" "cpu" "memory" "disk" "mpris" ];
+        modules-left = [ "hyprland/workspaces" "cpu" "memory" "disk" ];
         modules-center = [ "hyprland/window" ];
         modules-right = [ "custom/vpn" "pulseaudio" "bluetooth" "hyprland/language" "clock" "tray" ];
 

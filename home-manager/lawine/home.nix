@@ -64,6 +64,8 @@
     }
   '' + (import ../shared/waybar-style.nix);
 
+  programs.waybar.settings.mainBar.modules-left = pkgs.lib.mkAfter [ "mpris" ];
+
   home.file.".config/hypr/hyprpaper.conf".text = ''
     preload = ~/Pictures/wallpapers/wallhaven-e7d368.jpg
     wallpaper = HDMI-A-1,~/Pictures/wallpapers/wallhaven-e7d368.jpg

@@ -20,7 +20,7 @@
 
   * {
     font-family: "FantasqueSansM Nerd Font", monospace;
-    font-size: 12px;
+    font-size: 13px;
   }
 
   window#waybar {

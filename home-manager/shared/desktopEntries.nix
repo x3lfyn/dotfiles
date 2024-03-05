@@ -3,7 +3,7 @@
     qalc = {
       type = "Application";
       name = "Qalc floating calculator";
-      exec = ''alacritty --class qalc -T qalc /home/vobbla16/.nix-profile/bin/qalc'';
+      exec = ''alacritty --class qalc -T qalc -e /home/vobbla16/.nix-profile/bin/qalc'';
     };
 
     floating-terminal = {
@@ -12,8 +12,8 @@
     };
 
     nvim-foot = {
-      name = "Neovim on foot";
-      exec = "foot nvim %U";
+      name = "Neovim on alacritty";
+      exec = "alacritty -e nvim %U";
     };
   };
 }
