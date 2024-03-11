@@ -1,4 +1,25 @@
 { inputs, outputs, lib, config, pkgs, ... }: {
+  programs.kitty = {
+    enable = true;
+    theme = "Ayu";
+    font = {
+      package = (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; });
+      name = "FantasqueSansM Nerd Font";
+      size = 14;
+    };
+    shellIntegration.enableZshIntegration = true;
+    settings = {
+      cursor_blink_interval = "0.9";
+      cursor_stop_blinking_after = 0;
+      scrollback_lines = 20000;
+      enable_audio_bell = true;
+      visual_bell_duration = "0";
+      window_alert_on_bell = true;
+      window_padding_width = 6;
+      background_opacity = "0.85";
+	};
+  };
+
   programs.alacritty = {
     enable = true;
     settings = {

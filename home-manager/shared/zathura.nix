@@ -13,7 +13,7 @@
       guioptions = "sv";
       selection-clipboard = "clipboard";
 
-      font = "JetBrainsMono NF 10";
+      font = "FantasqueSansM Nerd Font 10";
 
       notification-error-bg = "#1F1F28";
       notification-error-fg = "#FF5D62";

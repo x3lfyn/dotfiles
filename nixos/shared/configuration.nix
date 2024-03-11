@@ -164,7 +164,7 @@
 
   security.polkit.enable = true;
 
-  security.pki.certificateFiles = [ ./hn-root-ca.crt ];
+  security.pki.certificateFiles = [ ./hn-root-ca.crt ./burp.pem ];
 
   systemd = {
     user.services.polkit-gnome-authentication-agent-1 = {
@@ -192,7 +192,7 @@
     enable = true;
     antialias = true;
     defaultFonts = {
-      monospace = [ "JetBrainsMono NF" ];
+      monospace = [ "FantasqueSansM Nerd Font" ];
       sansSerif = [ "Inter" ];
       serif = [ "Roboto Slab" ];
     };
