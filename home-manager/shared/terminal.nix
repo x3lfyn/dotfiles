@@ -83,44 +83,51 @@
     server.enable = true;
     settings = {
       main = {
-        font = "JetBrainsMono Nerd Font Propo:size=13";
+        font = "FantasqueSansM Nerd Font:size=14";
         pad = "10x10 center";
         term = "xterm-256color";
         resize-delay-ms = 0;
       };
       scrollback = {
-        multiplier = 13.0;
+        multiplier = 10.0;
       };
+      bell = {
+        urgent = true;
+        visual = false;
+	  };
       cursor = {
         style = "beam";
         blink = true;
       };
       colors = {
-        alpha = 0.7;
+        alpha = 0.85;
 
-        foreground = "B3B1AD";
-        background = "0A0E14";
+        foreground = "e6e1cf";
+        background = "0f1419";
 
-        selection-foreground = "f2e5bc";
-        selection-background = "32302f";
+#        selection-foreground = "f2e5bc";
+#        selection-background = "32302f";
 
-        regular0 = "7c6f64";
-        regular1 = "cc241d";
-        regular2 = "98971a";
-        regular3 = "d79921";
-        regular4 = "458588";
-        regular5 = "b16286";
-        regular6 = "689d6a";
-        regular7 = "fbf1c7";
+        regular0 = "0x000000";
+        regular1 = "0xf34a4a";
+        regular2 = "0xbae67e";
+        regular3 = "0xffee99";
+        regular4 = "0x73d0ff";
+        regular5 = "0xd4bfff";
+        regular6 = "0x83CEC6";
+        regular7 = "0xf2f2f2";
 
-        bright0 = "665c54";
-        bright1 = "fb4934";
-        bright2 = "b8bb26";
-        bright3 = "fabd2f";
-        bright4 = "83a598";
-        bright5 = "d3869b";
-        bright6 = "8ec07c";
-        bright7 = "f9f5d7";
+        bright0 = "0x737d87";
+        bright1 = "0xff3333";
+        bright2 = "0xbae67e";
+        bright3 = "0xffee99";
+        bright4 = "0x73d0ff";
+        bright5 = "0xb77ee0";
+        bright6 = "0x5ccfe6";
+        bright7 = "0xffffff";
+
+        flash = "e6b450";
+        flash-alpha = 0.4;
 
         #        "16" = "ffa066";
         #        "17" = "ff5d62";

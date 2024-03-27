@@ -26,6 +26,7 @@
       s = "sudo ";
       ipy = "ipython";
       open = "re.sonny.Junction";
+      ":q" = "exit";
     };
     history = {
       size = 20000;

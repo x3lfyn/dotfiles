@@ -9,7 +9,6 @@
           env = _JAVA_AWT_WM_NONREPARENTING,1
 
           exec-once = waybar
-          exec-once = telegram-desktop -startintray
           exec-once = nm-applet
           exec-once = blueman-applet
           exec-once = swww-daemon
@@ -69,7 +68,7 @@
 
           windowrulev2 = float,class:(.blueman-manager-wrapped)
 
-          bind = SUPER, Return, exec, alacritty
+          bind = SUPER, Return, exec, foot
           bind = SUPER ALT, Return, exec, gtk-launch floating-terminal
           bind = CONTROL, SPACE, exec, rofi -show drun
 

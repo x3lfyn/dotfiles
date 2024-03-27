@@ -155,9 +155,10 @@
     ]))
     pypy3
     jdk
-    clojure
+	gnumake
 
     # ctf things
+    wireshark
     binwalk
     nmap
     jadx
