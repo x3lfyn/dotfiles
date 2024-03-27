@@ -19,12 +19,12 @@
     ./gitgpg.nix
   ];
 
-#  xdg.configFile."nvim".source = pkgs.fetchFromGitHub {
-#    owner = "vobbla16";
-#    repo = "CyberNvim";
-#    rev = "e3cbcb64ebd1931c1e1d62fdf096a87a3153026f";
-#    sha256 = "sha256-lGXe2628xZPeNjfTder1hlgKp5Tw9B5Wobx7pz6A2xI=";
-#  };
+  #  xdg.configFile."nvim".source = pkgs.fetchFromGitHub {
+  #    owner = "vobbla16";
+  #    repo = "CyberNvim";
+  #    rev = "e3cbcb64ebd1931c1e1d62fdf096a87a3153026f";
+  #    sha256 = "sha256-lGXe2628xZPeNjfTder1hlgKp5Tw9B5Wobx7pz6A2xI=";
+  #  };
 
   nixpkgs = {
     overlays = [
@@ -155,7 +155,7 @@
     ]))
     pypy3
     jdk
-	gnumake
+    gnumake
 
     # ctf things
     wireshark
@@ -258,42 +258,42 @@
   };
 
   home.file = {
-#    ".config/electron-flags.conf".text = ''
-#      --enable-features=UseOzonePlatform
-#      --ozone-platform=wayland
-#    '';
-#    ".config/electron13-flags.conf".text = ''
-#      --enable-features=UseOzonePlatform
-#      --ozone-platform=wayland
-#    '';
-#    ".config/electron15-flags.conf".text = ''
-#      --enable-features=UseOzonePlatform
-#      --ozone-platform=wayland
-#    '';
-#    ".config/electron18-flags.conf".text = ''
-#      --enable-features=UseOzonePlatform
-#      --ozone-platform=wayland
-#    '';
-#    ".config/electron19-flags.conf".text = ''
-#      --enable-features=UseOzonePlatform
-#      --ozone-platform=wayland
-#    '';
-#    ".config/electron22-flags.conf".text = ''
-#      --enable-features=UseOzonePlatform
-#      --ozone-platform=wayland
-#    '';
-#    ".config/electron23-flags.conf".text = ''
-#      --enable-features=UseOzonePlatform
-#      --ozone-platform=wayland
-#    '';
-#    ".config/electron24-flags.conf".text = ''
-#      --enable-features=UseOzonePlatform
-#      --ozone-platform=wayland
-#    '';
-#    ".config/electron25-flags.conf".text = ''
-#      --enable-features=UseOzonePlatform
-#      --ozone-platform=wayland
-#    '';
+    #    ".config/electron-flags.conf".text = ''
+    #      --enable-features=UseOzonePlatform
+    #      --ozone-platform=wayland
+    #    '';
+    #    ".config/electron13-flags.conf".text = ''
+    #      --enable-features=UseOzonePlatform
+    #      --ozone-platform=wayland
+    #    '';
+    #    ".config/electron15-flags.conf".text = ''
+    #      --enable-features=UseOzonePlatform
+    #      --ozone-platform=wayland
+    #    '';
+    #    ".config/electron18-flags.conf".text = ''
+    #      --enable-features=UseOzonePlatform
+    #      --ozone-platform=wayland
+    #    '';
+    #    ".config/electron19-flags.conf".text = ''
+    #      --enable-features=UseOzonePlatform
+    #      --ozone-platform=wayland
+    #    '';
+    #    ".config/electron22-flags.conf".text = ''
+    #      --enable-features=UseOzonePlatform
+    #      --ozone-platform=wayland
+    #    '';
+    #    ".config/electron23-flags.conf".text = ''
+    #      --enable-features=UseOzonePlatform
+    #      --ozone-platform=wayland
+    #    '';
+    #    ".config/electron24-flags.conf".text = ''
+    #      --enable-features=UseOzonePlatform
+    #      --ozone-platform=wayland
+    #    '';
+    #    ".config/electron25-flags.conf".text = ''
+    #      --enable-features=UseOzonePlatform
+    #      --ozone-platform=wayland
+    #    '';
     ".scripts/volume.sh".text = builtins.readFile ./scripts/volume.sh;
     ".scripts/screenshot.sh".text = builtins.readFile ./scripts/screenshot.sh;
     ".scripts/wireguard.sh".text = builtins.readFile ./scripts/wireguard.sh;

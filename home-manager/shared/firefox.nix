@@ -31,6 +31,21 @@
           "extensions.pocket.onSaveRecs" = false;
           "browser.tabs.closeWindowWithLastTab" = false;
           "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+
+          "browser.safebrowsing.downloads.remote.block_dangerous" = false;
+          "browser.safebrowsing.downloads.remote.block_dangerous_host" = false;
+          "browser.safebrowsing.downloads.remote.block_potentially_unwanted" = false;
+          "browser.safebrowsing.downloads.remote.block_uncommon" = false;
+          "browser.safebrowsing.downloads.remote.url" = false;
+          "browser.safebrowsing.downloads.remote.enabled" = false;
+          "browser.safebrowsing.downloads.enabled" = false;
+
+          "toolkit.telemetry.enabled" = false;
+          "toolkit.telemetry.unified" = false;
+          "toolkit.telemetry.archive.enabled" = false;
+          "datareporting.healthreport.uploadEnabled" = false;
+          "datareporting.healthreport.service.enabled" = false;
+          "datareporting.policy.dataSubmissionEnabled" = false;
         };
 
         userChrome = ''
