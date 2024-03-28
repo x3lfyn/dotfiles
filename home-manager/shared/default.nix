@@ -122,7 +122,7 @@
     qview
     google-chrome
     via
-    wpsoffice
+    libreoffice-fresh
     anki-bin
     fragments
 
