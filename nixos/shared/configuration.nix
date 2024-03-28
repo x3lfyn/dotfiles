@@ -1,6 +1,6 @@
 { inputs, outputs, lib, config, pkgs, ... }: {
   imports = [
-    inputs.nix-gaming.nixosModules.pipewireLowLatency
+#    inputs.nix-gaming.nixosModules.pipewireLowLatency
   ];
 
   boot.kernelPackages = pkgs.linuxPackages;
@@ -147,9 +147,9 @@
     alsa.support32Bit = true;
     pulse.enable = true;
 
-    lowLatency = {
-      enable = true;
-    };
+#    lowLatency = {
+#      enable = true;
+#    };
   };
   environment.etc = {
     "wireplumber/bluetooth.lua.d/51-bluez-config.lua".text = ''
