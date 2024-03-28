@@ -1,6 +1,6 @@
 { inputs, outputs, lib, config, pkgs, ... }: {
   imports = [
-#    inputs.nix-gaming.nixosModules.pipewireLowLatency
+    #    inputs.nix-gaming.nixosModules.pipewireLowLatency
   ];
 
   boot.kernelPackages = pkgs.linuxPackages;
@@ -115,7 +115,7 @@
     xorg.libX11
   ];
 
-  #  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   hardware.opengl = {
     enable = true;
@@ -147,9 +147,9 @@
     alsa.support32Bit = true;
     pulse.enable = true;
 
-#    lowLatency = {
-#      enable = true;
-#    };
+    #    lowLatency = {
+    #      enable = true;
+    #    };
   };
   environment.etc = {
     "wireplumber/bluetooth.lua.d/51-bluez-config.lua".text = ''

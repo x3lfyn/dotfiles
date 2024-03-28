@@ -258,42 +258,42 @@
   };
 
   home.file = {
-    #    ".config/electron-flags.conf".text = ''
-    #      --enable-features=UseOzonePlatform
-    #      --ozone-platform=wayland
-    #    '';
-    #    ".config/electron13-flags.conf".text = ''
-    #      --enable-features=UseOzonePlatform
-    #      --ozone-platform=wayland
-    #    '';
-    #    ".config/electron15-flags.conf".text = ''
-    #      --enable-features=UseOzonePlatform
-    #      --ozone-platform=wayland
-    #    '';
-    #    ".config/electron18-flags.conf".text = ''
-    #      --enable-features=UseOzonePlatform
-    #      --ozone-platform=wayland
-    #    '';
-    #    ".config/electron19-flags.conf".text = ''
-    #      --enable-features=UseOzonePlatform
-    #      --ozone-platform=wayland
-    #    '';
-    #    ".config/electron22-flags.conf".text = ''
-    #      --enable-features=UseOzonePlatform
-    #      --ozone-platform=wayland
-    #    '';
-    #    ".config/electron23-flags.conf".text = ''
-    #      --enable-features=UseOzonePlatform
-    #      --ozone-platform=wayland
-    #    '';
-    #    ".config/electron24-flags.conf".text = ''
-    #      --enable-features=UseOzonePlatform
-    #      --ozone-platform=wayland
-    #    '';
-    #    ".config/electron25-flags.conf".text = ''
-    #      --enable-features=UseOzonePlatform
-    #      --ozone-platform=wayland
-    #    '';
+    ".config/electron-flags.conf".text = ''
+      --enable-features=UseOzonePlatform
+      --ozone-platform=wayland
+    '';
+    ".config/electron13-flags.conf".text = ''
+      --enable-features=UseOzonePlatform
+      --ozone-platform=wayland
+    '';
+    ".config/electron15-flags.conf".text = ''
+      --enable-features=UseOzonePlatform
+      --ozone-platform=wayland
+    '';
+    ".config/electron18-flags.conf".text = ''
+      --enable-features=UseOzonePlatform
+      --ozone-platform=wayland
+    '';
+    ".config/electron19-flags.conf".text = ''
+      --enable-features=UseOzonePlatform
+      --ozone-platform=wayland
+    '';
+    ".config/electron22-flags.conf".text = ''
+      --enable-features=UseOzonePlatform
+      --ozone-platform=wayland
+    '';
+    ".config/electron23-flags.conf".text = ''
+      --enable-features=UseOzonePlatform
+      --ozone-platform=wayland
+    '';
+    ".config/electron24-flags.conf".text = ''
+      --enable-features=UseOzonePlatform
+      --ozone-platform=wayland
+    '';
+    ".config/electron25-flags.conf".text = ''
+      --enable-features=UseOzonePlatform
+      --ozone-platform=wayland
+    '';
     ".scripts/volume.sh".text = builtins.readFile ./scripts/volume.sh;
     ".scripts/screenshot.sh".text = builtins.readFile ./scripts/screenshot.sh;
     ".scripts/wireguard.sh".text = builtins.readFile ./scripts/wireguard.sh;
