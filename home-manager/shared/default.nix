@@ -117,7 +117,7 @@
 
     gparted
     telegram-desktop
-    unstable.jetbrains-toolbox
+    jetbrains-toolbox
     obsidian
     qview
     google-chrome

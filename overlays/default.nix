@@ -23,6 +23,13 @@
         	  --replace "spotify %u" "spotify %u --enable-features=UseOzonePlatform --ozone-platform=wayland"
       '';
     });
+
+    jetbrains-toolbox = prev.jetbrains-toolbox.overrideAttrs (old: {
+      nativeBuildInputs = old.nativeBuildInputs ++ [ final.makeWrapper ];
+      postInstall = old.postInstall or "" + ''
+        wrapProgram "$out/bin/jetbrains-toolbox" --set LD_LIBRARY_PATH ${final.libpng}/lib:${final.xorg.libxkbfile}/lib:${final.libbsd}/lib
+      '';
+    });
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
