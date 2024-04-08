@@ -10,7 +10,6 @@
   xdg.portal = {
     enable = true;
     wlr.enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
     config.common.default = "*";
   };
 
@@ -139,6 +138,8 @@
   services.blueman.enable = true;
 
   services.upower.enable = true;
+
+  security.pam.services.swaylock = { };
 
   security.rtkit.enable = true;
   services.pipewire = {

@@ -59,7 +59,6 @@
     rofi-bluetooth
     bc
     xorg.libX11
-    gnome.file-roller
     xdg-utils
     btrfs-progs
     cava
@@ -121,10 +120,9 @@
     obsidian
     qview
     google-chrome
-    via
     libreoffice-fresh
     anki-bin
-    fragments
+    qbittorrent
 
     dconf
     libsForQt5.qtstyleplugins
@@ -135,7 +133,6 @@
     networkmanagerapplet
     corefonts
     noto-fonts-cjk-sans
-    junction
     glib
 
     rustup
@@ -321,6 +318,17 @@
     longitude = "31.014012";
     provider = "manual";
     tray = true;
+  };
+
+  programs.swaylock = {
+    enable = true;
+    package = pkgs.unstable.swaylock-effects;
+    settings = {
+      clock = true;
+      screenshots = true;
+      effect-blur = "15x10";
+      fade-in = "0.2";
+    };
   };
 
   programs.home-manager.enable = true;

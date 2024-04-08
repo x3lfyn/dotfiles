@@ -116,6 +116,9 @@
           bindm = SUPER, mouse:272, movewindow
           bindm = SUPER, mouse:273, resizewindow
 
+          # lock screen
+          bind = SUPER, L, exec, swaylock
+
           # open floating calculator
           bind = , XF86Calculator, exec, gtk-launch qalc
   	      bind = SUPER SHIFT, C, exec, gtk-launch qalc

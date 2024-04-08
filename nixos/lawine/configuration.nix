@@ -17,10 +17,11 @@
     # Import your generated (nixos-generate-config) hardware configuration
     ../shared
     ./hardware-configuration.nix
+    ./forwarding.nix
     inputs.aagl.nixosModules.default
   ];
 
-  programs.anime-game-launcher.enable = true;
+  programs.anime-game-launcher.enable = false;
 
   boot.loader.timeout = 0;
   boot.loader.systemd-boot.enable = true;
@@ -40,6 +41,8 @@
     nvidia-vaapi-driver
     egl-wayland
     gscan2pdf
+
+    bore-cli
   ];
 
   hardware.nvidia = {

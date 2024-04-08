@@ -1,6 +1,6 @@
 { inputs, outputs, lib, config, pkgs, ... }: {
   programs.kitty = {
-    enable = true;
+    enable = false;
     theme = "Ayu";
     font = {
       package = (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; });
@@ -21,7 +21,7 @@
   };
 
   programs.alacritty = {
-    enable = true;
+    enable = false;
     settings = {
       font = {
         normal = {
