@@ -31,6 +31,7 @@
       outputs.overlays.additions
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
+      outputs.overlays.yukigram
 
       inputs.nurpkgs.overlay
     ];
@@ -115,7 +116,7 @@
     yt-dlp
 
     gparted
-    telegram-desktop
+    yukigram
     jetbrains-toolbox
     obsidian
     qview

@@ -19,6 +19,13 @@
     aagl.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-gaming.url = "github:fufexan/nix-gaming";
+
+    yukigram = {
+      url = "https://github.com/yukigram/yukigram";
+      flake = true;
+	  type = "git";
+	  submodules = true;
+	};
   };
 
   outputs = { self, nixpkgs, home-manager, nix-ld, aagl, ... }@inputs:
