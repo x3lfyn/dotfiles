@@ -12,7 +12,7 @@
         identityFile = "${config.home.homeDirectory}/.ssh/linie";
       };
       ubel = {
-        hostname = "ubel.lan";
+        hostname = "192.168.1.200";
         user = "pi";
         identityFile = "${config.home.homeDirectory}/.ssh/ubel";
       };
