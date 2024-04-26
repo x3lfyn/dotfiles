@@ -3,6 +3,7 @@
     inputs.hyprland.homeManagerModules.default
     inputs.nurpkgs.nixosModules.nur
     inputs.spicetify-nix.homeManagerModule
+    inputs.anyrun.homeManagerModules.default
 
     ./terminal.nix
     ./waybar.nix
@@ -25,6 +26,17 @@
   #    rev = "e3cbcb64ebd1931c1e1d62fdf096a87a3153026f";
   #    sha256 = "sha256-lGXe2628xZPeNjfTder1hlgKp5Tw9B5Wobx7pz6A2xI=";
   #  };
+
+  programs.anyrun = {
+	enable = true;
+	config = {
+		plugins = with inputs.anyrun.packages.${pkgs.system}; [
+			applications
+			rink
+		];
+		layer = "overlay";
+	};
+  };
 
   nixpkgs = {
     overlays = [
@@ -187,6 +199,7 @@
     terraform
     dive
     trivy
+    cachix
 
     jetbrains-mono
 

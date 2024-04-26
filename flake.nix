@@ -26,6 +26,9 @@
 	  type = "git";
 	  submodules = true;
 	};
+
+	anyrun.url = "github:Kirottu/anyrun";
+#    anyrun.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, nixpkgs, home-manager, nix-ld, aagl, ... }@inputs:

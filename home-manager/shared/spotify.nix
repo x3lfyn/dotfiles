@@ -5,25 +5,25 @@ in
 {
   programs.spicetify = {
     enable = true;
-    theme = spicePkgs.themes.Comfy;
+    theme = spicePkgs.themes.Default;
     colorScheme = "custom";
     customColorScheme = {
-      text = "ebdbb2";
-      subtext = "B3B1AD";
-      sidebar-text = "f2e5bc";
-      main = "0A0E14";
-      sidebar = "00010A";
-      player = "00010A";
-      card = "665c54";
+      text = "bfbdb6";
+      subtext = "95e6cb";
+      sidebar-text = "95e6cb";
+      main = "0b0e14";
+      sidebar = "11151c";
+      player = "131721";
+      card = "162025";
       shadow = "0A0E14";
       selected-row = "3a3e42";
-      button = "fabd2f";
-      button-active = "504945";
-      button-disabled = "3a3e42";
-      tab-active = "7c6f64";
-      notification = "223249";
-      notification-error = "C34043";
-      misc = "665c54";
+      button = "95e6cb";
+      button-active = "e6b450";
+      button-disabled = "6c5980";
+      tab-active = "131721";
+      notification = "6c5980";
+      notification-error = "6c5980";
+      misc = "0f131a";
     };
 
     spotifyPackage = pkgs.spotify;

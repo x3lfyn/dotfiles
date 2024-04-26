@@ -89,9 +89,10 @@
     settings = {
       experimental-features = "nix-command flakes";
       auto-optimise-store = true;
+      builders-use-substitutes = true;
 
-      substituters = [ "https://x3lfy.cachix.org" "https://ezkea.cachix.org" "https://hyprland.cachix.org" "https://tweag-jupyter.cachix.org" ];
-      trusted-public-keys = [ "x3lfy.cachix.org-1:nNKLs5ryJhfCSzsbFmVKThjVqguUMkNeQzT3pBb8lTY=" "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI=" "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" "tweag-jupyter.cachix.org-1:UtNH4Zs6hVUFpFBTLaA4ejYavPo5EFFqgd7G7FxGW9g=" ];
+      substituters = [ "https://anyrun.cachix.org" "https://x3lfy.cachix.org" "https://ezkea.cachix.org" "https://hyprland.cachix.org" "https://tweag-jupyter.cachix.org" ];
+      trusted-public-keys = [ "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s=" "x3lfy.cachix.org-1:nNKLs5ryJhfCSzsbFmVKThjVqguUMkNeQzT3pBb8lTY=" "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI=" "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" "tweag-jupyter.cachix.org-1:UtNH4Zs6hVUFpFBTLaA4ejYavPo5EFFqgd7G7FxGW9g=" ];
     };
   };
 
