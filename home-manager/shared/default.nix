@@ -75,8 +75,7 @@
     xdg-utils
     btrfs-progs
     cava
-    discord
-    betterdiscordctl
+    vesktop
     libappindicator-gtk3
     fuse
     fuse3

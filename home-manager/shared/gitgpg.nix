@@ -10,10 +10,10 @@
 
   programs.git = {
     enable = true;
-    userName = "vobbla16";
-    userEmail = "novikovprojects@gmail.com";
+    userName = "Alexey Novikov";
+    userEmail = "me@x3lfy.space";
     signing = {
-      key = "F2EE41860B238D993139AF94C1190C108C849FA4";
+      key = "4F460EBD28EC67D23E72A83FC0711EA1614A6484";
       signByDefault = true;
     };
     lfs.enable = true;
