@@ -89,7 +89,6 @@
         resize-delay-ms = 0;
       };
       scrollback = {
-        multiplier = 10.0;
         lines = 40000;
       };
       bell = {

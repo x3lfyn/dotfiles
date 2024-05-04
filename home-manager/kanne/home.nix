@@ -7,6 +7,8 @@
     brightnessctl
   ];
 
+  programs.foot.settings.scrollback.multiplier = 10.0;
+
   wayland.windowManager.hyprland = {
     enable = true;
 

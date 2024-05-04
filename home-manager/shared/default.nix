@@ -129,7 +129,7 @@
     gparted
     yukigram
     jetbrains-toolbox
-    obsidian
+    unstable.obsidian
     qview
     google-chrome
     libreoffice-fresh

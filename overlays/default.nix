@@ -10,22 +10,6 @@
   # You can change versions, add patches, set compilation flags, anything really.
   # https://nixos.wiki/wiki/Overlays
   modifications = final: prev: {
-    # example = prev.example.overrideAttrs (oldAttrs: rec {
-    # ...
-    # });
-    obsidian = prev.obsidian.overrideAttrs (oldAttrs: {
-      postInstall = (oldAttrs.postInstall or "") + ''
-                substituteInPlace $out/share/applications/obsidian.desktop\
-        	  --replace "obsidian %u" "obsidian %u --ozone-platform-hint=auto"
-      '';
-    });
-    spotify = prev.spotify.overrideAttrs (oldAttrs: {
-      postInstall = (oldAttrs.postInstall or "") + ''
-                substituteInPlace $out/share/applications/spotify.desktop\
-        	  --replace "spotify %u" "spotify %u --enable-features=UseOzonePlatform --ozone-platform=wayland"
-      '';
-    });
-
     jetbrains-toolbox = prev.jetbrains-toolbox.overrideAttrs (old: {
       nativeBuildInputs = old.nativeBuildInputs ++ [ final.makeWrapper ];
       postInstall = old.postInstall or "" + ''
