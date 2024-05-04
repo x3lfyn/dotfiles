@@ -32,6 +32,13 @@
         wrapProgram "$out/bin/jetbrains-toolbox" --set LD_LIBRARY_PATH ${final.libpng}/lib:${final.xorg.libxkbfile}/lib:${final.libbsd}/lib
       '';
     });
+
+    google-chrome = prev.google-chrome.override {
+      commandLineArgs = [
+        "--enable-features=UseOzonePlatform"
+        "--ozone-platform=wayland"
+      ];
+    };
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will

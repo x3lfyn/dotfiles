@@ -23,12 +23,12 @@
     yukigram = {
       url = "https://github.com/yukigram/yukigram";
       flake = true;
-	  type = "git";
-	  submodules = true;
-	};
+      type = "git";
+      submodules = true;
+    };
 
-	anyrun.url = "github:Kirottu/anyrun";
-#    anyrun.inputs.nixpkgs.follows = "nixpkgs";
+    anyrun.url = "github:Kirottu/anyrun";
+    #    anyrun.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, nixpkgs, home-manager, nix-ld, aagl, ... }@inputs:
