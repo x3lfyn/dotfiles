@@ -79,7 +79,14 @@
     enable = true;
   };
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config.allowUnfree = true;
+    overlays = [
+      outputs.overlays.additions
+      outputs.overlays.modifications
+      outputs.overlays.unstable-packages
+    ];
+  };
 
   nix = {
     registry = lib.mapAttrs (_: value: { flake = value; }) inputs;

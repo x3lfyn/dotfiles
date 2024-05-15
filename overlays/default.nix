@@ -23,6 +23,10 @@
         "--ozone-platform=wayland"
       ];
     };
+
+    libratbag = prev.libratbag.overrideAttrs (old: {
+      patches = old.patches or [ ] ++ [ ./ratbag.patch ];
+    });
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will

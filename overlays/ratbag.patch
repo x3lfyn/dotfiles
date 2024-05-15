@@ -1,0 +1,13 @@
+diff --git a/data/devices/logitech-g102-g203.device b/data/devices/logitech-g102-g203.device
+index 34b63bd..2f4bd1f 100644
+--- a/data/devices/logitech-g102-g203.device
++++ b/data/devices/logitech-g102-g203.device
+@@ -1,6 +1,6 @@
+ # G102, G103 and G203 (USB)
+ [Device]
+ Name=Logitech Gaming Mouse G102/G103/G203
+-DeviceMatch=usb:046d:c084;usb:046d:c092
++DeviceMatch=usb:046d:c084;usb:046d:c092;usb:046d:c09d
+ Driver=hidpp20
+ LedTypes=logo;side;
+
