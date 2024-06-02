@@ -24,6 +24,8 @@
     extraConfig = {
       core = {
         editor = "nvim";
+        packedGitLimit = "512m";
+        packedGitWindowSize = "512m";
       };
       color = {
         ui = true;
@@ -37,6 +39,11 @@
       init = {
         defaultBranch = "main";
       };
+      pack = {
+		deltaCacheSize = "2047m";
+		packSizeLimit = "2047m";
+		workingMemory = "2047m";
+	  };
     };
   };
 
