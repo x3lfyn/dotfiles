@@ -1,4 +1,13 @@
-{ inputs, outputs, lib, config, pkgs, nix-colors, ... }: {
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  nix-colors,
+  ...
+}:
+{
   programs.ssh = {
     enable = true;
 

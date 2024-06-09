@@ -1,4 +1,12 @@
-{ inputs, outputs, lib, config, pkgs, ... }: {
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
   programs.kitty = {
     enable = false;
     theme = "Ayu";
@@ -30,7 +38,9 @@
         };
         size = 14;
       };
-      env = { TERM = "xterm-256color"; };
+      env = {
+        TERM = "xterm-256color";
+      };
       window = {
         padding = {
           x = 10;
@@ -39,7 +49,9 @@
         opacity = 0.85;
       };
       dynamic_title = true;
-      scrolling = { history = 100000; };
+      scrolling = {
+        history = 100000;
+      };
       cursor = {
         style = {
           shape = "Beam";
@@ -108,23 +120,23 @@
         #        selection-foreground = "f2e5bc";
         #        selection-background = "32302f";
 
-        regular0 = "0x000000";
-        regular1 = "0xf34a4a";
-        regular2 = "0xbae67e";
-        regular3 = "0xffee99";
-        regular4 = "0x73d0ff";
-        regular5 = "0xd4bfff";
-        regular6 = "0x83CEC6";
-        regular7 = "0xf2f2f2";
+        regular0 = "000000";
+        regular1 = "f34a4a";
+        regular2 = "bae67e";
+        regular3 = "ffee99";
+        regular4 = "73d0ff";
+        regular5 = "d4bfff";
+        regular6 = "83CEC6";
+        regular7 = "f2f2f2";
 
-        bright0 = "0x737d87";
-        bright1 = "0xff3333";
-        bright2 = "0xbae67e";
-        bright3 = "0xffee99";
-        bright4 = "0x73d0ff";
-        bright5 = "0xb77ee0";
-        bright6 = "0x5ccfe6";
-        bright7 = "0xffffff";
+        bright0 = "737d87";
+        bright1 = "ff3333";
+        bright2 = "bae67e";
+        bright3 = "ffee99";
+        bright4 = "73d0ff";
+        bright5 = "b77ee0";
+        bright6 = "5ccfe6";
+        bright7 = "ffffff";
 
         flash = "e6b450";
         flash-alpha = 0.4;
@@ -135,5 +147,3 @@
     };
   };
 }
-
-

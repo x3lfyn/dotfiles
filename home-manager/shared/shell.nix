@@ -1,4 +1,12 @@
-{ inputs, outputs, lib, config, pkgs, ... }: {
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
   programs.eza.enable = true;
   programs.bat.enable = true;
 
@@ -34,7 +42,7 @@
       ignoreDups = true;
       expireDuplicatesFirst = true;
     };
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = false; # use fast-syntax-highlighting
     initExtra = ''

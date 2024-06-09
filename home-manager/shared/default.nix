@@ -1,6 +1,14 @@
-{ inputs, outputs, lib, config, pkgs, ... }: {
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
   imports = [
-    inputs.hyprland.homeManagerModules.default
+	inputs.hyprland.homeManagerModules.default
     inputs.nurpkgs.nixosModules.nur
     inputs.spicetify-nix.homeManagerModule
     inputs.anyrun.homeManagerModules.default
@@ -152,16 +160,18 @@
     pkg-config
     libiconv
     openssl.dev
-    (python3.withPackages (ps: with ps; [
-      ipython
-      pycryptodome
-      requests
-      gmpy2
-      sympy
-      pillow
-      z3
-      pwntools
-    ]))
+    (python3.withPackages (
+      ps: with ps; [
+        ipython
+        pycryptodome
+        requests
+        gmpy2
+        sympy
+        pillow
+        z3
+        pwntools
+      ]
+    ))
     pypy3
     jdk
     gnumake
@@ -311,10 +321,8 @@
 
   qt = {
     enable = true;
-    style = {
-      name = "gtk2";
-    };
-    platformTheme = "gtk";
+    style.name = "gtk2";
+    platformTheme.name = "gtk";
   };
 
   home = {
@@ -350,5 +358,5 @@
   systemd.user.startServices = "sd-switch";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "23.11";
+  home.stateVersion = "24.05";
 }

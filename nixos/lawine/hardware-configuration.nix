@@ -1,40 +1,45 @@
-{ config, lib, pkgs, modulesPath, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  modulesPath,
+  ...
+}:
 
 {
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
+  boot.initrd.availableKernelModules = [
+    "nvme"
+    "xhci_pci"
+    "ahci"
+    "usb_storage"
+    "usbhid"
+    "sd_mod"
+  ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    {
-      device = "/dev/disk/by-uuid/ff7279c8-6f4e-4020-af91-53a0bce33b4a";
-      fsType = "ext4";
-    };
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/ff7279c8-6f4e-4020-af91-53a0bce33b4a";
+    fsType = "ext4";
+  };
 
-  fileSystems."/boot" =
-    {
-      device = "/dev/disk/by-uuid/6E00-AB44";
-      fsType = "vfat";
-    };
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/6E00-AB44";
+    fsType = "vfat";
+  };
 
-  fileSystems."/hdd" =
-    {
-      device = "/dev/disk/by-uuid/808e61e4-069a-4728-96da-d198290c0fad";
-      fsType = "btrfs";
-      options = [
-        "subvol=@data"
-      ];
-    };
+  fileSystems."/hdd" = {
+    device = "/dev/disk/by-uuid/808e61e4-069a-4728-96da-d198290c0fad";
+    fsType = "btrfs";
+    options = [ "subvol=@data" ];
+  };
 
-  fileSystems."/iso" =
-    {
-      device = "/dev/disk/by-uuid/808e61e4-069a-4728-96da-d198290c0fad";
-      fsType = "btrfs";
-      options = [
-        "subvol=@iso"
-      ];
-    };
+  fileSystems."/iso" = {
+    device = "/dev/disk/by-uuid/808e61e4-069a-4728-96da-d198290c0fad";
+    fsType = "btrfs";
+    options = [ "subvol=@iso" ];
+  };
 
   swapDevices = [ ];
 

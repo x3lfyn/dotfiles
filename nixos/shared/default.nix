@@ -1,5 +1,11 @@
-{ inputs, outputs, lib, config, pkgs, ... }: {
-  imports = [
-    ./configuration.nix
-  ];
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
+  imports = [ ./configuration.nix ];
 }

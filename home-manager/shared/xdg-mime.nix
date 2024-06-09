@@ -1,4 +1,12 @@
-{ inputs, outputs, lib, config, pkgs, nix-colors, ... }:
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  nix-colors,
+  ...
+}:
 let
   assocs = {
     #      "image/*" = [ "com.interversehq.qView.desktop" ];

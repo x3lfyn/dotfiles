@@ -1,10 +1,9 @@
 { config, pkgs, ... }:
 {
-  imports =
-    [
-      ../shared
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    ../shared
+    ./hardware-configuration.nix
+  ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -52,7 +51,6 @@
     powertop.enable = true;
   };
   services.thermald.enable = true;
-
 
   networking.extraHosts = ''
     0.0.0.0 cisco.com www.cisco.com

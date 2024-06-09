@@ -1,4 +1,12 @@
-{ inputs, outputs, lib, config, pkgs, ... }: {
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
   programs.waybar = {
     enable = true;
 
@@ -14,9 +22,21 @@
         position = "top";
         height = 27;
         spacing = 5;
-        modules-left = [ "hyprland/workspaces" "cpu" "memory" "disk" ];
+        modules-left = [
+          "hyprland/workspaces"
+          "cpu"
+          "memory"
+          "disk"
+        ];
         modules-center = [ "hyprland/window" ];
-        modules-right = [ "custom/vpn" "pulseaudio" "bluetooth" "hyprland/language" "clock" "tray" ];
+        modules-right = [
+          "custom/vpn"
+          "pulseaudio"
+          "bluetooth"
+          "hyprland/language"
+          "clock"
+          "tray"
+        ];
 
         "hyprland/workspaces" = {
           #          on-click = "";
@@ -75,7 +95,11 @@
             phone = "󰏲";
             portable = "<U+F095>";
             car = "󰄋";
-            default = [ "󰕿" "󰖀" "󰕾" ];
+            default = [
+              "󰕿"
+              "󰖀"
+              "󰕾"
+            ];
           };
           on-click = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
           on-click-right = "pavucontrol";
@@ -103,7 +127,18 @@
           };
           format = "{icon} {capacity}%";
           format-charging = "󰂄 {capacity}%";
-          format-icons = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
+          format-icons = [
+            "󰁺"
+            "󰁻"
+            "󰁼"
+            "󰁽"
+            "󰁾"
+            "󰁿"
+            "󰂀"
+            "󰂁"
+            "󰂂"
+            "󰁹"
+          ];
         };
 
         "network" = {
@@ -123,7 +158,11 @@
           format = "{status_icon} {dynamic}";
           dynamic-len = 42;
           dynamic-separator = " · ";
-          dynamic-order = [ "title" "artist" "album" ];
+          dynamic-order = [
+            "title"
+            "artist"
+            "album"
+          ];
           status-icons = {
             playing = "󰐌";
             paused = "󰏤";

@@ -1,7 +1,10 @@
 # Custom packages, that can be defined similarly to ones from nixpkgs
 # You can build them using 'nix build .#example' or (legacy) 'nix-build -A example'
 
-{ pkgs ? (import ../nixpkgs.nix) { } }: {
+{
+  pkgs ? (import ../nixpkgs.nix) { },
+}:
+{
   # example = pkgs.callPackage ./example { };
 
   kanagawa-gtk-theme-lcl = pkgs.stdenv.mkDerivation rec {
@@ -27,9 +30,7 @@
   };
   google-sans-display = pkgs.stdenv.mkDerivation rec {
     name = "Google Sans Display font";
-    src = [
-      ./google-sans-display.ttf
-    ];
+    src = [ ./google-sans-display.ttf ];
 
     unpackPhase = ''
       for srcFile in $src; do
@@ -44,9 +45,7 @@
   };
   jetbrainsmono-nf-ligs = pkgs.stdenv.mkDerivation rec {
     name = "JetBrains Mono Nerd font with ligatures";
-    src = [
-      ./jetbrainsmono-nf-ligs.ttf
-    ];
+    src = [ ./jetbrainsmono-nf-ligs.ttf ];
 
     unpackPhase = ''
       for srcFile in $src; do
@@ -120,7 +119,11 @@
         desktopName = "Cisco Packet Tracer 8";
         icon = "ciscoPacketTracer8";
         exec = "packettracer8 %f";
-        mimeTypes = [ "application/x-pkt" "application/x-pka" "application/x-pkz" ];
+        mimeTypes = [
+          "application/x-pkt"
+          "application/x-pka"
+          "application/x-pkz"
+        ];
       })
     ];
 
@@ -134,6 +137,5 @@
       maintainers = with maintainers; [ lucasew ];
       platforms = [ "x86_64-linux" ];
     };
-
   };
 }

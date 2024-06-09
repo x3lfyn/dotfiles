@@ -1,4 +1,12 @@
-{ inputs, outputs, lib, config, pkgs, ... }: {
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
   imports = [
     #    inputs.nix-gaming.nixosModules.pipewireLowLatency
   ];
@@ -7,10 +15,15 @@
 
   systemd.services.NetworkManager-wait-online.enable = false;
 
-  xdg.portal = {
+  #xdg.portal = {
+  #  enable = true;
+  #  wlr.enable = true;
+  #  config.common.default = "*";
+  #};
+
+  programs.hyprland = {
     enable = true;
-    wlr.enable = true;
-    config.common.default = "*";
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
 
   networking.networkmanager.enable = true;
@@ -35,10 +48,10 @@
   };
 
   services.xserver = {
-    layout = "us";
-    xkbVariant = "";
-    libinput.enable = true;
+    xkb.layout = "us";
+    xkb.variant = "";
   };
+  services.libinput.enable = true;
 
   services.greetd = {
     enable = true;
@@ -60,16 +73,22 @@
   users.users.vobbla16 = {
     isNormalUser = true;
     description = "vobbla16";
-    extraGroups = [ "networkmanager" "wheel" "adbusers" "docker" "hidrawgrp" "scanner" "lp" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "adbusers"
+      "docker"
+      "hidrawgrp"
+      "scanner"
+      "lp"
+    ];
     packages = with pkgs; [ ];
     shell = pkgs.zsh;
   };
 
   users.groups.hidrawgrp = { };
 
-  services.udev.packages = [
-    pkgs.android-udev-rules
-  ];
+  services.udev.packages = [ pkgs.android-udev-rules ];
 
   services.udev.extraRules = ''
     KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="hidrawgrp"
@@ -98,8 +117,20 @@
       auto-optimise-store = true;
       builders-use-substitutes = true;
 
-      substituters = [ "https://anyrun.cachix.org" "https://x3lfy.cachix.org" "https://ezkea.cachix.org" "https://hyprland.cachix.org" "https://tweag-jupyter.cachix.org" ];
-      trusted-public-keys = [ "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s=" "x3lfy.cachix.org-1:nNKLs5ryJhfCSzsbFmVKThjVqguUMkNeQzT3pBb8lTY=" "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI=" "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" "tweag-jupyter.cachix.org-1:UtNH4Zs6hVUFpFBTLaA4ejYavPo5EFFqgd7G7FxGW9g=" ];
+      substituters = [
+        "https://anyrun.cachix.org"
+        "https://x3lfy.cachix.org"
+        "https://ezkea.cachix.org"
+        "https://hyprland.cachix.org"
+        "https://tweag-jupyter.cachix.org"
+      ];
+      trusted-public-keys = [
+        "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
+        "x3lfy.cachix.org-1:nNKLs5ryJhfCSzsbFmVKThjVqguUMkNeQzT3pBb8lTY="
+        "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI="
+        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+        "tweag-jupyter.cachix.org-1:UtNH4Zs6hVUFpFBTLaA4ejYavPo5EFFqgd7G7FxGW9g="
+      ];
     };
   };
 
@@ -173,7 +204,10 @@
 
   security.polkit.enable = true;
 
-  security.pki.certificateFiles = [ ./hn-root-ca.crt ./burp.pem ];
+  security.pki.certificateFiles = [
+    ./hn-root-ca.crt
+    ./burp.pem
+  ];
 
   systemd = {
     user.services.polkit-gnome-authentication-agent-1 = {
@@ -221,7 +255,7 @@
 
   networking.firewall.enable = false;
 
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.05";
 
   networking.extraHosts = ''
     10.129.138.179 analytical.htb data.analytical.htb
@@ -229,7 +263,7 @@
 
   services.avahi = {
     enable = true;
-    nssmdns = true;
+    nssmdns4 = true;
 
     publish = {
       enable = true;
