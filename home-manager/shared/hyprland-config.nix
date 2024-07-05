@@ -12,6 +12,7 @@
                 exec-once = nm-applet
                 exec-once = blueman-applet
                 exec-once = swww-daemon
+                exec-once = hyprctl setcursor phinger-cursors-dark 24
 
                 monitor = Unknown-1,disabled
 

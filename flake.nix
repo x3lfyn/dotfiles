@@ -11,9 +11,6 @@
     nurpkgs.url = "github:nix-community/NUR";
     spicetify-nix.url = "github:the-argus/spicetify-nix";
 
-    nix-ld.url = "github:Mic92/nix-ld";
-    nix-ld.inputs.nixpkgs.follows = "nixpkgs";
-
     aagl.url = "github:ezKEa/aagl-gtk-on-nix";
     aagl.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -37,7 +34,6 @@
       self,
       nixpkgs,
       home-manager,
-      nix-ld,
       aagl,
       ...
     }@inputs:
@@ -80,7 +76,6 @@
             inherit inputs outputs;
           };
           modules = [
-            nix-ld.nixosModules.nix-ld
             ./nixos/lawine/configuration.nix
           ];
         };
@@ -89,7 +84,6 @@
             inherit inputs outputs;
           };
           modules = [
-            nix-ld.nixosModules.nix-ld
             ./nixos/kanne/configuration.nix
           ];
         };
