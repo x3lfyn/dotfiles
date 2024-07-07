@@ -87,6 +87,7 @@
     libappindicator-gtk3
     fuse
     fuse3
+    xorg.xhost
 
     roboto-slab
     inter
@@ -133,6 +134,7 @@
     p7zip
     socat
     yt-dlp
+    hexyl
 
     gparted
     yukigram
@@ -197,6 +199,7 @@
     sqlite
     frida-tools
     gef
+    ltrace
 
     # libs
     xorg.libX11
