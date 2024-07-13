@@ -30,11 +30,11 @@
   ];
 
   services.printing = {
-  	  enable = true;
-  	  drivers = with pkgs; [
-		gutenprint
-		hplip
-  	  ];
+    enable = true;
+    drivers = with pkgs; [
+      gutenprint
+      hplip
+    ];
   };
 
   programs.anime-game-launcher.enable = false;

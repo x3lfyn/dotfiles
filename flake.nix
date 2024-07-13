@@ -75,17 +75,13 @@
           specialArgs = {
             inherit inputs outputs;
           };
-          modules = [
-            ./nixos/lawine/configuration.nix
-          ];
+          modules = [ ./nixos/lawine/configuration.nix ];
         };
         kanne = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
           };
-          modules = [
-            ./nixos/kanne/configuration.nix
-          ];
+          modules = [ ./nixos/kanne/configuration.nix ];
         };
       };
 

@@ -1,4 +1,4 @@
-{
+args@{
   inputs,
   outputs,
   lib,
@@ -7,7 +7,10 @@
   ...
 }:
 {
-  imports = [ ../shared ];
+  imports = [
+    ../shared
+    (import ../shared/xdg-mime.nix (args // { defaultBrowserDesktop = "firefox.desktop"; }))
+  ];
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -16,7 +19,7 @@
       enable = true;
     };
 
-    systemd.variables = ["--all"];
+    systemd.variables = [ "--all" ];
 
     extraConfig =
       ''

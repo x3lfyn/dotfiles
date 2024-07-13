@@ -1,4 +1,4 @@
-{
+args@{
   inputs,
   outputs,
   lib,
@@ -8,7 +8,7 @@
 }:
 {
   imports = [
-	inputs.hyprland.homeManagerModules.default
+    inputs.hyprland.homeManagerModules.default
     inputs.nurpkgs.nixosModules.nur
     inputs.spicetify-nix.homeManagerModule
     inputs.anyrun.homeManagerModules.default
@@ -21,7 +21,6 @@
     ./syncthing.nix
     ./desktopEntries.nix
     ./spotify.nix
-    ./xdg-mime.nix
     ./ssh.nix
     ./mako.nix
     ./zathura.nix
@@ -139,7 +138,10 @@
     gparted
     yukigram
     jetbrains-toolbox
+    unstable.zed-editor
+    nixd
     unstable.obsidian
+    imv
     qview
     google-chrome
     libreoffice-fresh

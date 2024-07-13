@@ -1,4 +1,4 @@
-{
+args@{
   inputs,
   outputs,
   lib,
@@ -7,7 +7,10 @@
   ...
 }:
 {
-  imports = [ ../shared ];
+  imports = [
+    ../shared
+    (import ../shared/xdg-mime.nix (args // { defaultBrowserDesktop = "google-chrome.desktop"; }))
+  ];
 
   home.packages = with pkgs; [ brightnessctl ];
 

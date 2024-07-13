@@ -16,13 +16,13 @@
   };
 
   programs.atuin = {
-	enable = true;
-	enableZshIntegration = true;
-	flags = [ "--disable-up-arrow" ];
-	settings = {
-		sync_address = "https://atuin.x3lfy.space";
-		sync_frequency = "1m";
-	};
+    enable = true;
+    enableZshIntegration = true;
+    flags = [ "--disable-up-arrow" ];
+    settings = {
+      sync_address = "https://atuin.x3lfy.space";
+      sync_frequency = "1m";
+    };
   };
 
   programs.zsh = {
@@ -141,15 +141,15 @@
           sha256 = "WJ+ohX1yOVI+tw3Q1ns86y2dyljgBXLRZvdd+8A87t0=";
         };
       }
-#      {
-#        name = "zsh-fzf-history-search";
-#        src = pkgs.fetchFromGitHub {
-#          owner = "joshskidmore";
-#          repo = "zsh-fzf-history-search";
-#          rev = "d1aae98ccd6ce153c97a5401d79fd36418cd2958";
-#          sha256 = "4Dp2ehZLO83NhdBOKV0BhYFIvieaZPqiZZZtxsXWRaQ=";
-#        };
-#      }
+      #      {
+      #        name = "zsh-fzf-history-search";
+      #        src = pkgs.fetchFromGitHub {
+      #          owner = "joshskidmore";
+      #          repo = "zsh-fzf-history-search";
+      #          rev = "d1aae98ccd6ce153c97a5401d79fd36418cd2958";
+      #          sha256 = "4Dp2ehZLO83NhdBOKV0BhYFIvieaZPqiZZZtxsXWRaQ=";
+      #        };
+      #      }
       {
         name = "cd-dot-expansion";
         src = pkgs.fetchFromGitHub {
@@ -203,7 +203,7 @@
       };
       hostname = {
         ssh_only = false;
-		style = "bg:#95e6cb fg:black";
+        style = "bg:#95e6cb fg:black";
         format = "[](#95e6cb)[@$hostname]($style)[](#95e6cb)";
       };
       character = {
@@ -211,65 +211,65 @@
         error_symbol = "[λ>](red)";
       };
       git_branch = {
-		symbol = " ";
-		style = "bg:#ffb454 fg:black";
-		format = "[](#ffb454)[$symbol$branch]($style)";
-	  };
-	  git_status = {
-		style = "bg:#ffb454 fg:black";
-		format = "[$all_status$ahead_behind]($style)[](#ffb454) ";
-	  };
-	  nix_shell = {
-		symbol = " ";
-		style = "bg:#59c2ff fg:black";
-		format = "[](#59c2ff)[$symbol $name]($style)[](#59c2ff) ";
-	  };
-	  cmd_duration = {
-	  	min_time = 300;
-		style = "bg:#bfbdb6 fg:black";
-		format = "[](#bfbdb6)[ $duration]($style)[](#bfbdb6) ";
-	  };
-	  golang = {
-		symbol = " ";
-		style = "bg:#00add8 fg:black";
-		format = "[](#00add8)[$symbol$version]($style)[](#00add8) ";
-	  };
-	  python = {
-		symbol = " ";
-		style = "bg:#7fd962 fg:black";
-		format = "[](#7fd962)[$symbol$version]($style)[](#7fd962) ";
-	  };
-	  nodejs = {
-		style = "bg:#aad94c fg:black";
-		version_format = "v$major.$minor";
-		format = "[](#aad94c)[ $version]($style)[](#aad94c) ";
-	  };
-	  kotlin = {
-		symbol = "󱈙 ";
-		style = "bg:#824FFE fg:black";
-		format = "[](#824FFE)[$symbol$version]($style)[](#824FFE) ";
-	  };
-	  gradle = {
-		symbol = " ";
-		style = "bg:#209BC4 fg:black";
-		format = "[](#209BC4)[$symbol$version]($style)[](#209BC4) ";
-	  };
-	  java = {
-		symbol = " ";
-		style = "bg:#ff8f40 fg:black";
-		format = "[](#ff8f40)[$symbol$version]($style)[](#ff8f40) ";
-	  };
-	  memory_usage = {
-		disabled = false;
-		threshold = 75;
-		symbol = " ";
-		style = "bg:#427B58 fg:black";
-		format = "[](#427B58)[$symbol $ram( $swap)]($style)[](#427B58) ";
-	  };
-	  haskell = {
-		style = "bg:#4e6272 fg:black";
-		format = "[](#4e6272)[$symbol$version]($style)[](#4e6272) ";
-	  };
+        symbol = " ";
+        style = "bg:#ffb454 fg:black";
+        format = "[](#ffb454)[$symbol$branch]($style)";
+      };
+      git_status = {
+        style = "bg:#ffb454 fg:black";
+        format = "[$all_status$ahead_behind]($style)[](#ffb454) ";
+      };
+      nix_shell = {
+        symbol = " ";
+        style = "bg:#59c2ff fg:black";
+        format = "[](#59c2ff)[$symbol $name]($style)[](#59c2ff) ";
+      };
+      cmd_duration = {
+        min_time = 300;
+        style = "bg:#bfbdb6 fg:black";
+        format = "[](#bfbdb6)[ $duration]($style)[](#bfbdb6) ";
+      };
+      golang = {
+        symbol = " ";
+        style = "bg:#00add8 fg:black";
+        format = "[](#00add8)[$symbol$version]($style)[](#00add8) ";
+      };
+      python = {
+        symbol = " ";
+        style = "bg:#7fd962 fg:black";
+        format = "[](#7fd962)[$symbol$version]($style)[](#7fd962) ";
+      };
+      nodejs = {
+        style = "bg:#aad94c fg:black";
+        version_format = "v$major.$minor";
+        format = "[](#aad94c)[ $version]($style)[](#aad94c) ";
+      };
+      kotlin = {
+        symbol = "󱈙 ";
+        style = "bg:#824FFE fg:black";
+        format = "[](#824FFE)[$symbol$version]($style)[](#824FFE) ";
+      };
+      gradle = {
+        symbol = " ";
+        style = "bg:#209BC4 fg:black";
+        format = "[](#209BC4)[$symbol$version]($style)[](#209BC4) ";
+      };
+      java = {
+        symbol = " ";
+        style = "bg:#ff8f40 fg:black";
+        format = "[](#ff8f40)[$symbol$version]($style)[](#ff8f40) ";
+      };
+      memory_usage = {
+        disabled = false;
+        threshold = 75;
+        symbol = " ";
+        style = "bg:#427B58 fg:black";
+        format = "[](#427B58)[$symbol $ram( $swap)]($style)[](#427B58) ";
+      };
+      haskell = {
+        style = "bg:#4e6272 fg:black";
+        format = "[](#4e6272)[$symbol$version]($style)[](#4e6272) ";
+      };
     };
   };
 }
