@@ -177,6 +177,7 @@
     pypy3
     jdk
     gnumake
+    scc
 
     # ctf things
     wireshark

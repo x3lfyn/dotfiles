@@ -15,6 +15,16 @@
     enableZshIntegration = true;
   };
 
+  programs.atuin = {
+	enable = true;
+	enableZshIntegration = true;
+	flags = [ "--disable-up-arrow" ];
+	settings = {
+		sync_address = "https://atuin.x3lfy.space";
+		sync_frequency = "1m";
+	};
+  };
+
   programs.zsh = {
     enable = true;
     autocd = true;
@@ -131,15 +141,15 @@
           sha256 = "WJ+ohX1yOVI+tw3Q1ns86y2dyljgBXLRZvdd+8A87t0=";
         };
       }
-      {
-        name = "zsh-fzf-history-search";
-        src = pkgs.fetchFromGitHub {
-          owner = "joshskidmore";
-          repo = "zsh-fzf-history-search";
-          rev = "d1aae98ccd6ce153c97a5401d79fd36418cd2958";
-          sha256 = "4Dp2ehZLO83NhdBOKV0BhYFIvieaZPqiZZZtxsXWRaQ=";
-        };
-      }
+#      {
+#        name = "zsh-fzf-history-search";
+#        src = pkgs.fetchFromGitHub {
+#          owner = "joshskidmore";
+#          repo = "zsh-fzf-history-search";
+#          rev = "d1aae98ccd6ce153c97a5401d79fd36418cd2958";
+#          sha256 = "4Dp2ehZLO83NhdBOKV0BhYFIvieaZPqiZZZtxsXWRaQ=";
+#        };
+#      }
       {
         name = "cd-dot-expansion";
         src = pkgs.fetchFromGitHub {
