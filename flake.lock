@@ -567,11 +567,11 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1720761218,
-        "narHash": "sha256-6oE9lrO9/dXLjP3vEIANrunhrUPdHCFpvAAyWWwenOc=",
+        "lastModified": 1719232133,
+        "narHash": "sha256-glRrK9ihS+A9vwxD7McfBgpNT9tdk6ayzXe2WNuatxs=",
         "ref": "refs/heads/dev",
-        "rev": "51abd358258d9ee2f2579259fbb87c6af75458d6",
-        "revCount": 19360,
+        "rev": "7a3ce1aad4a955bd29090f355f1850cf1fb7891d",
+        "revCount": 19137,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/yukigram/yukigram"
