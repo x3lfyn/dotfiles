@@ -117,6 +117,10 @@
       auto-optimise-store = true;
       builders-use-substitutes = true;
 
+      trusted-users = [
+		"@wheel"
+      ];
+
       substituters = [
         "https://anyrun.cachix.org"
         "https://x3lfy.cachix.org"
