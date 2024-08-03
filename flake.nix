@@ -27,6 +27,11 @@
     #    anyrun.inputs.nixpkgs.follows = "nixpkgs";
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+
+    lix-module = {
+	  url = "https://git.lix.systems/lix-project/nixos-module/archive/2.90.0.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+	};
   };
 
   outputs =
@@ -35,6 +40,7 @@
       nixpkgs,
       home-manager,
       aagl,
+      lix-module,
       ...
     }@inputs:
     let
@@ -75,13 +81,13 @@
           specialArgs = {
             inherit inputs outputs;
           };
-          modules = [ ./nixos/lawine/configuration.nix ];
+          modules = [ lix-module.nixosModules.default ./nixos/lawine/configuration.nix ];
         };
         kanne = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
           };
-          modules = [ ./nixos/kanne/configuration.nix ];
+          modules = [ lix-module.nixosModules.default ./nixos/kanne/configuration.nix ];
         };
       };
 
