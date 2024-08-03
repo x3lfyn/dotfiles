@@ -45,6 +45,7 @@
       ipy = "ipython";
       open = "re.sonny.Junction";
       ":q" = "exit";
+      k = "kubectl";
     };
     history = {
       size = 20000;

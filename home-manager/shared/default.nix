@@ -215,6 +215,7 @@ args@{
     dive
     trivy
     cachix
+    kubectl
 
     jetbrains-mono
 
