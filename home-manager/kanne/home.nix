@@ -44,6 +44,23 @@ args@{
 
           drop_shadow = false
         }
+
+		input {
+		  kb_layout = us, ru
+		  kb_variant =
+		  kb_model =
+		  kb_options = grp:win_space_toggle
+		  kb_rules =
+		  numlock_by_default = 1
+		  follow_mouse = 1
+		  sensitivity = 0
+		  accel_profile = adaptive
+
+		  touchpad {
+			natural_scroll = true
+			scroll_factor = 0.15
+		  }
+		}
       ''
       + (import ../shared/hyprland-config.nix);
   };
