@@ -11,9 +11,6 @@
     nurpkgs.url = "github:nix-community/NUR";
     spicetify-nix.url = "github:the-argus/spicetify-nix";
 
-    aagl.url = "github:ezKEa/aagl-gtk-on-nix";
-    aagl.inputs.nixpkgs.follows = "nixpkgs";
-
     nix-gaming.url = "github:fufexan/nix-gaming";
 
     yukigram = {

@@ -26,7 +26,6 @@
     ../shared
     ./hardware-configuration.nix
     ./forwarding.nix
-    inputs.aagl.nixosModules.default
   ];
 
   services.printing = {
@@ -36,8 +35,6 @@
       hplip
     ];
   };
-
-  programs.anime-game-launcher.enable = false;
 
   boot.loader.timeout = 0;
   boot.loader.systemd-boot.enable = true;
