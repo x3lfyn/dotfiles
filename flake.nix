@@ -20,9 +20,6 @@
       submodules = true;
     };
 
-    anyrun.url = "github:Kirottu/anyrun";
-    #    anyrun.inputs.nixpkgs.follows = "nixpkgs";
-
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
 
     lix-module = {
@@ -36,7 +33,6 @@
       self,
       nixpkgs,
       home-manager,
-      aagl,
       lix-module,
       ...
     }@inputs:
