@@ -26,9 +26,9 @@
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
 
     lix-module = {
-	  url = "https://git.lix.systems/lix-project/nixos-module/archive/2.91.0.tar.gz";
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.91.0.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
-	};
+    };
   };
 
   outputs =
@@ -78,13 +78,19 @@
           specialArgs = {
             inherit inputs outputs;
           };
-          modules = [ lix-module.nixosModules.default ./nixos/lawine/configuration.nix ];
+          modules = [
+            lix-module.nixosModules.default
+            ./nixos/lawine/configuration.nix
+          ];
         };
         kanne = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
           };
-          modules = [ lix-module.nixosModules.default ./nixos/kanne/configuration.nix ];
+          modules = [
+            lix-module.nixosModules.default
+            ./nixos/kanne/configuration.nix
+          ];
         };
       };
 

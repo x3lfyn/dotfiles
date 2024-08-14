@@ -25,42 +25,42 @@ args@{
 
     extraConfig =
       ''
-        monitor = eDP-1,2256x1504,0x0,1.566667
+                monitor = eDP-1,2256x1504,0x0,1.566667
 
-        animations {
-          enabled = false
-        }
+                animations {
+                  enabled = false
+                }
 
-        xwayland {
-          force_zero_scaling = true
-        }
+                xwayland {
+                  force_zero_scaling = true
+                }
 
-        decoration {
-          rounding = 0
+                decoration {
+                  rounding = 0
 
-          blur {
-            enabled = false
-          }
+                  blur {
+                    enabled = false
+                  }
 
-          drop_shadow = false
-        }
+                  drop_shadow = false
+                }
 
-		input {
-		  kb_layout = us, ru
-		  kb_variant =
-		  kb_model =
-		  kb_options = grp:win_space_toggle
-		  kb_rules =
-		  numlock_by_default = 1
-		  follow_mouse = 1
-		  sensitivity = 0
-		  accel_profile = adaptive
+        		input {
+        		  kb_layout = us, ru
+        		  kb_variant =
+        		  kb_model =
+        		  kb_options = grp:win_space_toggle
+        		  kb_rules =
+        		  numlock_by_default = 1
+        		  follow_mouse = 1
+        		  sensitivity = 0
+        		  accel_profile = adaptive
 
-		  touchpad {
-			natural_scroll = true
-			scroll_factor = 0.15
-		  }
-		}
+        		  touchpad {
+        			natural_scroll = true
+        			scroll_factor = 0.15
+        		  }
+        		}
       ''
       + (import ../shared/hyprland-config.nix);
   };

@@ -23,49 +23,49 @@ args@{
 
     extraConfig =
       ''
-        monitor = HDMI-A-1,2560x1080@75,0x0,1
+                monitor = HDMI-A-1,2560x1080@75,0x0,1
 
-        animations {
-          enabled = true
+                animations {
+                  enabled = true
 
-          bezier = ease,0.4,0.02,0.21,1
+                  bezier = ease,0.4,0.02,0.21,1
 
-          animation = windows, 1, 3.5, ease, slide
-          animation = windowsOut, 1, 3.5, ease, slide
-          animation = border, 1, 6, default
-          animation = fade, 1, 3, ease
-          animation = workspaces, 1, 3.5, ease
-        }
+                  animation = windows, 1, 3.5, ease, slide
+                  animation = windowsOut, 1, 3.5, ease, slide
+                  animation = border, 1, 6, default
+                  animation = fade, 1, 3, ease
+                  animation = workspaces, 1, 3.5, ease
+                }
 
-        decoration {
-          rounding = 10
+                decoration {
+                  rounding = 10
 
-          blur {
-            enabled = true
-            size = 7
-            passes = 2
-            new_optimizations = on
-          }
+                  blur {
+                    enabled = true
+                    size = 7
+                    passes = 2
+                    new_optimizations = on
+                  }
 
-          drop_shadow = no
-        }
+                  drop_shadow = no
+                }
 
-		input {
-		  kb_layout = us, ru
-		  kb_variant =
-		  kb_model =
-		  kb_options = grp:win_space_toggle
-		  kb_rules =
-		  numlock_by_default = 1
-		  follow_mouse = 1
-		  sensitivity = 0
-		  accel_profile = flat
+        		input {
+        		  kb_layout = us, ru
+        		  kb_variant =
+        		  kb_model =
+        		  kb_options = grp:win_space_toggle
+        		  kb_rules =
+        		  numlock_by_default = 1
+        		  follow_mouse = 1
+        		  sensitivity = 0
+        		  accel_profile = flat
 
-		  touchpad {
-			natural_scroll = true
-			scroll_factor = 0.15
-		  }
-		}
+        		  touchpad {
+        			natural_scroll = true
+        			scroll_factor = 0.15
+        		  }
+        		}
       ''
       + (import ../shared/hyprland-config.nix);
   };
