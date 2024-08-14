@@ -9,7 +9,6 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     nurpkgs.url = "github:nix-community/NUR";
-    spicetify-nix.url = "github:the-argus/spicetify-nix";
 
     nix-gaming.url = "github:fufexan/nix-gaming";
 

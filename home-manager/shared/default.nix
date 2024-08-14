@@ -10,7 +10,6 @@ args@{
   imports = [
     inputs.hyprland.homeManagerModules.default
     inputs.nurpkgs.nixosModules.nur
-    inputs.spicetify-nix.homeManagerModule
 
     ./terminal.nix
     ./waybar.nix
@@ -19,7 +18,6 @@ args@{
     ./kdeconnect.nix
     ./syncthing.nix
     ./desktopEntries.nix
-    ./spotify.nix
     ./ssh.nix
     ./mako.nix
     ./zathura.nix
@@ -130,6 +128,7 @@ args@{
     libreoffice-fresh
     anki-bin
     qbittorrent
+    unstable.spotify
 
     dconf
     libsForQt5.qtstyleplugins
