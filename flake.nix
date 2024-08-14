@@ -72,7 +72,8 @@
       nixosConfigurations = {
         lawine = nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit inputs outputs;
+            inherit inputs;
+            overlays = outputs.overlays.all;
           };
           modules = [
             lix-module.nixosModules.default
@@ -81,7 +82,8 @@
         };
         kanne = nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit inputs outputs;
+            inherit inputs;
+            overlays = outputs.overlays.all;
           };
           modules = [
             lix-module.nixosModules.default
@@ -94,14 +96,16 @@
         lawine = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           extraSpecialArgs = {
-            inherit inputs outputs;
+            inherit inputs;
+            overlays = outputs.overlays.all;
           };
           modules = [ ./home-manager/lawine/home.nix ];
         };
         kanne = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           extraSpecialArgs = {
-            inherit inputs outputs;
+            inherit inputs;
+            overlays = outputs.overlays.all;
           };
           modules = [ ./home-manager/kanne/home.nix ];
         };

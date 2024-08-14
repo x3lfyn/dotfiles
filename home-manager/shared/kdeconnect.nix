@@ -1,10 +1,8 @@
 {
   inputs,
-  outputs,
   lib,
   config,
   pkgs,
-  nix-colors,
   ...
 }:
 {

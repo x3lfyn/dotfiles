@@ -1,9 +1,9 @@
 {
   inputs,
-  outputs,
   lib,
   config,
   pkgs,
+  overlays,
   ...
 }:
 {
@@ -99,12 +99,8 @@
   };
 
   nixpkgs = {
+    inherit overlays;
     config.allowUnfree = true;
-    overlays = [
-      outputs.overlays.additions
-      outputs.overlays.modifications
-      outputs.overlays.unstable-packages
-    ];
   };
 
   nix = {

@@ -1,9 +1,9 @@
 args@{
   inputs,
-  outputs,
   lib,
   config,
   pkgs,
+  overlays,
   ...
 }:
 {
@@ -35,13 +35,8 @@ args@{
 
   nixpkgs = {
     overlays = [
-      outputs.overlays.additions
-      outputs.overlays.modifications
-      outputs.overlays.unstable-packages
-      outputs.overlays.yukigram
-
       inputs.nurpkgs.overlay
-    ];
+    ] ++ overlays;
 
     config = {
       allowUnfree = true;
