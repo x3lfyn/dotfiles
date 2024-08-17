@@ -5,6 +5,12 @@
     ./hardware-configuration.nix
   ];
 
+  home-manager.users.vobbla16 =
+    { ... }:
+    {
+      imports = [ ../../home-manager/kanne/home.nix ];
+    };
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 

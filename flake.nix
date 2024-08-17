@@ -44,6 +44,27 @@
         "aarch64-darwin"
         "x86_64-darwin"
       ];
+      mkSystem =
+        {
+          system,
+          modules ? [ ],
+          specialArgs ? { },
+        }:
+        let
+          totalSpecialArgs = {
+            inherit inputs;
+            overlays = outputs.overlays.all;
+          } // specialArgs;
+        in
+        nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [
+            lix-module.nixosModules.default
+            home-manager.nixosModules.home-manager
+            { home-manager.extraSpecialArgs = totalSpecialArgs; }
+          ] ++ modules;
+          specialArgs = totalSpecialArgs;
+        };
     in
     rec {
       packages = forAllSystems (
@@ -69,44 +90,13 @@
       homeManagerModules = import ./modules/home-manager;
 
       nixosConfigurations = {
-        lawine = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs;
-            overlays = outputs.overlays.all;
-          };
-          modules = [
-            lix-module.nixosModules.default
-            ./nixos/lawine/configuration.nix
-          ];
+        lawine = mkSystem {
+          system = "x86_64-linux";
+          modules = [ ./nixos/lawine/configuration.nix ];
         };
-        kanne = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs;
-            overlays = outputs.overlays.all;
-          };
-          modules = [
-            lix-module.nixosModules.default
-            ./nixos/kanne/configuration.nix
-          ];
-        };
-      };
-
-      homeConfigurations = {
-        lawine = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          extraSpecialArgs = {
-            inherit inputs;
-            overlays = outputs.overlays.all;
-          };
-          modules = [ ./home-manager/lawine/home.nix ];
-        };
-        kanne = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          extraSpecialArgs = {
-            inherit inputs;
-            overlays = outputs.overlays.all;
-          };
-          modules = [ ./home-manager/kanne/home.nix ];
+        kanne = mkSystem {
+          system = "x86_64-linux";
+          modules = [ ./nixos/kanne/configuration.nix ];
         };
       };
     };

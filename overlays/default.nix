@@ -33,5 +33,10 @@ rec {
     };
   };
 
-  all = [additions yukigram modifications unstable-packages];
+  all = [
+    additions
+    yukigram
+    modifications
+    unstable-packages
+  ];
 }

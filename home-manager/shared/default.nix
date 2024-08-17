@@ -32,9 +32,7 @@ args@{
   #  };
 
   nixpkgs = {
-    overlays = [
-      inputs.nurpkgs.overlay
-    ] ++ overlays;
+    overlays = [ inputs.nurpkgs.overlay ] ++ overlays;
 
     config = {
       allowUnfree = true;
