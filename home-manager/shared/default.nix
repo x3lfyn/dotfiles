@@ -12,7 +12,6 @@ args @ {
 
     ./terminal.nix
     ./waybar.nix
-    ./shell.nix
     ./firefox.nix
     ./kdeconnect.nix
     ./syncthing.nix
@@ -29,6 +28,8 @@ args @ {
   #    rev = "e3cbcb64ebd1931c1e1d62fdf096a87a3153026f";
   #    sha256 = "sha256-lGXe2628xZPeNjfTder1hlgKp5Tw9B5Wobx7pz6A2xI=";
   #  };
+
+  myShell.enable = true;
 
   nixpkgs = {
     overlays = [inputs.nurpkgs.overlay] ++ overlays;
@@ -72,46 +73,16 @@ args @ {
     jetbrainsmono-nf-ligs
     noto-fonts-emoji
 
-    screen
-    grc
-    duf
-    du-dust
-    dogdns
-    tealdeer
-    fd
-    ripgrep
-    fzf
-    jq
-    openssl
-    unzip
-    unrar
-    file
-    jless
-    gping
     alsa-utils
     alsa-tools
-    patchelf
-    pciutils
-    smartmontools
-    tree
-    usbutils
-    wget
-    p7zip
-    zip
     cmake
-    btop
     iptables
     mpv
     openvpn
     libsixel
-    zip
     hyperfine
     glow
-    killall
-    p7zip
-    socat
     yt-dlp
-    hexyl
 
     gparted
     yukigram

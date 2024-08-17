@@ -5,10 +5,11 @@
   lib,
   config,
   pkgs,
+  myHmModules,
   ...
 }: {
   home-manager.users.vobbla16 = {...}: {
-    imports = [../../home-manager/lawine/home.nix];
+    imports = [../../home-manager/lawine/home.nix] ++ myHmModules;
   };
 
   imports = [

@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  myHmModules,
   ...
 }: {
   imports = [
@@ -9,7 +10,7 @@
   ];
 
   home-manager.users.vobbla16 = {...}: {
-    imports = [../../home-manager/kanne/home.nix];
+    imports = [../../home-manager/kanne/home.nix] ++ myHmModules;
   };
 
   boot.loader.systemd-boot.enable = true;

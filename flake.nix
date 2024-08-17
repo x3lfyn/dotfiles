@@ -51,6 +51,7 @@
         {
           inherit inputs;
           overlays = outputs.overlays.all;
+          myHmModules = outputs.homeManagerModules.all;
         }
         // specialArgs;
     in
