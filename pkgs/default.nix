@@ -1,10 +1,6 @@
 # Custom packages, that can be defined similarly to ones from nixpkgs
 # You can build them using 'nix build .#example' or (legacy) 'nix-build -A example'
-
-{
-  pkgs ? (import ../nixpkgs.nix) { },
-}:
-{
+{pkgs ? (import ../nixpkgs.nix) {}}: {
   # example = pkgs.callPackage ./example { };
 
   kanagawa-gtk-theme-lcl = pkgs.stdenv.mkDerivation rec {
@@ -17,7 +13,7 @@
       sha256 = "sha256-BZRmjVas8q6zsYbXFk4bCk5Ec/3liy9PQ8fqFGHAXe0=";
     };
 
-    propagatedUserEnvPkgs = [ pkgs.gtk-engine-murrine ];
+    propagatedUserEnvPkgs = [pkgs.gtk-engine-murrine];
 
     dontBuild = true;
 
@@ -30,7 +26,7 @@
   };
   google-sans-display = pkgs.stdenv.mkDerivation rec {
     name = "Google Sans Display font";
-    src = [ ./google-sans-display.ttf ];
+    src = [./google-sans-display.ttf];
 
     unpackPhase = ''
       for srcFile in $src; do
@@ -45,7 +41,7 @@
   };
   jetbrainsmono-nf-ligs = pkgs.stdenv.mkDerivation rec {
     name = "JetBrains Mono Nerd font with ligatures";
-    src = [ ./jetbrainsmono-nf-ligs.ttf ];
+    src = [./jetbrainsmono-nf-ligs.ttf];
 
     unpackPhase = ''
       for srcFile in $src; do
@@ -132,10 +128,10 @@
     meta = with pkgs.lib; {
       description = "Network simulation tool from Cisco";
       homepage = "https://www.netacad.com/courses/packet-tracer";
-      sourceProvenance = with sourceTypes; [ binaryNativeCode ];
+      sourceProvenance = with sourceTypes; [binaryNativeCode];
       license = licenses.unfree;
-      maintainers = with maintainers; [ lucasew ];
-      platforms = [ "x86_64-linux" ];
+      maintainers = with maintainers; [lucasew];
+      platforms = ["x86_64-linux"];
     };
   };
 }

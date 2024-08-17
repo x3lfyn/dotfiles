@@ -1,14 +1,14 @@
-{ inputs, ... }:
-rec {
-  additions = final: _prev: import ../pkgs { pkgs = final; };
+{inputs, ...}: rec {
+  additions = final: _prev: import ../pkgs {pkgs = final;};
 
-  yukigram = final: prev: { yukigram = inputs.yukigram.packages.${final.system}.yukigram; };
+  yukigram = final: prev: {yukigram = inputs.yukigram.packages.${final.system}.yukigram;};
 
   modifications = final: prev: {
     jetbrains-toolbox = prev.jetbrains-toolbox.overrideAttrs (old: {
-      nativeBuildInputs = old.nativeBuildInputs ++ [ final.makeWrapper ];
+      nativeBuildInputs = old.nativeBuildInputs ++ [final.makeWrapper];
       postInstall =
-        old.postInstall or ""
+        old.postInstall
+        or ""
         + ''
           wrapProgram "$out/bin/jetbrains-toolbox" --set LD_LIBRARY_PATH ${final.libpng}/lib:${final.xorg.libxkbfile}/lib:${final.libbsd}/lib
         '';
@@ -22,7 +22,7 @@ rec {
     };
 
     libratbag = prev.libratbag.overrideAttrs (old: {
-      patches = old.patches or [ ] ++ [ ./ratbag.patch ];
+      patches = old.patches or [] ++ [./ratbag.patch];
     });
   };
 

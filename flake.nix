@@ -27,77 +27,74 @@
     };
   };
 
-  outputs =
-    {
-      self,
-      nixpkgs,
-      home-manager,
-      lix-module,
-      ...
-    }@inputs:
-    let
-      inherit (self) outputs;
-      forAllSystems = nixpkgs.lib.genAttrs [
-        "aarch64-linux"
-        "i686-linux"
-        "x86_64-linux"
-        "aarch64-darwin"
-        "x86_64-darwin"
-      ];
-      mkSystem =
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    lix-module,
+    ...
+  } @ inputs: let
+    inherit (self) outputs;
+    forAllSystems = nixpkgs.lib.genAttrs [
+      "aarch64-linux"
+      "i686-linux"
+      "x86_64-linux"
+      "aarch64-darwin"
+      "x86_64-darwin"
+    ];
+    mkSystem = {
+      system,
+      modules ? [],
+      specialArgs ? {},
+    }: let
+      totalSpecialArgs =
         {
-          system,
-          modules ? [ ],
-          specialArgs ? { },
-        }:
-        let
-          totalSpecialArgs = {
-            inherit inputs;
-            overlays = outputs.overlays.all;
-          } // specialArgs;
-        in
-        nixpkgs.lib.nixosSystem {
-          inherit system;
-          modules = [
+          inherit inputs;
+          overlays = outputs.overlays.all;
+        }
+        // specialArgs;
+    in
+      nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules =
+          [
             lix-module.nixosModules.default
             home-manager.nixosModules.home-manager
-            { home-manager.extraSpecialArgs = totalSpecialArgs; }
-          ] ++ modules;
-          specialArgs = totalSpecialArgs;
-        };
-    in
-    rec {
-      packages = forAllSystems (
-        system:
-        let
-          pkgs = nixpkgs.legacyPackages.${system};
-        in
-        import ./pkgs { inherit pkgs; }
-      );
+            {home-manager.extraSpecialArgs = totalSpecialArgs;}
+          ]
+          ++ modules;
+        specialArgs = totalSpecialArgs;
+      };
+  in rec {
+    packages = forAllSystems (
+      system: let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in
+        import ./pkgs {inherit pkgs;}
+    );
 
-      devShells = forAllSystems (
-        system:
-        let
-          pkgs = nixpkgs.legacyPackages.${system};
-        in
-        import ./shell.nix { inherit pkgs; }
-      );
+    devShells = forAllSystems (
+      system: let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in
+        import ./shell.nix {inherit pkgs;}
+    );
 
-      formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
+    formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
 
-      overlays = import ./overlays { inherit inputs; };
-      nixosModules = import ./modules/nixos;
-      homeManagerModules = import ./modules/home-manager;
+    overlays = import ./overlays {inherit inputs;};
+    nixosModules = import ./modules/nixos;
+    homeManagerModules = import ./modules/home-manager;
 
-      nixosConfigurations = {
-        lawine = mkSystem {
-          system = "x86_64-linux";
-          modules = [ ./nixos/lawine/configuration.nix ];
-        };
-        kanne = mkSystem {
-          system = "x86_64-linux";
-          modules = [ ./nixos/kanne/configuration.nix ];
-        };
+    nixosConfigurations = {
+      lawine = mkSystem {
+        system = "x86_64-linux";
+        modules = [./nixos/lawine/configuration.nix];
+      };
+      kanne = mkSystem {
+        system = "x86_64-linux";
+        modules = [./nixos/kanne/configuration.nix];
       };
     };
+  };
 }

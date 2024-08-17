@@ -4,8 +4,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   programs.firefox = {
     enable = true;
     profiles = {
@@ -69,7 +68,7 @@
           #sidebar-header {
             visibility: collapse !important;
           }
-          	'';
+        '';
       };
     };
   };

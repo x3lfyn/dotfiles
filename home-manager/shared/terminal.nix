@@ -4,13 +4,12 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   programs.kitty = {
     enable = false;
     theme = "Ayu";
     font = {
-      package = (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; });
+      package = pkgs.nerdfonts.override {fonts = ["FantasqueSansMono"];};
       name = "FantasqueSansM Nerd Font";
       size = 14;
     };

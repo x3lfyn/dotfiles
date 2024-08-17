@@ -4,8 +4,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   programs.waybar = {
     enable = true;
 
@@ -27,7 +26,7 @@
           "memory"
           "disk"
         ];
-        modules-center = [ "hyprland/window" ];
+        modules-center = ["hyprland/window"];
         modules-right = [
           "custom/vpn"
           "pulseaudio"

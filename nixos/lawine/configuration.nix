@@ -1,19 +1,15 @@
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
-
 {
   inputs,
   lib,
   config,
   pkgs,
   ...
-}:
-{
-  home-manager.users.vobbla16 =
-    { ... }:
-    {
-      imports = [ ../../home-manager/lawine/home.nix ];
-    };
+}: {
+  home-manager.users.vobbla16 = {...}: {
+    imports = [../../home-manager/lawine/home.nix];
+  };
 
   imports = [
     ../shared
@@ -40,7 +36,7 @@
   services.ratbagd.enable = true;
   services.flatpak.enable = true;
 
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = ["nvidia"];
 
   environment.systemPackages = with pkgs; [
     libva

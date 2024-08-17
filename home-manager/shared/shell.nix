@@ -4,8 +4,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   programs.eza.enable = true;
   programs.bat.enable = true;
 
@@ -17,7 +16,7 @@
   programs.atuin = {
     enable = true;
     enableZshIntegration = true;
-    flags = [ "--disable-up-arrow" ];
+    flags = ["--disable-up-arrow"];
     settings = {
       sync_address = "https://atuin.x3lfy.space";
       sync_frequency = "1m";

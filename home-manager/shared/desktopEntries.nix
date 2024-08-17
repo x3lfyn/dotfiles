@@ -4,8 +4,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   xdg.desktopEntries = {
     qalc = {
       type = "Application";

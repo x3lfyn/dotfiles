@@ -4,8 +4,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   services.mako = {
     enable = true;
     anchor = "top-center";

@@ -1,12 +1,11 @@
-args@{
+args @ {
   inputs,
   lib,
   config,
   pkgs,
   overlays,
   ...
-}:
-{
+}: {
   imports = [
     inputs.hyprland.homeManagerModules.default
     inputs.nurpkgs.nixosModules.nur
@@ -32,11 +31,11 @@ args@{
   #  };
 
   nixpkgs = {
-    overlays = [ inputs.nurpkgs.overlay ] ++ overlays;
+    overlays = [inputs.nurpkgs.overlay] ++ overlays;
 
     config = {
       allowUnfree = true;
-      allowUnfreePredicate = (_: true);
+      allowUnfreePredicate = _: true;
 
       permittedInsecurePackages = [
         "electron-24.8.6"
@@ -145,16 +144,17 @@ args@{
     libiconv
     openssl.dev
     (python3.withPackages (
-      ps: with ps; [
-        ipython
-        pycryptodome
-        requests
-        gmpy2
-        sympy
-        pillow
-        z3
-        pwntools
-      ]
+      ps:
+        with ps; [
+          ipython
+          pycryptodome
+          requests
+          gmpy2
+          sympy
+          pillow
+          z3
+          pwntools
+        ]
     ))
     pypy3
     jdk
@@ -201,7 +201,7 @@ args@{
 
     burpsuite
 
-    (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+    (nerdfonts.override {fonts = ["FantasqueSansMono"];})
   ];
 
   programs.rofi = {

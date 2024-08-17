@@ -5,8 +5,7 @@
   pkgs,
   overlays,
   ...
-}:
-{
+}: {
   imports = [
     #    inputs.nix-gaming.nixosModules.pipewireLowLatency
   ];
@@ -82,13 +81,13 @@
       "scanner"
       "lp"
     ];
-    packages = with pkgs; [ ];
+    packages = with pkgs; [];
     shell = pkgs.zsh;
   };
 
-  users.groups.hidrawgrp = { };
+  users.groups.hidrawgrp = {};
 
-  services.udev.packages = [ pkgs.android-udev-rules ];
+  services.udev.packages = [pkgs.android-udev-rules];
 
   services.udev.extraRules = ''
     KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="hidrawgrp"
@@ -104,7 +103,7 @@
   };
 
   nix = {
-    registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
+    registry = lib.mapAttrs (_: value: {flake = value;}) inputs;
 
     nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
 
@@ -113,7 +112,7 @@
       auto-optimise-store = true;
       builders-use-substitutes = true;
 
-      trusted-users = [ "@wheel" ];
+      trusted-users = ["@wheel"];
 
       substituters = [
         "https://x3lfy.cachix.org"
@@ -174,7 +173,7 @@
 
   services.upower.enable = true;
 
-  security.pam.services.swaylock = { };
+  security.pam.services.swaylock = {};
 
   security.rtkit.enable = true;
   services.pipewire = {
@@ -208,9 +207,9 @@
   systemd = {
     user.services.polkit-gnome-authentication-agent-1 = {
       description = "polkit-gnome-authentication-agent-1";
-      wantedBy = [ "graphical-session.target" ];
-      wants = [ "graphical-session.target" ];
-      after = [ "graphical-session.target" ];
+      wantedBy = ["graphical-session.target"];
+      wants = ["graphical-session.target"];
+      after = ["graphical-session.target"];
       serviceConfig = {
         Type = "simple";
         ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
@@ -225,22 +224,22 @@
     Defaults pwfeedback
   '';
 
-  environment.pathsToLink = [ "/share/zsh" ];
+  environment.pathsToLink = ["/share/zsh"];
 
   fonts.fontconfig = {
     enable = true;
     antialias = true;
     defaultFonts = {
-      monospace = [ "FantasqueSansM Nerd Font" ];
-      sansSerif = [ "Inter" ];
-      serif = [ "Roboto Slab" ];
+      monospace = ["FantasqueSansM Nerd Font"];
+      sansSerif = ["Inter"];
+      serif = ["Roboto Slab"];
     };
     hinting = {
       enable = false;
     };
   };
 
-  services.dbus.packages = with pkgs; [ gcr ];
+  services.dbus.packages = with pkgs; [gcr];
 
   programs.gnupg.agent = {
     enable = true;
