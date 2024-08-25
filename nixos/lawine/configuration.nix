@@ -15,7 +15,6 @@
   imports = [
     ../shared
     ./hardware-configuration.nix
-    ./forwarding.nix
   ];
 
   services.printing = {

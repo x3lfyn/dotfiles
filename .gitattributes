@@ -1,1 +1,0 @@
-nixos/lawine/forwarding.nix filter=git-crypt diff=git-crypt
