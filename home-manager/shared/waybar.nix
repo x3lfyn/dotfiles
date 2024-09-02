@@ -39,7 +39,7 @@
         "hyprland/workspaces" = {
           #          on-click = "";
           #          sort-by-number = true;
-          persistent_workspaces = {
+          persistent-workspaces = {
             "*" = 10;
           };
           format-icons = {
