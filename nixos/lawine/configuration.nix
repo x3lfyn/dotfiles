@@ -61,7 +61,10 @@
     nvidia-vaapi-driver
   ];
 
-  hardware.sane.enable = true;
+  hardware.sane = {
+		enable = true;
+		extraBackends = [ pkgs.hplipWithPlugin ];
+  };
 
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "nvidia";
