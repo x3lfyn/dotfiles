@@ -1,5 +1,5 @@
 rec {
-    myShell = ./shell.nix;
+  myShell = ./shell.nix;
 
-    all = [myShell];
+  all = [myShell];
 }

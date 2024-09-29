@@ -27,37 +27,37 @@
     };
 
     home.packages = with pkgs; [
-        neovim
-        grc
-        duf
-        du-dust
-        doggo
-        screen
-        tealdeer
-        fd
-        ripgrep
-        fzf
-        jq
-        openssl
-        unzip
-        unrar
-        file
-        jless
-        gping
-        patchelf
-        pciutils
-        smartmontools
-        tree
-        usbutils
-        wget
-        p7zip
-        zip
-        btop
-        zip
-        killall
-        p7zip
-        socat
-        hexyl
+      neovim
+      grc
+      duf
+      du-dust
+      doggo
+      screen
+      tealdeer
+      fd
+      ripgrep
+      fzf
+      jq
+      openssl
+      unzip
+      unrar
+      file
+      jless
+      gping
+      patchelf
+      pciutils
+      smartmontools
+      tree
+      usbutils
+      wget
+      p7zip
+      zip
+      btop
+      zip
+      killall
+      p7zip
+      socat
+      hexyl
     ];
 
     programs.zsh = {

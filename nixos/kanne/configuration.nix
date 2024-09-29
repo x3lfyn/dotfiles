@@ -18,7 +18,10 @@
 
   networking.hostName = "kanne";
 
-  programs.nix-ld.enable = true;
+  programs.nix-ld = {
+    enable = true;
+    package = pkgs.unstable.nix-ld;
+  };
 
   hardware.opengl.extraPackages = with pkgs; [
     vaapiVdpau
