@@ -26,7 +26,6 @@
           "memory"
           "disk"
         ];
-        modules-center = ["hyprland/window"];
         modules-right = [
           "custom/vpn"
           "pulseaudio"

@@ -95,6 +95,7 @@ args @ {
     + (import ../shared/waybar-style.nix);
 
   programs.waybar.settings.mainBar.modules-left = pkgs.lib.mkAfter ["mpris"];
+  progams.waybar.settings.mainBar.modules-center = [ "hyprland/window" ];
 
   home.file.".config/hypr/hyprpaper.conf".text = ''
     preload = ~/Pictures/wallpapers/wallhaven-e7d368.jpg
