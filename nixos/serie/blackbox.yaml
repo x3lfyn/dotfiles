@@ -1,0 +1,36 @@
+modules:
+  http_2xx:
+    prober: http
+    timeout: 10s
+    http:
+      valid_status_codes: [200,302,301,304] 
+      method: GET
+  https_2xx:
+    prober: https
+    timeout: 10s
+    http:
+      valid_status_codes: [200,302,301,304]
+      method: GET
+  http_404:
+    prober: http
+    timeout: 10s
+    http:
+      valid_status_codes: [404] 
+      method: GET
+  https_404:
+    prober: https
+    timeout: 10s
+    http:
+      valid_status_codes: [404]
+      method: GET
+  tcp_connect:
+    prober: tcp
+  ssh_banner:
+    prober: tcp
+    tcp:
+      query_response:
+      - expect: "^SSH-2.0-"
+      - send: "SSH-2.0-blackbox-ssh-check"
+  icmp:
+    prober: icmp
+

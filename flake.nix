@@ -25,6 +25,21 @@
       url = "https://git.lix.systems/lix-project/nixos-module/archive/2.91.0.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    agenix = {
+        url = "github:ryantm/agenix";
+        inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    deploy-rs = {
+        url = "github:serokell/deploy-rs";
+        inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    disko = {
+        url = "github:nix-community/disko";
+        inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -32,6 +47,7 @@
     nixpkgs,
     home-manager,
     lix-module,
+    deploy-rs,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -96,6 +112,22 @@
         system = "x86_64-linux";
         modules = [./nixos/kanne/configuration.nix];
       };
+      serie = mkSystem {
+        system = "x86_64-linux";
+        modules = [./nixos/serie/configuration.nix];
+      };
+    };
+    deploy.nodes.serie = {
+        hostname = "serie.x3lfy.space";
+        profiles.system = {
+            sshUser = "confu";
+            user = "root";
+            path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.serie;
+            sshOpts = [
+                "-i"
+                "/home/vobbla16/.ssh/serie"
+            ];
+        };
     };
   };
 }

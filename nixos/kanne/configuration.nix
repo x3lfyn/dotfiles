@@ -1,12 +1,15 @@
 {
+  inputs,
   config,
   pkgs,
   myHmModules,
   ...
 }: {
   imports = [
+    inputs.agenix.nixosModules.default
     ../shared
     ./hardware-configuration.nix
+    ./secrets.nix
   ];
 
   home-manager.users.vobbla16 = {...}: {
@@ -32,6 +35,7 @@
 
   environment.systemPackages = with pkgs; [
     #    libva-utils
+    inputs.agenix.packages."${system}".default
   ];
 
   environment.sessionVariables = {
