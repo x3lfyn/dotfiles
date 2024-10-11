@@ -1,27 +1,26 @@
-{ config, ... }:
-{
-    age.secrets = {
-        ovpn-ca-crt = {
-            file = ../../secrets/ovpn-ca-crt.age;
-            owner = "root";
-            group = "users";
-        };
-        ovpn-srv-crt = {
-            file = ../../secrets/ovpn-srv-crt.age;
-            owner = "root";
-            group = "users";
-        };
-        ovpn-srv-key = {
-            file = ../../secrets/ovpn-srv-key.age;
-            owner = "root";
-            group = "users";
-        };
-        ovpn-dh = {
-            file = ../../secrets/ovpn-dh.age;
-            owner = "root";
-            group = "users";
-        };
+{config, ...}: {
+  age.secrets = {
+    ovpn-ca-crt = {
+      file = ../../secrets/ovpn-ca-crt.age;
+      owner = "root";
+      group = "users";
     };
+    ovpn-srv-crt = {
+      file = ../../secrets/ovpn-srv-crt.age;
+      owner = "root";
+      group = "users";
+    };
+    ovpn-srv-key = {
+      file = ../../secrets/ovpn-srv-key.age;
+      owner = "root";
+      group = "users";
+    };
+    ovpn-dh = {
+      file = ../../secrets/ovpn-dh.age;
+      owner = "root";
+      group = "users";
+    };
+  };
 
   services.openvpn.servers.home = {
     autoStart = true;
@@ -74,5 +73,4 @@
       ifconfig-push 10.7.7.20 255.255.255.0
     '';
   };
-
 }

@@ -3,9 +3,7 @@
   writeShellScript,
   system,
   ...
-}:
-
-{
+}: {
   getInsecure = name: let
     identityPath = /etc/agenix/agenix-insecure;
 
@@ -18,5 +16,6 @@
         ${age}/bin/age --decrypt --identity ${identityPath} $src > $out
       '';
     };
-  in builtins.readFile drv;
+  in
+    builtins.readFile drv;
 }

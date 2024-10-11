@@ -27,18 +27,18 @@
     };
 
     agenix = {
-        url = "github:ryantm/agenix";
-        inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     deploy-rs = {
-        url = "github:serokell/deploy-rs";
-        inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:serokell/deploy-rs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     disko = {
-        url = "github:nix-community/disko";
-        inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -118,16 +118,16 @@
       };
     };
     deploy.nodes.serie = {
-        hostname = "serie.x3lfy.space";
-        profiles.system = {
-            sshUser = "confu";
-            user = "root";
-            path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.serie;
-            sshOpts = [
-                "-i"
-                "/home/vobbla16/.ssh/serie"
-            ];
-        };
+      hostname = "serie.x3lfy.space";
+      profiles.system = {
+        sshUser = "confu";
+        user = "root";
+        path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.serie;
+        sshOpts = [
+          "-i"
+          "/home/vobbla16/.ssh/serie"
+        ];
+      };
     };
   };
 }

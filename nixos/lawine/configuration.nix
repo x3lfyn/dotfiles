@@ -62,8 +62,8 @@
   ];
 
   hardware.sane = {
-		enable = true;
-		extraBackends = [ pkgs.hplipWithPlugin ];
+    enable = true;
+    extraBackends = [pkgs.hplipWithPlugin];
   };
 
   environment.sessionVariables = {
