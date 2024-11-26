@@ -10,8 +10,6 @@
     #    inputs.nix-gaming.nixosModules.pipewireLowLatency
   ];
 
-  boot.kernelPackages = pkgs.linuxPackages;
-
   systemd.services.NetworkManager-wait-online.enable = false;
 
   #xdg.portal = {

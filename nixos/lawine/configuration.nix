@@ -29,6 +29,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  boot.kernelPackages = pkgs.linuxPackages_zen;
+
   programs.nix-ld.enable = true;
 
   networking.hostName = "lawine";
@@ -52,6 +54,7 @@
     open = false;
     nvidiaSettings = true;
     powerManagement.enable = true;
+    package = (pkgs.unstable.linuxPackagesFor config.boot.kernelPackages.kernel).nvidiaPackages.beta;
   };
 
   hardware.opengl.extraPackages = with pkgs; [

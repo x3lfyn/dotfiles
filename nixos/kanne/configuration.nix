@@ -19,6 +19,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  boot.kernelPackages = pkgs.linuxPackages;
+
   networking.hostName = "kanne";
 
   programs.nix-ld = {
