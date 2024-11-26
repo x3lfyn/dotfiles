@@ -9,7 +9,6 @@
     inputs.agenix.nixosModules.default
     ../shared
     ./hardware-configuration.nix
-    ./secrets.nix
   ];
 
   home-manager.users.vobbla16 = {...}: {

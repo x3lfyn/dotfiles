@@ -146,7 +146,8 @@ in {
 
   virtualisation.oci-containers.containers.prometheus-oci = {
     image = "prom/prometheus:v2.54.1";
-    user = "${builtins.toString prometheusUid}:${builtins.toString prometheusGid}";
+    # user = "${builtins.toString prometheusUid}:${builtins.toString prometheusGid}";
+    user = "0:0";
     volumes = [
       "${config}:/etc/prometheus/prometheus.yml:ro"
       "${prometheusData}:/prometheus"
