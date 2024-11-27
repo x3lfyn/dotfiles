@@ -38,6 +38,8 @@
   services.ratbagd.enable = true;
   services.flatpak.enable = true;
 
+  services.tailscale.enable = true;
+
   services.xserver.videoDrivers = ["nvidia"];
 
   environment.systemPackages = with pkgs; [
