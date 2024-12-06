@@ -29,6 +29,8 @@
 
   i18n.defaultLocale = "en_US.UTF-8";
 
+  services.tailscale.enable = true;
+
   programs.adb.enable = true;
   virtualisation.docker.enable = true;
 
