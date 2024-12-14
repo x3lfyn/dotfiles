@@ -80,7 +80,8 @@
               "umami.x3lfy.space"
               "meow.x3lfy.space"
               "meows.x3lfy.space"
-              "immich.x3lfy.space"
+              "pds.x3lfy.space"
+              "dl.x3lfy.space"
             ];
           }
         ];
@@ -105,7 +106,7 @@
         ];
         static_configs = [
           {
-            targets = ["linie.x3lfy.space" "fern.x3lfy.space"];
+            targets = ["linie.x3lfy.space" "fern.x3lfy.space" "sense.x3lfy.space"];
           }
         ];
       }
