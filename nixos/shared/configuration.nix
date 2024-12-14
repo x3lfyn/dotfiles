@@ -250,7 +250,7 @@
 
   networking.firewall.enable = false;
 
-  system.stateVersion = "24.05";
+  system.stateVersion = "24.11";
 
   networking.extraHosts = ''
     10.129.138.179 analytical.htb data.analytical.htb
