@@ -8,7 +8,6 @@ args @ {
 }: {
   imports = [
     inputs.hyprland.homeManagerModules.default
-    inputs.nurpkgs.nixosModules.nur
 
     ./terminal.nix
     ./waybar.nix

@@ -37,6 +37,9 @@ args @ {
 
               decoration {
                 rounding = 10
+                shadow {
+					enabled = true
+				}
 
                 blur {
                   enabled = true
@@ -44,8 +47,6 @@ args @ {
                   passes = 2
                   new_optimizations = on
                 }
-
-                drop_shadow = no
               }
 
         input {

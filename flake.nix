@@ -40,6 +40,8 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
   };
 
   outputs = {
@@ -48,6 +50,7 @@
     home-manager,
     lix-module,
     deploy-rs,
+    chaotic,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -76,6 +79,7 @@
         modules =
           [
             lix-module.nixosModules.default
+            chaotic.nixosModules.default
             home-manager.nixosModules.home-manager
             {home-manager.extraSpecialArgs = totalSpecialArgs;}
           ]

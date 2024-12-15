@@ -25,11 +25,11 @@
     ];
   };
 
-  boot.loader.timeout = 0;
+  boot.loader.timeout = 10;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelPackages = pkgs.linuxPackages_cachyos;
 
   programs.nix-ld.enable = true;
 
