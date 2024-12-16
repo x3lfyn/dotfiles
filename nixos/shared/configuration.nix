@@ -146,6 +146,9 @@
     openvpn
 
     xorg.libX11
+
+    uv
+    ruff
   ];
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
