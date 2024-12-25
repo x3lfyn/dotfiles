@@ -149,6 +149,8 @@
 
     uv
     ruff
+    devenv
+    poetry
   ];
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";

@@ -47,6 +47,8 @@
     gscan2pdf
 
     bore-cli
+
+    vscode-fhs
   ];
 
   hardware.nvidia = {
