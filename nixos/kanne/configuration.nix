@@ -37,6 +37,8 @@
   environment.systemPackages = with pkgs; [
     #    libva-utils
     inputs.agenix.packages."${system}".default
+
+    cookpypy310
   ];
 
   environment.sessionVariables = {

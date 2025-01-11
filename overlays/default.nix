@@ -24,6 +24,9 @@
     libratbag = prev.libratbag.overrideAttrs (old: {
       patches = old.patches or [] ++ [./ratbag.patch];
     });
+    cookpypy310 = prev.pypy310.overrideAttrs (old: {
+      patches = old.patches or [] ++ [./cooking.patch];
+    });
   };
 
   unstable-packages = final: _prev: {
