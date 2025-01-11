@@ -29,7 +29,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
 
   programs.nix-ld.enable = true;
 
@@ -49,6 +49,9 @@
     bore-cli
 
     vscode-fhs
+
+    unstable.lutris
+    unstable.wineWowPackages.unstableFull
   ];
 
   hardware.nvidia = {
