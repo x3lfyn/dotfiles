@@ -71,7 +71,7 @@
 
   hardware.sane = {
     enable = true;
-    extraBackends = [pkgs.hplipWithPlugin];
+    extraBackends = [pkgs.unstable.hplipWithPlugin];
   };
 
   environment.sessionVariables = {

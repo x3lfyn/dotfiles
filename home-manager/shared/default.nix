@@ -124,6 +124,7 @@ args @ {
           pillow
           z3
           pwntools
+          tqdm
         ]
     ))
     pypy3
