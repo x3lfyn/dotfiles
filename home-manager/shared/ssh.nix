@@ -22,6 +22,9 @@
         user = "pi";
         identityFile = "${config.home.homeDirectory}/.ssh/ubel";
       };
+      "gitlab.prodcontest.ru" = {
+		identityFile ="${config.home.homeDirectory}/.ssh/internal";
+	  };
     };
   };
 }

@@ -40,7 +40,6 @@ args @ {
                   enabled = false
                 }
 
-                drop_shadow = false
               }
 
         input {
@@ -99,4 +98,8 @@ args @ {
     preload = ~/Pictures/wallpapers/pinterest_girl_space_upscaled.png
     wallpaper = eDP-1,~/Pictures/wallpapers/pinterest_girl_space_upscaled.png
   '';
+
+  programs.vscode = {
+	enable = true;
+  };
 }
