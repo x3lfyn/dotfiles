@@ -27,7 +27,7 @@
     package = pkgs.unstable.nix-ld;
   };
 
-  hardware.opengl.extraPackages = with pkgs; [
+  hardware.graphics.extraPackages = with pkgs; [
     vaapiVdpau
     intel-media-driver
     vaapiIntel
@@ -37,8 +37,6 @@
   environment.systemPackages = with pkgs; [
     #    libva-utils
     inputs.agenix.packages."${system}".default
-
-    cookpypy310
   ];
 
   environment.sessionVariables = {

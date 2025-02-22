@@ -155,9 +155,9 @@
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
   };
 
   programs.xwayland.enable = true;

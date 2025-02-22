@@ -25,6 +25,12 @@
       "gitlab.prodcontest.ru" = {
 		identityFile ="${config.home.homeDirectory}/.ssh/internal";
 	  };
+	  laufen = {
+		hostname = "over.rest";
+		port = 3789;
+		identityFile = "${config.home.homeDirectory}/.ssh/laufen";
+		user = "x3lfyn";
+	  };
     };
   };
 }

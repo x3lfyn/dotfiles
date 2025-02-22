@@ -80,6 +80,8 @@
         ipy = "ipython";
         ":q" = "exit";
         k = "kubectl";
+        dc = "docker compose";
+        n = "nix";
       };
       history = {
         size = 20000;
@@ -228,7 +230,7 @@
         add_newline = true;
         line_break.disabled = false;
         directory = {
-          style = "cyan";
+          style = "#C84A95";
         };
         username = {
           style_user = "#e6b450 bold";
@@ -238,12 +240,12 @@
         };
         hostname = {
           ssh_only = false;
-          style = "bg:#95e6cb fg:black";
-          format = "[](#95e6cb)[@$hostname]($style)[](#95e6cb)";
+          style = "bg:#EB622B fg:black";
+          format = "[](#EB622B)[@$hostname]($style)[](#EB622B)";
         };
         character = {
-          success_symbol = "[λ>](green)";
-          error_symbol = "[λ>](red)";
+          success_symbol = "[λ>](#FF9B55)";
+          error_symbol = "[λ>](#D62900)";
         };
         git_branch = {
           symbol = " ";
@@ -261,8 +263,8 @@
         };
         cmd_duration = {
           min_time = 300;
-          style = "bg:#bfbdb6 fg:black";
-          format = "[](#bfbdb6)[ $duration]($style)[](#bfbdb6) ";
+          style = "bg:#EA7F7E fg:black";
+          format = "[](#EA7F7E)[ $duration]($style)[](#EA7F7E) ";
         };
         golang = {
           symbol = " ";

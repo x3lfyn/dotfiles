@@ -31,7 +31,7 @@ args @ {
   myShell.enable = true;
 
   nixpkgs = {
-    overlays = [inputs.nurpkgs.overlay] ++ overlays;
+    overlays = [inputs.nurpkgs.overlays.default] ++ overlays;
 
     config = {
       allowUnfree = true;
@@ -148,7 +148,7 @@ args @ {
     ghidra-bin
     radare2
     apktool
-    gnome.ghex
+    ghex
     xortool
     sqlite
     frida-tools
