@@ -75,6 +75,7 @@ args @ {
     alsa-utils
     alsa-tools
     cmake
+    meson
     iptables
     mpv
     openvpn

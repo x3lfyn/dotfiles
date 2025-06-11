@@ -95,8 +95,8 @@ args @ {
   programs.waybar.settings.mainBar.modules-right = pkgs.lib.mkBefore ["backlight"];
 
   home.file.".config/hypr/hyprpaper.conf".text = ''
-    preload = ~/Pictures/wallpapers/pinterest_girl_space_upscaled.png
-    wallpaper = eDP-1,~/Pictures/wallpapers/pinterest_girl_space_upscaled.png
+    preload = ~/Pictures/wallpapers/wallhaven-gpm2j3.png
+    wallpaper = eDP-1,~/Pictures/wallpapers/wallhaven-gpm2j3.png
   '';
 
   programs.vscode = {
