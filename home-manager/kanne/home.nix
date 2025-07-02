@@ -10,7 +10,7 @@ args @ {
     (import ../shared/xdg-mime.nix (args // {defaultBrowserDesktop = "google-chrome.desktop";}))
   ];
 
-  home.packages = with pkgs; [brightnessctl];
+  home.packages = with pkgs; [brightnessctl seatd];
 
   programs.foot.settings.scrollback.multiplier = 10.0;
 
@@ -100,6 +100,6 @@ args @ {
   '';
 
   programs.vscode = {
-	enable = true;
+    enable = true;
   };
 }

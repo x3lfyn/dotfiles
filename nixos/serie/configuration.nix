@@ -20,11 +20,11 @@ in {
   fileSystems."/opt/nas" = {
     device = "10.7.7.10:/share/VPSInternal";
     fsType = "nfs";
-    options = [ "x-systemd.automount" "noauto" "x-systemd.idle-timeout=600" ];
+    options = ["x-systemd.automount" "noauto" "x-systemd.idle-timeout=600"];
   };
   fileSystems."/srv/data/prometheus" = {
     device = "/opt/nas/prometheus";
-    options = [ "bind" ];
+    options = ["bind"];
   };
 
   age.identityPaths = ["/etc/agenix/agenix"];

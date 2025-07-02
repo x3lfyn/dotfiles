@@ -19,6 +19,9 @@ args @ {
     ./mako.nix
     ./zathura.nix
     ./gitgpg.nix
+
+    inputs.niri.homeModules.niri
+    ./niri.nix
   ];
 
   #  xdg.configFile."nvim".source = pkgs.fetchFromGitHub {
@@ -110,6 +113,7 @@ args @ {
     glib
 
     rustup
+    go
     gcc
     pkg-config
     libiconv
@@ -155,6 +159,7 @@ args @ {
     frida-tools
     gef
     ltrace
+    sqlmap
 
     # libs
     xorg.libX11
@@ -173,7 +178,7 @@ args @ {
 
     burpsuite
 
-    (nerdfonts.override {fonts = ["FantasqueSansMono"];})
+    nerd-fonts.fantasque-sans-mono
   ];
 
   programs.rofi = {
@@ -317,5 +322,5 @@ args @ {
   systemd.user.startServices = "sd-switch";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "24.11";
+  home.stateVersion = "25.05";
 }

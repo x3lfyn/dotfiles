@@ -9,7 +9,7 @@
     enable = false;
     theme = "Ayu";
     font = {
-      package = pkgs.nerdfonts.override {fonts = ["FantasqueSansMono"];};
+      package = pkgs.nerd-fonts.fantasque-sans-mono;
       name = "FantasqueSansM Nerd Font";
       size = 14;
     };

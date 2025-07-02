@@ -11,7 +11,7 @@
       vobbla16 = {
         id = 0;
 
-        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+        extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
           ublock-origin
           bitwarden
           translate-web-pages

@@ -23,13 +23,18 @@
         identityFile = "${config.home.homeDirectory}/.ssh/ubel";
       };
       "gitlab.prodcontest.ru" = {
-		identityFile ="${config.home.homeDirectory}/.ssh/internal";
-	  };
-	  laufen = {
-		hostname = "over.rest";
-		port = 3789;
-		identityFile = "${config.home.homeDirectory}/.ssh/laufen";
-		user = "x3lfyn";
+        identityFile = "${config.home.homeDirectory}/.ssh/internal";
+      };
+      laufen = {
+        hostname = "over.rest";
+        port = 3789;
+        identityFile = "${config.home.homeDirectory}/.ssh/laufen";
+        user = "x3lfyn";
+      };
+      ico = {
+		hostname = "178.170.193.145";
+		identityFile = "${config.home.homeDirectory}/.ssh/ico";
+		user = "root";
 	  };
     };
   };

@@ -21,7 +21,7 @@
         height = 27;
         spacing = 5;
         modules-left = [
-          "hyprland/workspaces"
+          "niri/workspaces"
           "cpu"
           "memory"
           "disk"
@@ -30,17 +30,20 @@
           "custom/vpn"
           "pulseaudio"
           "bluetooth"
-          "hyprland/language"
+          "niri/language"
           "clock"
           "tray"
         ];
+        modules-center = [
+		  "niri/window"
+        ];
 
-        "hyprland/workspaces" = {
+        "niri/workspaces" = {
           #          on-click = "";
           #          sort-by-number = true;
-          persistent-workspaces = {
-            "*" = 10;
-          };
+         # persistent-workspaces = {
+         #   "*" = 10;
+         # };
           format-icons = {
             default = "■";
             active = "■";
@@ -73,7 +76,7 @@
             };
           };
         };
-        "hyprland/language" = {
+        "niri/language" = {
           format = "󰌌 {}";
           format-en = "en";
           format-ru = "ru";

@@ -7,16 +7,18 @@
 }: {
   services.mako = {
     enable = true;
-    anchor = "top-center";
-    font = "Inter 12";
-    backgroundColor = "#1f1f28";
-    textColor = "#dcd7ba";
-    progressColor = "#43242B";
-    borderSize = 2;
-    borderRadius = 10;
-    padding = "8";
-    iconPath = "${config.home.homeDirectory}/.nix-profile/share/icons/Papirus-Dark";
-    layer = "overlay";
-    defaultTimeout = 3000;
+    settings = {
+		anchor = "top-center";
+		font = "Inter 12";
+		background-color = "#1f1f28";
+		text-color = "#dcd7ba";
+		progress-color = "#43242B";
+		border-size = 2;
+		border-radius = 10;
+		padding = "8";
+		icon-path = "${config.home.homeDirectory}/.nix-profile/share/icons/Papirus-Dark";
+		layer = "overlay";
+		default-timeout = 3000;
+	};
   };
 }

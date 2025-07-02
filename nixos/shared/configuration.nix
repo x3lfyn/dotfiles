@@ -151,6 +151,8 @@
     ruff
     devenv
     poetry
+    
+    steam-run
   ];
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
@@ -254,7 +256,7 @@
 
   networking.firewall.enable = false;
 
-  system.stateVersion = "24.11";
+  system.stateVersion = "25.05";
 
   networking.extraHosts = ''
     10.129.138.179 analytical.htb data.analytical.htb

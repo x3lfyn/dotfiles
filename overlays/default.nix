@@ -38,5 +38,6 @@
     yukigram
     modifications
     unstable-packages
+    inputs.niri.overlays.niri
   ];
 }

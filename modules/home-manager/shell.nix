@@ -92,7 +92,7 @@
       autosuggestion.enable = true;
       enableCompletion = true;
       syntaxHighlighting.enable = false; # use fast-syntax-highlighting
-      initExtra = ''
+      initContent = ''
         # show completion menus
         #zstyle ':completion:*' menu select
         #zstyle ':completion:*:manuals'    separate-sections true

@@ -26,9 +26,9 @@
   window#waybar {
     background-color: @bg;
   }
-  label {
+/*  label {
     color: @defaultFg;
-  }
+  }*/
   #tray label {
     color: @fg;
   }
@@ -38,7 +38,6 @@
   tooltip * {
     color: @fg;
   }
-
 
 
   #workspaces button.empty label {
@@ -51,6 +50,7 @@
 
   #cpu, #memory, #language, #clock, #bluetooth, #pulseaudio, #disk, #battery, #network, #backlight,
   #mpris, #custom-vpn {
+    color: @defaultFg;
     padding: 0 5px;
     margin: 0 2px;
   }
