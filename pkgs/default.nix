@@ -39,6 +39,21 @@
       cp -a *.ttf $out/share/fonts/truetype/
     '';
   };
+  moscowsans = pkgs.stdenv.mkDerivation rec {
+    name = "Moscow Sans font";
+    src = [./moscowsansregular.ttf];
+
+    unpackPhase = ''
+      for srcFile in $src; do
+        cp $srcFile $(stripHash $srcFile)
+      done
+    '';
+
+    installPhase = ''
+      mkdir -p $out/share/fonts/truetype
+      cp -a *.ttf $out/share/fonts/truetype/
+    '';
+  };
   jetbrainsmono-nf-ligs = pkgs.stdenv.mkDerivation rec {
     name = "JetBrains Mono Nerd font with ligatures";
     src = [./jetbrainsmono-nf-ligs.ttf];

@@ -17,6 +17,14 @@
     ./hardware-configuration.nix
   ];
 
+  programs.steam = {
+	enable = true;
+  };
+  programs.appimage = {
+	enable = true;
+	binfmt = true;
+  };
+
   services.printing = {
     enable = true;
     drivers = with pkgs; [

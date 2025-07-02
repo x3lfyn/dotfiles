@@ -72,6 +72,7 @@ args @ {
     roboto-slab
     inter
     google-sans-display
+    moscowsans
     jetbrainsmono-nf-ligs
     noto-fonts-emoji
 
