@@ -39,10 +39,6 @@
             	workspace_back_and_forth = true
             }
 
-            opengl {
-  force_introspection = 0
-   }
-
             misc {
             	disable_hyprland_logo = true
             	disable_splash_rendering = true

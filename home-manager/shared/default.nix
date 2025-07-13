@@ -68,6 +68,7 @@ args @ {
     fuse
     fuse3
     xorg.xhost
+    xwayland-satellite
 
     roboto-slab
     inter
@@ -119,6 +120,7 @@ args @ {
     pkg-config
     libiconv
     openssl.dev
+    protobuf
     (python3.withPackages (
       ps:
         with ps; [

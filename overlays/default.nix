@@ -21,9 +21,9 @@
       ];
     };
 
-    libratbag = prev.libratbag.overrideAttrs (old: {
-      patches = old.patches or [] ++ [./ratbag.patch];
-    });
+   # libratbag = prev.libratbag.overrideAttrs (old: {
+   #   patches = old.patches or [] ++ [./ratbag.patch];
+   # });
   };
 
   unstable-packages = final: _prev: {
